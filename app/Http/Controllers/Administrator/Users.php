@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\UserLog;
 
@@ -28,7 +30,25 @@ class Users extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $saved = $user->save();
+
+        // Make log
+        $user_log = new UserLog;
+        $user_log->name = Auth::user()->name.' Menambahkan user baru';
+        $user_log->save();
+
+        if($saved) return redirect()->route('users.index')->with(['message' => 'Menambah user berhasil!', 'type' => 'success']);
+        else return redirect()->back()->with(['message' => 'Menambah user gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
     public function show($id)
@@ -38,16 +58,47 @@ class Users extends Controller
 
     public function edit($id)
     {
-        //
+        $user = User::firstWhere('id', $id);
+        return view('administrator.users.edit')->with('user', $user);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $user = User::firstWhere('id', $id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        if ($request->password) {
+            $validator = $request->validate([
+                'password' => ['string', 'min:8', 'confirmed'],
+            ]);
+
+            $user->password = Hash::make($request->password);
+        }
+
+        $saved = $user->save();
+
+        // Make log
+        $user_log = new UserLog;
+        $user_log->name = Auth::user()->name.' Mengubahkan user '.$user->email;
+        $user_log->save();
+
+        if($saved) return redirect()->route('users.index')->with(['message' => 'Mengubah user berhasil!', 'type' => 'success']);
+        else return redirect()->back()->with(['message' => 'Mengubah user gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
     public function destroy($id)
     {
-        //
+        $user = User::firstWhere('id', $id);
+
+        // Make log
+        $user_log = new UserLog;
+        $user_log->name = Auth::user()->name.' Menghapus user '.$user->email;
+        $user_log->save();
+
+        $delete = $user->delete();
+
+        if($delete) return redirect()->back()->with(['message' => 'Menghapus user berhasil!', 'type' => 'success']);
+        else return redirect()->back()->with(['message' => 'Menghapus user gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 }

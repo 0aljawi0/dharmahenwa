@@ -19,6 +19,9 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    {{-- Animate --}}
+    <link rel="stylesheet" href="{{asset('vendor/animatecss/animate.min.css')}}">
+
     {{-- DataTables --}}
     <link rel="stylesheet" href="{{asset('vendor/datatables/datatables.min.css')}}">
 </head>
@@ -84,6 +87,9 @@
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    {{-- Sweetalert --}}
+    <script src="{{ asset('vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
 
     {{-- DataTable --}}
     <script src="{{ asset('vendor/datatables/datatables.min.js') }}"></script>

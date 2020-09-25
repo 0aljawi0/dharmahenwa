@@ -4,18 +4,19 @@
 
 <div class="container-fluid">
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4 animate__animated animate__fadeInDown">
         <h1 class="h3 mb-0 text-gray-800">User Management</h1>
 
         <div class="btn-group" role="group">
             <a href="{{route('dashboard')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Go To Dashboard</a>
             <a href="{{route('users.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New User</a>
         </div>
-
     </div>
 
+    @include('administrator.components.alert')
+
     <!-- Content Row -->
-    <div class="row">
+    <div class="row animate__animated animate__fadeInUp">
 
         <!-- Content Column -->
         <div class="col-12 mb-4">
@@ -42,7 +43,7 @@
                             <td>
                                 <div class="btn-group" role="group">
                                     <a href="{{route('users.edit', ['user' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
-                                    <button type="button" class="btn btn-danger btn-sm"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
                                 </div>
 
                                 <form id="destroy_{{$item->id}}" action="{{route('users.destroy', ['user' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
@@ -65,5 +66,31 @@
     $(function () {
         $('#datatable').DataTable();
     });
+
+    function destroy(id, title) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: title+" akan dihapus permanen.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus saja!',
+            showClass: {
+                popup: 'animate__animated animate__flipInX'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__flipOutX'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var form = document.getElementById('destroy_'+id);
+                form.submit();
+                Swal.fire(
+                    'Terhapus!',
+                    'File sudah dihapus.',
+                    'success'
+                )
+            }
+        })
+    }
 </script>
 @endpush

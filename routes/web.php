@@ -22,3 +22,4 @@ Auth::routes(['register' => false]);
 Route::get('/dashboard', [App\Http\Controllers\Administrator\Dashboard::class, 'index'])->name('dashboard');
 Route::get('/user_logs', [App\Http\Controllers\Administrator\UserLogs::class, 'index'])->name('user_logs');
 Route::resource('users', App\Http\Controllers\Administrator\Users::class);
+Route::resource('files', App\Http\Controllers\Administrator\Files::class);
