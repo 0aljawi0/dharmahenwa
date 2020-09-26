@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use App\Models\UserLog;
+use App\Traits\Logs;
 
 class Users extends Controller
 {
+
+    use Logs;
 
     public function __contruct()
     {
@@ -43,9 +45,7 @@ class Users extends Controller
         $saved = $user->save();
 
         // Make log
-        $user_log = new UserLog;
-        $user_log->name = Auth::user()->name.' Menambahkan user baru';
-        $user_log->save();
+        Logs::add(Auth::user()->name.' Menambahkan user baru');
 
         if($saved) return redirect()->route('users.index')->with(['message' => 'Menambah user berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Menambah user gagal, Coba lagi nanti!', 'type' => 'danger']);
@@ -79,9 +79,7 @@ class Users extends Controller
         $saved = $user->save();
 
         // Make log
-        $user_log = new UserLog;
-        $user_log->name = Auth::user()->name.' Mengubahkan user '.$user->email;
-        $user_log->save();
+        Logs::add(Auth::user()->name.' Mengubah user '.$user->email);
 
         if($saved) return redirect()->route('users.index')->with(['message' => 'Mengubah user berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Mengubah user gagal, Coba lagi nanti!', 'type' => 'danger']);
@@ -92,9 +90,7 @@ class Users extends Controller
         $user = User::firstWhere('id', $id);
 
         // Make log
-        $user_log = new UserLog;
-        $user_log->name = Auth::user()->name.' Menghapus user '.$user->email;
-        $user_log->save();
+        Logs::add(Auth::user()->name.' Menghapus user '.$user->email);
 
         $delete = $user->delete();
 

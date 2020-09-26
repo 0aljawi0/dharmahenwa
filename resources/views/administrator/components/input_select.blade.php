@@ -1,11 +1,6 @@
 <div class="form-group">
-    @php
-        $explode = explode('_', $name);
-        array_pop($explode);
-        $title = implode(' ', $explode);
-    @endphp
-    <label>{{ucfirst($title)}}</label>
-    <select name="{{$name}}" class="form-control" {{$required ?? 'required'}}>
+    <label>{{ucfirst(str_replace('_', ' ', $name))}}</label>
+    <select name="{{$name}}" class="form-control" {{$required ?? ''}}>
         {{$slot}}
     </select>
 </div>

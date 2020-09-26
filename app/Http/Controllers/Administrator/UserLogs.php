@@ -14,7 +14,7 @@ class UserLogs extends Controller
 
     public function index()
     {
-        $user_logs = UserLog::all();
+        $user_logs = UserLog::orderBy('created_at', 'desc')->limit('50')->get();
         return view('administrator.user_logs')->with('user_logs', $user_logs);
     }
 }

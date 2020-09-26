@@ -22,7 +22,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item {{Route::is('files.index') ? 'active' : ''}}">
-        <a class="nav-link" href="files.index">
+        <a class="nav-link" href="{{route('files.index')}}">
             <i class="fas fa-fw fa-image"></i>
             <span>Media</span>
         </a>
