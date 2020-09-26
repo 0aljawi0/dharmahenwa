@@ -73,7 +73,8 @@
                             <img class="card-img-top" src="{{'storage/'.$item->path}}" alt="Images">
                             <div class="card-body">
                                 <h5>{{$item->name}}</h5>
-                                <a href="" class="btn btn-danger btn-sm shadow-sm">Delete</a>
+                                <button type="button" class="btn btn-danger btn-sm shadow-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')">Delete</button>
+                                <form id="destroy_{{$item->id}}" action="{{route('files.destroy', ['id' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
                             </div>
                         </div>
                     </div>
@@ -87,10 +88,12 @@
                 @foreach ($files['document'] as $item)
                     <div class="col-lg-4 mb-2">
                         <div class="card">
-                            <p>{{$item->path}}</p>
+
                             <div class="card-body">
                                 <h5>{{$item->name}}</h5>
-                                <a href="" class="btn btn-danger btn-sm shadow-sm">Delete</a>
+                                <a href="{{asset('storage/'.$item->path)}}" class="btn btn-info btn-sm shadow-sm"><i class="fas fa-file-alt fa-sm fa-fw"></i> {{$item->name}}</a>
+                                <button type="button" class="btn btn-danger btn-sm shadow-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')">Delete</button>
+                                <form id="destroy_{{$item->id}}" action="{{route('files.destroy', ['id' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
                             </div>
                         </div>
                     </div>
@@ -182,5 +185,31 @@
             });
         });
     });
+
+    function destroy(id, title) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: title+" akan dihapus permanen.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus saja!',
+            showClass: {
+                popup: 'animate__animated animate__flipInX'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__flipOutX'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var form = document.getElementById('destroy_'+id);
+                form.submit();
+                Swal.fire(
+                    'Terhapus!',
+                    'File sudah dihapus.',
+                    'success'
+                )
+            }
+        })
+    }
 </script>
 @endpush

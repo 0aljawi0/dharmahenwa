@@ -18,6 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     {{-- Animate --}}
     <link rel="stylesheet" href="{{asset('vendor/animatecss/animate.min.css')}}">

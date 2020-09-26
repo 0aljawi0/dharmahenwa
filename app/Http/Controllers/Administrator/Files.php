@@ -30,9 +30,20 @@ class Files extends Controller
         return view('administrator.files')->with('files', $files);
     }
 
+    public function all()
+    {
+        $images = File::where('type', 'image')->orderBy('created_at', 'desc')->get();
+        $document = File::where('type', 'document')->orderBy('created_at', 'desc')->get();
+
+        $files['images'] = $images;
+        $files['document'] = $document;
+
+        return response()->json($files);
+    }
+
     public function store(Request $request)
     {
-        $directory = date('Y_m');
+        $directory = $request->type.'_'.date('Y_m');
         $name = date('dHis').'.';
         $extension = $request->file->getClientOriginalExtension();
 
@@ -47,12 +58,22 @@ class Files extends Controller
         $file->path = $fileurl;
         $saved = $file->save();
 
+        Logs::add(Auth::user()->name.' Menambahkan '.$request->type);
+
         if($saved) return response()->json(['status' => 'ok']);
         else return response()->json(['status' => 'fail']);
     }
 
     public function destroy($id)
     {
+        $file = File::firstWhere('id', $id);
 
+        Storage::delete('public/'.$file->path);
+        Logs::add(Auth::user()->name.' Menghapus '.$file->type);
+
+        $delete = $file->delete();
+
+        if($delete) return redirect()->back()->with(['message' => 'Menghapus file berhasil!', 'type' => 'success']);
+        else return redirect()->back()->with(['message' => 'Menghapus file gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 }

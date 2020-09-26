@@ -1,3 +1,9 @@
+$(function () {
+    $(".readonly").on('keydown paste', function(e){
+        e.preventDefault();
+    });
+});
+
 function handle_image(event, selector, width) {
     event.preventDefault();
     let preview = document.getElementById(selector);
@@ -14,8 +20,12 @@ function handle_image(event, selector, width) {
                     var image = document.createElement('img');
                     image.setAttribute('src', e.target.result);
                     image.setAttribute('width', width);
-                    image.setAttribute('alt', 'slider');
+                    image.setAttribute('alt', 'image');
+
+                    console.log(image);
                     preview.appendChild(image);
+
+                    console.log(preview);
                 }
                 reader.readAsDataURL(file);
             }

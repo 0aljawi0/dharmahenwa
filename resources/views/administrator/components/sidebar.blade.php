@@ -20,11 +20,25 @@
         </a>
     </li>
 
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading"> Website </div>
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item {{Route::is('files.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('files.index')}}">
             <i class="fas fa-fw fa-image"></i>
             <span>Media</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item {{Route::is('sliders.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('sliders.index')}}">
+            <i class="fas fa-fw fa-image"></i>
+            <span>Sliders</span>
         </a>
     </li>
 
