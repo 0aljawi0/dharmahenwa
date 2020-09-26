@@ -66,16 +66,14 @@
     <div class="row animate__animated animate__fadeInUp">
         <div class="col-lg-6">
             <h1>Images</h1>
-            <div class="row">
+            <div class="card-columns">
                 @foreach ($files['images'] as $item)
-                    <div class="col-lg-4 mb-2">
-                        <div class="card">
-                            <img class="card-img-top" src="{{'storage/'.$item->path}}" alt="Images">
-                            <div class="card-body">
-                                <h5>{{$item->name}}</h5>
-                                <button type="button" class="btn btn-danger btn-sm shadow-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')">Delete</button>
-                                <form id="destroy_{{$item->id}}" action="{{route('files.destroy', ['id' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
-                            </div>
+                    <div class="card">
+                        <img class="card-img-top" src="{{'storage/'.$item->path}}" alt="Images">
+                        <div class="card-body">
+                            <h5>{{$item->name}}</h5>
+                            <button type="button" class="btn btn-danger btn-sm shadow-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')">Delete</button>
+                            <form id="destroy_{{$item->id}}" action="{{route('files.destroy', ['id' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
                         </div>
                     </div>
                 @endforeach
@@ -84,17 +82,14 @@
 
         <div class="col-lg-6">
             <h1>Document</h1>
-            <div class="row">
+            <div class="card-columns">
                 @foreach ($files['document'] as $item)
-                    <div class="col-lg-4 mb-2">
-                        <div class="card">
-
-                            <div class="card-body">
-                                <h5>{{$item->name}}</h5>
-                                <a href="{{asset('storage/'.$item->path)}}" class="btn btn-info btn-sm shadow-sm"><i class="fas fa-file-alt fa-sm fa-fw"></i> {{$item->name}}</a>
-                                <button type="button" class="btn btn-danger btn-sm shadow-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')">Delete</button>
-                                <form id="destroy_{{$item->id}}" action="{{route('files.destroy', ['id' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>{{$item->name}}</h5>
+                            <a href="{{asset('storage/'.$item->path)}}" class="btn btn-info btn-sm shadow-sm"><i class="fas fa-file-alt fa-sm fa-fw"></i> {{$item->name}}</a>
+                            <button type="button" class="btn btn-danger btn-sm shadow-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')">Delete</button>
+                            <form id="destroy_{{$item->id}}" action="{{route('files.destroy', ['id' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
                         </div>
                     </div>
                 @endforeach

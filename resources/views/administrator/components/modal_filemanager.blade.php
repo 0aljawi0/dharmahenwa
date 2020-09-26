@@ -45,14 +45,14 @@
 
                         <div class="col-12" id="wrapper-images">
                             <h5>Images</h5>
-                            <div class="row" id="images">
+                            <div class="card-columns" id="images">
 
                             </div>
                         </div>
 
                         <div class="col-12" id="wrapper-documents">
                             <h5>Documents</h5>
-                            <div class="row" id="documents">
+                            <div class="card-columns" id="documents">
 
                             </div>
                         </div>
@@ -161,20 +161,16 @@
 
             $.each(data.images, function (i, item) {
                  $('#images').append(`
-                    <div class="col-lg-4 mb-2">
-                        <div class="card p-2 file-manager" onclick="choose('${item.type}', '${item.path}')">
-                            <img class="card-img-top" src="${window.location.origin}/storage/${item.path}" alt="Images">
-                        </div>
+                    <div class="card p-2 file-manager" onclick="choose('${item.type}', '${item.path}')">
+                        <img class="card-img-top" src="${window.location.origin}/storage/${item.path}" alt="Images">
                     </div>
                  `);
             });
 
             $.each(data.document, function (i, item) {
                  $('#documents').append(`
-                    <div class="col-lg-4 mb-2">
-                        <div class="card p-2 text-center file-manager" onclick="choose('${item.type}', '${item.path}')">
-                            <p class="mb-0"><i class="fas fa-file-alt fa-sm fa-fw"></i> ${item.name}</p>
-                        </div>
+                    <div class="card p-2 text-center file-manager" onclick="choose('${item.type}', '${item.path}')">
+                        <p class="mb-0"><i class="fas fa-file-alt fa-sm fa-fw"></i> ${item.name}</p>
                     </div>
                  `);
             });
