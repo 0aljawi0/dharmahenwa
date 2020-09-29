@@ -26,6 +26,8 @@
     {{-- DataTables --}}
     <link rel="stylesheet" href="{{asset('vendor/datatables/datatables.min.css')}}">
 
+    {{-- Summernote --}}
+    <link rel="stylesheet" href="{{asset('vendor/summernote/summernote-bs4.min.css')}}">
 </head>
 <body id="page-top">
 
@@ -95,6 +97,9 @@
 
     {{-- DataTable --}}
     <script src="{{ asset('vendor/datatables/datatables.min.js') }}"></script>
+
+    {{-- Summernote --}}
+    <script src="{{ asset('vendor/summernote/summernote-bs4.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>

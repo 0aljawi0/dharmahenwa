@@ -44,7 +44,7 @@ class Files extends Controller
     public function store(Request $request)
     {
         $directory = $request->type.'_'.date('Y_m');
-        $name = date('dHis').'.';
+        $name = $this->slugify($request->name).'_'.date('dHis').'.';
         $extension = $request->file->getClientOriginalExtension();
 
         $filename = $name.$extension;
@@ -75,5 +75,35 @@ class Files extends Controller
 
         if($delete) return redirect()->back()->with(['message' => 'Menghapus file berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Menghapus file gagal, Coba lagi nanti!', 'type' => 'danger']);
+    }
+
+    function slugify($text)
+    {
+        // replace non letter or digits by -
+        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+        // transliterate
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
+
+        // trim
+        $text = trim($text, '-');
+
+        // remove duplicate -
+        $text = preg_replace('~-+~', '-', $text);
+
+        // lowercase
+        $text = strtolower($text);
+
+        // Change - to _
+        $text = str_replace('-', '_', $text);
+
+        if (empty($text)) {
+            return 'n-a';
+        }
+
+        return $text;
     }
 }

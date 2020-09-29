@@ -71,10 +71,10 @@
                     @slot('name') image @endslot
                     @slot('required') required @endslot
                     @slot('value') {{$slider->image}} @endslot
-                    @slot('image') <img src="{{asset('storage/'.$slider->image)}}" alt="preview" width="50%"> @endslot
+                    @slot('image') <img src="{{asset('storage/'.$slider->image)}}" alt="preview" width="200"> @endslot
                 @endcomponent
 
-                <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Create')}}</button>
+                <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Update')}}</button>
             </form>
         </div>
 

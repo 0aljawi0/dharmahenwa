@@ -90,7 +90,7 @@ class Sliders extends Controller
         Logs::add(Auth::user()->name.' Menghapus slider');
 
         if($delete) return redirect()->back()->with(['message' => 'Menghapus slider berhasil!', 'type' => 'success']);
-        else return redirect()->back()->with(['message' => 'Menghapus user gagal, Coba lagi nanti!', 'type' => 'danger']);
+        else return redirect()->back()->with(['message' => 'Menghapus slider gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
 }

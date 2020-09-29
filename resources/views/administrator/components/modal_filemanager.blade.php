@@ -12,6 +12,7 @@
                 <div class="container-fluid" >
                     <div class="row">
                         <div class="col-12">
+                            <input type="hidden" name="inputID">
                             <form id="form">
                                 @component('administrator.components.input_text')
                                     @slot('name') name @endslot
@@ -130,6 +131,7 @@
 
     function openModal(filetype, name) {
 
+        $('[name="inputID"]').val(name);
         $('#file-manager').modal('show');
         $('#file').empty();
         $('[name="type"]').val(filetype);
@@ -179,10 +181,13 @@
     }
 
     function choose(type, path) {
+
+        var name = $('[name="inputID"]').val();
+
         if (type == 'image') {
 
-            $('#file-input').val(path);
-            $('#image-preview').empty().append(`<img src="${window.location.origin}/storage/${path}" alt="preview" width="50%">`);
+            $('[name="'+name+'"]').val(path);
+            $('#image-preview-'+name).empty().append(`<img src="${window.location.origin}/storage/${path}" alt="preview" width="200">`);
 
             Swal.fire({
                 icon: 'success',
@@ -195,7 +200,7 @@
             });
         } else {
 
-            $('#file-input').val(path);
+            $('[name="'+name+'"]').val(path);
 
             Swal.fire({
                 icon: 'success',

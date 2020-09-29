@@ -1,4 +1,4 @@
 <div class="form-group">
-    <label>{{ucfirst($name)}}</label>
-    <textarea class="form-control" id="{{$summernote}}" name="{{$name}}" {{$required ?? 'required'}}>{{$value}}</textarea>
+    <label>{{ucfirst(str_replace('_', ' ', $name))}}</label>
+    <textarea class="form-control" id="{{$summernote}}" name="{{$name}}" {{$required ?? ''}}>{{$value}}</textarea>
 </div>

@@ -33,11 +33,11 @@ function handle_image(event, selector, width) {
     }
 }
 
-function sendFile (files, summernote, token) {
+function sendFile (files, summernote) {
     let data = new FormData();
     data.append('image', files[0], files[0].name);
 
-    var url = window.location.origin+'/admin/summernote';
+    var url = window.location.origin+'/summernote';
 
     $.ajax({
         type: 'POST',
@@ -50,7 +50,6 @@ function sendFile (files, summernote, token) {
         processData: false,
         mimeType:"multipart/form-data",
         success: function (res) {
-            // $img = $('<img>').attr({ src: res.image});
             $(summernote).summernote('editor.insertImage', res.image);
         },
         error: function (jqXHR, textStatus, errorThrown) {

@@ -26,19 +26,10 @@
     <!-- Heading -->
     <div class="sidebar-heading"> Website </div>
 
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{Route::is('files.index') ? 'active' : ''}}">
-        <a class="nav-link" href="{{route('files.index')}}">
-            <i class="fas fa-fw fa-image"></i>
-            <span>Media</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{Route::is('sliders.index') ? 'active' : ''}}">
-        <a class="nav-link" href="{{route('sliders.index')}}">
-            <i class="fas fa-fw fa-image"></i>
-            <span>Sliders</span>
+    <li class="nav-item {{Route::is('blogs.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('blogs.index')}}">
+            <i class="fas fa-rss fa-fw"></i>
+            <span>Press Release</span>
         </a>
     </li>
 
@@ -48,7 +39,27 @@
     <!-- Heading -->
     <div class="sidebar-heading"> Pengaturan </div>
 
-    <!-- Nav Item - Dashboard -->
+    <li class="nav-item {{Route::is('website.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('website.index')}}">
+            <i class="fas fa-globe fa-fw"></i>
+            <span>Website Profile</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{Route::is('files.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('files.index')}}">
+            <i class="fas fa-fw fa-image"></i>
+            <span>Media</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{Route::is('sliders.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('sliders.index')}}">
+            <i class="fas fa-fw fa-image"></i>
+            <span>Sliders</span>
+        </a>
+    </li>
+
     <li class="nav-item {{Route::is('users.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('users.index')}}">
             <i class="fas fa-fw fa-users"></i>
