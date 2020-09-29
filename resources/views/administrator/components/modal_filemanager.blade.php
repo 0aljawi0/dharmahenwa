@@ -104,6 +104,8 @@
                     if (response.status == 'ok') {
                         $('#form')[0].reset();
                         $('.progress').hide();
+                        $('#file').empty();
+
                         Swal.fire({
                             icon: 'success',
                             title: 'Upload Berhasil',
@@ -165,6 +167,7 @@
                  $('#images').append(`
                     <div class="card p-2 file-manager" onclick="choose('${item.type}', '${item.path}')">
                         <img class="card-img-top" src="${window.location.origin}/storage/${item.path}" alt="Images">
+                        <small>${item.name}</small>
                     </div>
                  `);
             });

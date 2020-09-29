@@ -28,6 +28,9 @@
 
     {{-- Summernote --}}
     <link rel="stylesheet" href="{{asset('vendor/summernote/summernote-bs4.min.css')}}">
+
+    {{-- Select 2 --}}
+    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.min.css')}}">
 </head>
 <body id="page-top">
 
@@ -100,6 +103,9 @@
 
     {{-- Summernote --}}
     <script src="{{ asset('vendor/summernote/summernote-bs4.min.js') }}"></script>
+
+    {{-- Select 2 --}}
+    <script src="{{ asset('vendor/select2/js/select2.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>

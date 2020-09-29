@@ -57,7 +57,7 @@
 
                 @component('administrator.components.input_text')
                     @slot('name') year @endslot
-                    @slot('type') num @endslot
+                    @slot('type') number @endslot
                     @slot('value') {{old('year')}} @endslot
                     @slot('required') required @endslot
                 @endcomponent

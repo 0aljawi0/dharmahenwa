@@ -38,16 +38,10 @@
                 <a class="collapse-item {{Route::is('mvv.index') ? 'active' : ''}}" href="{{route('mvv.index')}}">Mission, Vision, Value</a>
                 <a class="collapse-item {{Route::is('milestones.index') ? 'active' : ''}}" href="{{route('milestones.index')}}">Milestones</a>
                 <a class="collapse-item {{Route::is('executives.index') ? 'active' : ''}}" href="{{route('executives.index')}}">Executives</a>
+                <a class="collapse-item {{Route::is('awards.index') ? 'active' : ''}}" href="{{route('awards.index')}}">Awards / Certification</a>
             </div>
         </div>
     </li>
-
-    {{-- <li class="nav-item {{Route::is('manage-company-profile.index') ? 'active' : ''}}">
-        <a class="nav-link" href="{{route('manage-company-profile.index')}}">
-            <i class="fas fa-building fa-fw"></i>
-            <span>Company Profile</span>
-        </a>
-    </li> --}}
 
     <li class="nav-item {{Route::is('blogs.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('blogs.index')}}">
