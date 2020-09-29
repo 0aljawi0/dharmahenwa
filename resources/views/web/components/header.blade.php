@@ -10,7 +10,7 @@
 				<span class="icon-bar"></span>
 				</button>
 				<a class="logo" href="index.php">
-					<img src="{{asset('web/images/logo/logo-light.png')}}" alt="DarmaHenwa">
+					<img src="{{asset('storage/'.$website->logo)}}" alt="DarmaHenwa">
 				</a>
 			</div>
 
@@ -19,13 +19,13 @@
 
 				<ul class="nav navbar-nav navbar-left">
 					<li class="has-dropdown">
-						<a href="company-profile.php" data-toggle="dropdown" class="dropdown-toggle">about</a>
+						<a href="{{route('company-profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Tentang Kami' : 'About Us'}}</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="company-profile.php">Company Profile</a>
+								<a href="{{route('company-profile')}}">{{Session::get('locale') == 'id' ? 'Profil Perusahaan' : 'Company Profile'}}</a>
 							</li>
 							<li>
-								<a href="visi-misi.php">Mission, Vision, Values</a>
+								<a href="{{route('mission-vision-value')}}">{{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}}</a>
 							</li>
 							<li>
 								<a href="milestone.php">Milestone</a>

@@ -1,24 +1,43 @@
 @extends('layouts.web')
 
-@section('favicon', 'test')
-@section('title', 'test')
-@section('description', 'test')
-@section('keyword', 'test')
-@section('author', 'test')
-@section('sitename', 'test')
+@php
+    $website = json_decode($website->value)
+@endphp
+
+@section('favicon', asset('storage/'.$website->favicon))
+@section('title', $website->title)
+@section('description', $website->description)
+@section('keyword', $website->keyword)
+@section('author', $website->author)
+@section('sitename', $website->sitename)
 
 @section('content')
-
+    @include('web.components.header')
     @include('web.components.hero')
     @include('web.components.service')
     @include('web.components.about')
     @include('web.components.annualreport')
     @include('web.components.pressrelease')
     @include('web.components.stockprice')
-
+    @include('web.components.footer')
 @endsection
 
 @push('script')
+
+<script type="text/javascript" src="{{asset('web/revolution/js/jquery.themepunch.tools.min.js?rev=5.0')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0')}}"></script>
+
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script type="text/javascript" src="{{asset('web/js/slick.min.js')}}"></script>
+
 <script type="text/javascript">
     $(function () {
 

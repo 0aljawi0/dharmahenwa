@@ -10,6 +10,11 @@ use App\Models\Option;
 
 class Website extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $data = Option::firstWhere('key', 'website-profile');
@@ -35,7 +40,7 @@ class Website extends Controller
         $saved = $option->save();
 
         // Make log
-        Logs::add(Auth::user()->name.' Mengubah profile baru');
+        Logs::add(Auth::user()->name.' Mengubah profile');
 
         if($saved) return redirect()->back()->with(['message' => 'Mengubah profile berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Mengubah profile gagal, Coba lagi nanti!', 'type' => 'danger']);
@@ -59,7 +64,7 @@ class Website extends Controller
         $saved = $option->save();
 
         // Make log
-        Logs::add(Auth::user()->name.' Mengubah profile baru');
+        Logs::add(Auth::user()->name.' Mengubah profile');
 
         if($saved) return redirect()->back()->with(['message' => 'Mengubah profile berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Mengubah profile gagal, Coba lagi nanti!', 'type' => 'danger']);

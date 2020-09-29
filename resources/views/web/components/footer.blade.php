@@ -98,7 +98,7 @@
 					<div class="col-md-6 t-center">
 					    <div class="contact-bot contact-box bg-semitheme">
 					    	<div class="contact-details">
-					    	    <p><i class="fa fa-phone" aria-hidden="true"></i><b>PHONE</b>: +62 21 2991 2350</p>
+					    	    <p><i class="fa fa-phone" aria-hidden="true"></i><b>PHONE</b>: {{$website->phone}}</p>
 					    	</div>
 					    </div>
 					</div>
@@ -107,7 +107,7 @@
 					    <div class="contact-bot contact-box bg-semitheme">
 					    	<div class="contact-details">
 					    	    <div class="contact-details">
-					    	        <p><i class="fa fa-envelope" aria-hidden="true"></i><b>EMAIL US</b>: corporate.secretary@ptdh.co.id</p>
+					    	        <p><i class="fa fa-envelope" aria-hidden="true"></i><b>EMAIL US</b>: {{$website->email}}</p>
 					    	    </div>
 					    	</div>
 					    </div>
@@ -135,7 +135,7 @@
 					</div> -->
 					<div class="widget-about-info">
 						<h5 class="text-capitalize text-white">DarmaHenwa</h5>
-						<p class="mb-0">Darma Henwa focused on mining contractor services, general mining services and equipment maintenance. Our subsidiaries are Coal Vista Resources and PT DH Energy and Corfield Investments Limited.</p>
+						<p class="mb-0">{{$website->footer_description}}</p>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-5 widget-navigation text-center-xs mb-30-xs">

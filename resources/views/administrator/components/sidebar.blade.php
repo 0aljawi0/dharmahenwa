@@ -26,6 +26,28 @@
     <!-- Heading -->
     <div class="sidebar-heading"> Website </div>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#about" aria-expanded="true" aria-controls="about">
+            <i class="fas fa-info-circle fa-sm fa-fw"></i>
+            <span>About</span>
+        </a>
+        <div id="about" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">About Page:</h6>
+
+                <a class="collapse-item {{Route::is('manage-company-profile.index') ? 'active' : ''}}" href="{{route('manage-company-profile.index')}}">Company Profile</a>
+                <a class="collapse-item {{Route::is('manage-mvv.index') ? 'active' : ''}}" href="{{route('manage-mvv.index')}}">Mission, Vision, Value</a>
+            </div>
+        </div>
+    </li>
+
+    {{-- <li class="nav-item {{Route::is('manage-company-profile.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('manage-company-profile.index')}}">
+            <i class="fas fa-building fa-fw"></i>
+            <span>Company Profile</span>
+        </a>
+    </li> --}}
+
     <li class="nav-item {{Route::is('blogs.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('blogs.index')}}">
             <i class="fas fa-rss fa-fw"></i>
@@ -46,17 +68,17 @@
         </a>
     </li>
 
-    <li class="nav-item {{Route::is('files.index') ? 'active' : ''}}">
-        <a class="nav-link" href="{{route('files.index')}}">
-            <i class="fas fa-fw fa-image"></i>
-            <span>Media</span>
-        </a>
-    </li>
-
     <li class="nav-item {{Route::is('sliders.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('sliders.index')}}">
             <i class="fas fa-fw fa-image"></i>
             <span>Sliders</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{Route::is('files.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('files.index')}}">
+            <i class="fas fa-fw fa-image"></i>
+            <span>Media</span>
         </a>
     </li>
 

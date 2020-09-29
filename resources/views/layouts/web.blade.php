@@ -67,29 +67,11 @@
         </div>
     </div>
 
-    @include('web.components.header')
-
     @yield('content')
-
-    @include('web.components.footer')
 
     <script src="{{asset('web/js/jquery-2.1.1.min.js')}}"></script>
     <script src="{{asset('web/js/plugins.js?v=1.0.0')}}"></script>
     <script src="{{asset('web/js/functions.js?v=1.2.0')}}"></script>
-
-    <script type="text/javascript" src="{{asset('web/revolution/js/jquery.themepunch.tools.min.js?rev=5.0')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0')}}"></script>
-
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('web/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script type="text/javascript" src="{{asset('web/js/slick.min.js')}}"></script>
 
     @stack('script')
 </body>
