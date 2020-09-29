@@ -6,7 +6,7 @@
                 <div class="content-breadcrumb pb-sm">
                     <ol class="breadcrumb">
                         <li>
-                            <a href="{{route('home')}}">Home</a>
+                            {{$route_back}}
                         </li>
                         <li class="active">
                             {{$title}}

@@ -16,8 +16,8 @@
     @include('web.components.header')
 
     @component('web.components.page_title')
-        @slot('image') {{asset('storage/'.$mvv->image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? $mvv->title_id : $mvv->title_en}} @endslot
+        @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -31,10 +31,11 @@
                                 <a href="{{route('company-profile')}}">About</a>
                             </li>
                             <li class="active">
-                                {{Session::get('locale') == 'id' ? $mvv->title_id : $mvv->title_en}}
+                                {{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}}
                             </li>
                         </ol>
                     </div>
+
                     <div class="row">
 
                         <div class="col-xs-12 col-sm-12 col-md-12 entry toogle-caption">

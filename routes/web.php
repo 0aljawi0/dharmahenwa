@@ -19,8 +19,9 @@ Route::get('/', function () {
 
 // Frontend
 Route::get('home', [App\Http\Controllers\Web\Home::class, 'index'])->name('home');
-Route::get('company-profile', [App\Http\Controllers\Web\CompanyProfile::class, 'index'])->name('company-profile');
-Route::get('mission-vision-value', [App\Http\Controllers\Web\MissionVisionValue::class, 'index'])->name('mission-vision-value');
+Route::get('company-profile', [App\Http\Controllers\Web\About::class, 'company_profile'])->name('company-profile');
+Route::get('mission-vision-value', [App\Http\Controllers\Web\About::class, 'mvv'])->name('mission-vision-value');
+Route::get('milestone', [App\Http\Controllers\Web\About::class, 'milestone'])->name('milestone');
 
 // Backend
 Auth::routes(['register' => false]);
@@ -43,10 +44,18 @@ Route::get('website', [App\Http\Controllers\Administrator\Website::class, 'index
 Route::post('website', [App\Http\Controllers\Administrator\Website::class, 'store'])->name('website.store');
 Route::put('website/{key}', [App\Http\Controllers\Administrator\Website::class, 'update'])->name('website.update');
 
-Route::get('manage-company-profile', [App\Http\Controllers\Administrator\ManageCompanyProfile::class, 'index'])->name('manage-company-profile.index');
-Route::post('manage-company-profile', [App\Http\Controllers\Administrator\ManageCompanyProfile::class, 'store'])->name('manage-company-profile.store');
-Route::put('manage-company-profile/{key}', [App\Http\Controllers\Administrator\ManageCompanyProfile::class, 'update'])->name('manage-company-profile.update');
+// Company Profile
+Route::get('manage-company-profile', [App\Http\Controllers\Administrator\CompanyProfile::class, 'index'])->name('manage-company-profile.index');
+Route::post('manage-company-profile', [App\Http\Controllers\Administrator\CompanyProfile::class, 'store'])->name('manage-company-profile.store');
+Route::put('manage-company-profile/{key}', [App\Http\Controllers\Administrator\CompanyProfile::class, 'update'])->name('manage-company-profile.update');
 
-Route::get('manage-mvv', [App\Http\Controllers\Administrator\ManageMVV::class, 'index'])->name('manage-mvv.index');
-Route::post('manage-mvv', [App\Http\Controllers\Administrator\ManageMVV::class, 'store'])->name('manage-mvv.store');
-Route::put('manage-mvv/{key}', [App\Http\Controllers\Administrator\ManageMVV::class, 'update'])->name('manage-mvv.update');
+// Mission, Vision, Value
+Route::get('manage-mvv', [App\Http\Controllers\Administrator\MVV::class, 'index'])->name('manage-mvv.index');
+Route::post('manage-mvv', [App\Http\Controllers\Administrator\MVV::class, 'store'])->name('manage-mvv.store');
+Route::put('manage-mvv/{key}', [App\Http\Controllers\Administrator\MVV::class, 'update'])->name('manage-mvv.update');
+
+// Milestones
+Route::resource('manage-milestones', App\Http\Controllers\Administrator\Milestones::class);
+
+// Executives
+Route::resource('manage-executives', App\Http\Controllers\Administrator\Executives::class);

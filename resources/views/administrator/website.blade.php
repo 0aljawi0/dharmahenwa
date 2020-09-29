@@ -55,6 +55,18 @@
 
                 @endcomponent
 
+                @component('administrator.components.input_filemanager')
+                    @slot('filetype') image @endslot
+                    @slot('name') page_title_image @endslot
+                    @slot('required') required @endslot
+
+                    @if ($data)
+                        @slot('value') {{$value->page_title_image}} @endslot
+                        @slot('image') <img src="{{asset('storage/'.$value->page_title_image)}}" alt="preview" width="200"> @endslot
+                    @endif
+
+                @endcomponent
+
                 @component('administrator.components.input_text')
                     @slot('name') title @endslot
                     @slot('value') {{$data ? $value->title : ''}} @endslot

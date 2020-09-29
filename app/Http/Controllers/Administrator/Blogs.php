@@ -10,8 +10,6 @@ use App\Models\Blog;
 
 class Blogs extends Controller
 {
-    use Logs;
-
     public function __construct()
     {
         $this->middleware('auth');

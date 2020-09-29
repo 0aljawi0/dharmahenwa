@@ -28,7 +28,7 @@
 								<a href="{{route('mission-vision-value')}}">{{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}}</a>
 							</li>
 							<li>
-								<a href="milestone.php">Milestone</a>
+								<a href="{{route('milestone')}}">{{Session::get('locale') == 'id' ? 'Tonggak Sejarah' : 'Milestone'}}</a>
 							</li>
 							<li class="dropdown-submenu">
 								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Executives</a>

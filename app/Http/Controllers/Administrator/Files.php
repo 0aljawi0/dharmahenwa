@@ -12,8 +12,6 @@ use App\Models\File;
 class Files extends Controller
 {
 
-    use Logs;
-
     public function __construct()
     {
         $this->middleware('auth');

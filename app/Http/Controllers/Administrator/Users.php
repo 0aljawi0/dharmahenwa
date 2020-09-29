@@ -12,8 +12,6 @@ use App\Traits\Logs;
 class Users extends Controller
 {
 
-    use Logs;
-
     public function __contruct()
     {
         $this->middleware('auth');

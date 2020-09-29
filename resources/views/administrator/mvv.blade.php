@@ -31,34 +31,8 @@
                     @method('PUT')
                 @endif
 
-                <div class="row">
-                    <div class="col-lg-4">
-                        @component('administrator.components.input_filemanager')
-                            @slot('filetype') image @endslot
-                            @slot('name') image @endslot
-                            @slot('required') required @endslot
+                <h4>Corporate Mission</h4>
 
-                            @if ($data)
-                                @slot('value') {{$value->image}} @endslot
-                                @slot('image') <img src="{{asset('storage/'.$value->image)}}" alt="preview" width="200"> @endslot
-                            @endif
-                        @endcomponent
-                    </div>
-                    <div class="col-lg-4">
-                        @component('administrator.components.input_text')
-                            @slot('name') title_en @endslot
-                            @slot('value') {{$data ? $value->title_en : ''}} @endslot
-                            @slot('required') required @endslot
-                        @endcomponent
-                    </div>
-                    <div class="col-lg-4">
-                        @component('administrator.components.input_text')
-                            @slot('name') title_id @endslot
-                            @slot('value') {{$data ? $value->title_id : ''}} @endslot
-                            @slot('required') required @endslot
-                        @endcomponent
-                    </div>
-                </div>
 
                 <div class="row">
                     <div class="col-lg-4">
@@ -88,6 +62,8 @@
                         @endcomponent
                     </div>
                 </div>
+
+                <h4>Corporate Vision</h4>
 
                 <div class="row">
                     <div class="col-lg-4">

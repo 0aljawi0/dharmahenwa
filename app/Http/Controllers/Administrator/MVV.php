@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Traits\Logs;
 use App\Models\Option;
 
-class ManageMVV extends Controller
+class MVV extends Controller
 {
     public function __construct()
     {
@@ -18,18 +18,13 @@ class ManageMVV extends Controller
     public function index()
     {
         $data = Option::firstWhere('key', 'mvv');
-        return view('administrator.manage_mvv')->with('data', $data);
+        return view('administrator.mvv')->with('data', $data);
     }
 
     public function store(Request $request)
     {
-        $value['image'] = $request->image;
         $value['mission_image'] = $request->mission_image;
         $value['vision_image'] = $request->vision_image;
-
-        $value['title_en'] = $request->title_en;
-        $value['title_id'] = $request->title_id;
-
         $value['mission_en'] = $request->mission_en;
         $value['mission_id'] = $request->mission_id;
         $value['vision_en'] = $request->vision_en;

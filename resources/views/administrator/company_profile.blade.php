@@ -31,35 +31,6 @@
                     @method('PUT')
                 @endif
 
-                @component('administrator.components.input_filemanager')
-                    @slot('filetype') image @endslot
-                    @slot('name') image @endslot
-                    @slot('required') required @endslot
-
-                    @if ($data)
-                        @slot('value') {{$value->image}} @endslot
-                        @slot('image') <img src="{{asset('storage/'.$value->image)}}" alt="preview" width="200"> @endslot
-                    @endif
-
-                @endcomponent
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        @component('administrator.components.input_text')
-                            @slot('name') title_en @endslot
-                            @slot('value') {{$data ? $value->title_en : ''}} @endslot
-                            @slot('required') required @endslot
-                        @endcomponent
-                    </div>
-                    <div class="col-lg-6">
-                        @component('administrator.components.input_text')
-                            @slot('name') title_id @endslot
-                            @slot('value') {{$data ? $value->title_id : ''}} @endslot
-                            @slot('required') required @endslot
-                        @endcomponent
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col-lg-6">
                         @component('administrator.components.input_summernote')

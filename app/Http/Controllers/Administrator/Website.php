@@ -33,6 +33,7 @@ class Website extends Controller
         $value['phone'] = $request->phone;
         $value['email'] = $request->email;
         $value['footer_description'] = $request->footer_description;
+        $value['page_title_image'] = $request->page_title_image;
 
         $option = new Option;
         $option->key = 'website-profile';
@@ -58,6 +59,7 @@ class Website extends Controller
         $value['phone'] = $request->phone;
         $value['email'] = $request->email;
         $value['footer_description'] = $request->footer_description;
+        $value['page_title_image'] = $request->page_title_image;
 
         $option = Option::firstWhere('key', $key);
         $option->value = json_encode($value);

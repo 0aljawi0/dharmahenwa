@@ -10,7 +10,6 @@ use App\Models\Slider;
 
 class Sliders extends Controller
 {
-    use Logs;
 
     public function __construct()
     {

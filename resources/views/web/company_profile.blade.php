@@ -16,12 +16,13 @@
     @include('web.components.header')
 
     @component('web.components.page_title')
-        @slot('image') {{asset('storage/'.$company_profile->image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? $company_profile->title_id : $company_profile->title_en}} @endslot
+        @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Profil Perusahaan' : 'Company Profile'}} @endslot
     @endcomponent
 
     @component('web.components.page_single')
-        @slot('title') {{Session::get('locale') == 'id' ? $company_profile->title_id : $company_profile->title_en}} @endslot
+        @slot('route_back') <a href="{{route('company-profile')}}">About</a> @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Profil Perusahaan' : 'Company Profile'}} @endslot
 
         @if (Session::get('locale') == 'id')
             {!! $company_profile->description_id !!}
