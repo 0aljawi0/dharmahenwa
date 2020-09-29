@@ -24,7 +24,7 @@
                 }
             @endphp
 
-            <form action="{{ $data ? route('manage-mvv.update', ['key' => $data->key]) : route('manage-mvv.store') }}" method="POST">
+            <form action="{{ $data ? route('mvv.update', ['key' => $data->key]) : route('mvv.store') }}" method="POST">
                 @csrf
 
                 @if ($data)

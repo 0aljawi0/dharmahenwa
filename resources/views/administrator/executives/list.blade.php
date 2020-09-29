@@ -9,7 +9,7 @@
 
         <div class="btn-group" role="group">
             <a href="{{route('dashboard')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Go To Dashboard</a>
-            <a href="{{route('manage-executives.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Milestone</a>
+            <a href="{{route('executives.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Milestone</a>
         </div>
     </div>
 
@@ -47,11 +47,11 @@
                             <td>{{ date('d F Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="{{route('manage-executives.edit', ['manage_executive' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
+                                    <a href="{{route('executives.edit', ['executive' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$item->name}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
                                 </div>
 
-                                <form id="destroy_{{$item->id}}" action="{{route('manage-executives.destroy', ['manage_executive' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
+                                <form id="destroy_{{$item->id}}" action="{{route('executives.destroy', ['executive' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
                             </td>
                         </tr>
                     @endforeach

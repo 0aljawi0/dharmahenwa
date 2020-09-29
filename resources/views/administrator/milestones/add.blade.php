@@ -7,7 +7,7 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4 animate__animated animate__fadeInDown">
         <h1 class="h3 mb-0 text-gray-800">Create New Milestone</h1>
 
-        <a href="{{route('manage-milestones.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Back To Milestone</a>
+        <a href="{{route('milestones.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Back To Milestone</a>
     </div>
 
     @include('administrator.components.alert')
@@ -18,7 +18,7 @@
         <!-- Content Column -->
         <div class="col-lg-12 mb-4">
 
-            <form action="{{route('manage-milestones.store')}}" method="POST">
+            <form action="{{route('milestones.store')}}" method="POST">
                 @csrf
 
                 <div class="row">

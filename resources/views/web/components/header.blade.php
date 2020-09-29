@@ -19,16 +19,16 @@
 
 				<ul class="nav navbar-nav navbar-left">
 					<li class="has-dropdown">
-						<a href="{{route('company-profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Tentang Kami' : 'About Us'}}</a>
+						<a href="{{route('about-company-profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Tentang Kami' : 'About Us'}}</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="{{route('company-profile')}}">{{Session::get('locale') == 'id' ? 'Profil Perusahaan' : 'Company Profile'}}</a>
+								<a href="{{route('about-company-profile')}}">{{Session::get('locale') == 'id' ? 'Profil Perusahaan' : 'Company Profile'}}</a>
 							</li>
 							<li>
 								<a href="{{route('mission-vision-value')}}">{{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}}</a>
 							</li>
 							<li>
-								<a href="{{route('milestone')}}">{{Session::get('locale') == 'id' ? 'Tonggak Sejarah' : 'Milestone'}}</a>
+								<a href="{{route('company-milestone')}}">{{Session::get('locale') == 'id' ? 'Tonggak Sejarah' : 'Milestone'}}</a>
 							</li>
 							<li class="dropdown-submenu">
 								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Executives</a>

@@ -34,10 +34,10 @@
         <div id="about" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Page:</h6>
-                <a class="collapse-item {{Route::is('manage-company-profile.index') ? 'active' : ''}}" href="{{route('manage-company-profile.index')}}">Company Profile</a>
-                <a class="collapse-item {{Route::is('manage-mvv.index') ? 'active' : ''}}" href="{{route('manage-mvv.index')}}">Mission, Vision, Value</a>
-                <a class="collapse-item {{Route::is('manage-milestones.index') ? 'active' : ''}}" href="{{route('manage-milestones.index')}}">Milestones</a>
-                <a class="collapse-item {{Route::is('manage-executives.index') ? 'active' : ''}}" href="{{route('manage-executives.index')}}">Executives</a>
+                <a class="collapse-item {{Route::is('company-profile.index') ? 'active' : ''}}" href="{{route('company-profile.index')}}">Company Profile</a>
+                <a class="collapse-item {{Route::is('mvv.index') ? 'active' : ''}}" href="{{route('mvv.index')}}">Mission, Vision, Value</a>
+                <a class="collapse-item {{Route::is('milestones.index') ? 'active' : ''}}" href="{{route('milestones.index')}}">Milestones</a>
+                <a class="collapse-item {{Route::is('executives.index') ? 'active' : ''}}" href="{{route('executives.index')}}">Executives</a>
             </div>
         </div>
     </li>

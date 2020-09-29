@@ -9,7 +9,7 @@
 
         <div class="btn-group" role="group">
             <a href="{{route('dashboard')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Go To Dashboard</a>
-            <a href="{{route('manage-milestones.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Milestone</a>
+            <a href="{{route('milestones.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Milestone</a>
         </div>
     </div>
 
@@ -48,11 +48,11 @@
                             <td>{{ date('d F Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="{{route('manage-milestones.edit', ['manage_milestone' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
+                                    <a href="{{route('milestones.edit', ['milestone' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$title->en}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
                                 </div>
 
-                                <form id="destroy_{{$item->id}}" action="{{route('manage-milestones.destroy', ['manage_milestone' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
+                                <form id="destroy_{{$item->id}}" action="{{route('milestones.destroy', ['milestone' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
                             </td>
                         </tr>
                     @endforeach

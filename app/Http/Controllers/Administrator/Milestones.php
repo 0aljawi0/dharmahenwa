@@ -44,7 +44,7 @@ class Milestones extends Controller
         // Make log
         Logs::add(Auth::user()->name.' Menambahkan milestone baru');
 
-        if($saved) return redirect()->route('manage-milestones.index')->with(['message' => 'Menambah milestone berhasil!', 'type' => 'success']);
+        if($saved) return redirect()->route('milestones.index')->with(['message' => 'Menambah milestone berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Menambah milestone gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
@@ -75,7 +75,7 @@ class Milestones extends Controller
         // Make log
         Logs::add(Auth::user()->name.' Mengubah milestone');
 
-        if($saved) return redirect()->route('manage-milestones.index')->with(['message' => 'Mengubah milestone berhasil!', 'type' => 'success']);
+        if($saved) return redirect()->route('milestones.index')->with(['message' => 'Mengubah milestone berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Mengubah milestone gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 

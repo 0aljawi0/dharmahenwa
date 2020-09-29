@@ -39,7 +39,7 @@ class Executives extends Controller
         // Make log
         Logs::add(Auth::user()->name.' Menambahkan executive baru');
 
-        if($saved) return redirect()->route('manage-executives.index')->with(['message' => 'Menambah executive berhasil!', 'type' => 'success']);
+        if($saved) return redirect()->route('executives.index')->with(['message' => 'Menambah executive berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Menambah executive gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
@@ -65,7 +65,7 @@ class Executives extends Controller
         // Make log
         Logs::add(Auth::user()->name.' Mengubah executive');
 
-        if($saved) return redirect()->route('manage-executives.index')->with(['message' => 'Mengubah executive berhasil!', 'type' => 'success']);
+        if($saved) return redirect()->route('executives.index')->with(['message' => 'Mengubah executive berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Mengubah executive gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 

@@ -24,7 +24,7 @@
                 }
             @endphp
 
-            <form action="{{ $data ? route('manage-company-profile.update', ['key' => $data->key]) : route('manage-company-profile.store') }}" method="POST">
+            <form action="{{ $data ? route('company-profile.update', ['key' => $data->key]) : route('company-profile.store') }}" method="POST">
                 @csrf
 
                 @if ($data)

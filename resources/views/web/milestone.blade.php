@@ -27,7 +27,7 @@
                  <div class="content-breadcrumb pb-sm">
                     <ol class="breadcrumb">
                        <li>
-                          <a href="{{route('company-profile')}}">About</a>
+                          <a href="{{route('about-company-profile')}}">About</a>
                        </li>
                        <li class="active">
                             {{Session::get('locale') == 'id' ? 'Tonggak Sejarah' : 'Milestone'}}

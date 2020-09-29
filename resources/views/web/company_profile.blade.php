@@ -21,7 +21,7 @@
     @endcomponent
 
     @component('web.components.page_single')
-        @slot('route_back') <a href="{{route('company-profile')}}">About</a> @endslot
+        @slot('route_back') <a href="{{route('about-company-profile')}}">About</a> @endslot
         @slot('title') {{Session::get('locale') == 'id' ? 'Profil Perusahaan' : 'Company Profile'}} @endslot
 
         @if (Session::get('locale') == 'id')
