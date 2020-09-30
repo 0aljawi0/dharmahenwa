@@ -83,3 +83,23 @@ Route::put('port/{key}', [App\Http\Controllers\Administrator\Port::class, 'updat
 Route::get('operational-area', [App\Http\Controllers\Administrator\OperationalArea::class, 'index'])->name('operational-area.index');
 Route::post('operational-area', [App\Http\Controllers\Administrator\OperationalArea::class, 'store'])->name('operational-area.store');
 Route::put('operational-area/{key}', [App\Http\Controllers\Administrator\OperationalArea::class, 'update'])->name('operational-area.update');
+
+// Business Ethics
+Route::get('business-ethics', [App\Http\Controllers\Administrator\BusinessEthics::class, 'index'])->name('business-ethics.index');
+Route::post('business-ethics', [App\Http\Controllers\Administrator\BusinessEthics::class, 'store'])->name('business-ethics.store');
+Route::put('business-ethics/{key}', [App\Http\Controllers\Administrator\BusinessEthics::class, 'update'])->name('business-ethics.update');
+
+// Code Of Conduct
+Route::get('code-of-conduct', [App\Http\Controllers\Administrator\CodeOfConduct::class, 'index'])->name('code-of-conduct.index');
+Route::post('code-of-conduct', [App\Http\Controllers\Administrator\CodeOfConduct::class, 'store'])->name('code-of-conduct.store');
+Route::put('code-of-conduct/{key}', [App\Http\Controllers\Administrator\CodeOfConduct::class, 'update'])->name('code-of-conduct.update');
+
+// GCG
+Route::get('gcg', [App\Http\Controllers\Administrator\GCG::class, 'index'])->name('gcg.index');
+Route::post('gcg', [App\Http\Controllers\Administrator\GCG::class, 'store'])->name('gcg.store');
+Route::put('gcg/{key}', [App\Http\Controllers\Administrator\GCG::class, 'update'])->name('gcg.update');
+
+// Integrity Pact
+Route::get('integrity-pact', [App\Http\Controllers\Administrator\IntegrityPact::class, 'index'])->name('integrity-pact.index');
+Route::post('integrity-pact', [App\Http\Controllers\Administrator\IntegrityPact::class, 'store'])->name('integrity-pact.store');
+Route::put('integrity-pact/{key}', [App\Http\Controllers\Administrator\IntegrityPact::class, 'update'])->name('integrity-pact.update');

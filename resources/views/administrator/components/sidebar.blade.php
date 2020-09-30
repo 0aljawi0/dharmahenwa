@@ -59,6 +59,22 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#corporate-governance" aria-expanded="true" aria-controls="corporate-governance">
+            <i class="fas fa-building fa-sm fa-fw"></i>
+            <span>Corporate Governace</span>
+        </a>
+        <div id="corporate-governance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Page:</h6>
+                <a class="collapse-item {{Route::is('gcg.index') ? 'active' : ''}}" href="{{route('gcg.index')}}">GCG Practice</a>
+                <a class="collapse-item {{Route::is('business-ethics.index') ? 'active' : ''}}" href="{{route('business-ethics.index')}}">Business Ethcis</a>
+                <a class="collapse-item {{Route::is('code-of-conduct.index') ? 'active' : ''}}" href="{{route('code-of-conduct.index')}}">Code Of Conduct</a>
+                <a class="collapse-item {{Route::is('integrity-pact.index') ? 'active' : ''}}" href="{{route('integrity-pact.index')}}">Integrity Pact</a>
+            </div>
+        </div>
+    </li>
+
     <li class="nav-item {{Route::is('blogs.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('blogs.index')}}">
             <i class="fas fa-rss fa-fw"></i>
