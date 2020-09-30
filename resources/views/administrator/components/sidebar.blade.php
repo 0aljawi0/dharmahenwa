@@ -43,6 +43,22 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#business" aria-expanded="true" aria-controls="business">
+            <i class="fas fa-business-time fa-sm fa-fw"></i>
+            <span>Business</span>
+        </a>
+        <div id="business" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Page:</h6>
+                <a class="collapse-item {{Route::is('coals.index') ? 'active' : ''}}" href="{{route('coals.index')}}">Coal & Mining Service</a>
+                <a class="collapse-item {{Route::is('infrastructures.index') ? 'active' : ''}}" href="{{route('infrastructures.index')}}">Mining Infratructure & Other Service</a>
+                <a class="collapse-item {{Route::is('port.index') ? 'active' : ''}}" href="{{route('port.index')}}">Port Management Service</a>
+                <a class="collapse-item {{Route::is('operational-area.index') ? 'active' : ''}}" href="{{route('operational-area.index')}}">Operational Area</a>
+            </div>
+        </div>
+    </li>
+
     <li class="nav-item {{Route::is('blogs.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('blogs.index')}}">
             <i class="fas fa-rss fa-fw"></i>

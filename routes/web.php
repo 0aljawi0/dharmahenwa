@@ -67,3 +67,19 @@ Route::resource('awards', App\Http\Controllers\Administrator\Awards::class);
 
 // Press Release
 Route::resource('blogs', App\Http\Controllers\Administrator\Blogs::class);
+
+// Coals
+Route::resource('coals', App\Http\Controllers\Administrator\Coals::class);
+
+// Infrastructures
+Route::resource('infrastructures', App\Http\Controllers\Administrator\Infrastructures::class);
+
+// Port
+Route::get('port', [App\Http\Controllers\Administrator\Port::class, 'index'])->name('port.index');
+Route::post('port', [App\Http\Controllers\Administrator\Port::class, 'store'])->name('port.store');
+Route::put('port/{key}', [App\Http\Controllers\Administrator\Port::class, 'update'])->name('port.update');
+
+// Operational Area
+Route::get('operational-area', [App\Http\Controllers\Administrator\OperationalArea::class, 'index'])->name('operational-area.index');
+Route::post('operational-area', [App\Http\Controllers\Administrator\OperationalArea::class, 'store'])->name('operational-area.store');
+Route::put('operational-area/{key}', [App\Http\Controllers\Administrator\OperationalArea::class, 'update'])->name('operational-area.update');
