@@ -5,9 +5,9 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 animate__animated animate__fadeInDown">
-        <h1 class="h3 mb-0 text-gray-800">Edit Executive: {{ $executive->name }}</h1>
+        <h1 class="h3 mb-0 text-gray-800">Edit Committee: {{ $committee->name }}</h1>
 
-        <a href="{{route('executives.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Back To Executives</a>
+        <a href="{{route('committees.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Back To Committees</a>
     </div>
 
     @include('administrator.components.alert')
@@ -18,7 +18,7 @@
         <!-- Content Column -->
         <div class="col-lg-12 mb-4">
 
-            <form action="{{route('executives.update', ['executive' => $executive->id])}}" method="POST">
+            <form action="{{route('committees.update', ['committee' => $committee->id])}}" method="POST">
                 @csrf
 
                 @method('PUT')
@@ -28,36 +28,36 @@
                     @slot('name') photo @endslot
                     @slot('required') required @endslot
 
-                    @slot('value') {{$executive->photo}} @endslot
-                    @slot('image') <img src="{{asset('storage/'.$executive->photo)}}" alt="preview" width="200"> @endslot
+                    @slot('value') {{$committee->photo}} @endslot
+                    @slot('image') <img src="{{asset('storage/'.$committee->photo)}}" alt="preview" width="200"> @endslot
                 @endcomponent
 
                 @component('administrator.components.input_text')
                     @slot('name') name @endslot
-                    @slot('value') {{$executive->name}} @endslot
+                    @slot('value') {{$committee->name}} @endslot
                     @slot('required') required @endslot
                 @endcomponent
 
                 @component('administrator.components.input_text')
                     @slot('name') position @endslot
-                    @slot('value') {{$executive->position}} @endslot
+                    @slot('value') {{$committee->position}} @endslot
                     @slot('required') required @endslot
                 @endcomponent
 
                 @component('administrator.components.input_textarea')
                     @slot('name') bio @endslot
-                    @slot('value') {{$executive->bio}} @endslot
+                    @slot('value') {{$committee->bio}} @endslot
                     @slot('required') required @endslot
                 @endcomponent
 
                 @component('administrator.components.input_select')
-                    @slot('name') board @endslot
+                    @slot('name') type @endslot
                     @slot('required') required @endslot
 
-                    <option value="">Choose Board Of</option>
-                    <option value="Commissioners" {{$executive->board == 'Commissioners' ? 'selected' : ''}}>Commissioners</option>
-                    <option value="Directors" {{$executive->board == 'Directors' ? 'selected' : ''}}>Directors</option>
-                    <option value="Management" {{$executive->board == 'Management' ? 'selected' : ''}}>Management</option>
+                    <option value="">Choose Committee Of</option>
+                    <option value="Audit" {{$committee->type == 'Audit' ? 'selected' : ''}}>Audit</option>
+                    <option value="Nomination & Remuneration" {{$committee->type == 'Nomination & Remuneration' ? 'selected' : ''}}>Nomination & Remuneration</option>
+                    <option value="Risk Management" {{$committee->type == 'Risk Management' ? 'selected' : ''}}>Risk Management</option>
                 @endcomponent
 
                 <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Update')}}</button>

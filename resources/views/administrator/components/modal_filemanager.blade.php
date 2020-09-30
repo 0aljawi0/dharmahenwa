@@ -42,16 +42,14 @@
                             </form>
                         </div>
 
-                        <hr>
-
-                        <div class="col-12" id="wrapper-images">
+                        <div class="col-12 mt-3" id="wrapper-images">
                             <h5>Images</h5>
                             <div class="card-columns" id="images">
 
                             </div>
                         </div>
 
-                        <div class="col-12" id="wrapper-documents">
+                        <div class="col-12 mt-3" id="wrapper-documents">
                             <h5>Documents</h5>
                             <div class="card-columns" id="documents">
 

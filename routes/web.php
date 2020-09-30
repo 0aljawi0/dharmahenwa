@@ -103,3 +103,18 @@ Route::put('gcg/{key}', [App\Http\Controllers\Administrator\GCG::class, 'update'
 Route::get('integrity-pact', [App\Http\Controllers\Administrator\IntegrityPact::class, 'index'])->name('integrity-pact.index');
 Route::post('integrity-pact', [App\Http\Controllers\Administrator\IntegrityPact::class, 'store'])->name('integrity-pact.store');
 Route::put('integrity-pact/{key}', [App\Http\Controllers\Administrator\IntegrityPact::class, 'update'])->name('integrity-pact.update');
+
+
+// Policies
+Route::resource('policies', App\Http\Controllers\Administrator\Policies::class);
+
+// Committees
+Route::resource('committees', App\Http\Controllers\Administrator\Committees::class);
+
+// Whistleblowing
+Route::get('whistleblowing', [App\Http\Controllers\Administrator\Whistleblowing::class, 'index'])->name('whistleblowing.index');
+Route::post('whistleblowing', [App\Http\Controllers\Administrator\Whistleblowing::class, 'store'])->name('whistleblowing.store');
+Route::put('whistleblowing/{key}', [App\Http\Controllers\Administrator\Whistleblowing::class, 'update'])->name('whistleblowing.update');
+
+// Violation Reports
+Route::post('violation-reports', [App\Http\Controllers\Web\ViolationReport::class, 'store'])->name('violation-reports.store');

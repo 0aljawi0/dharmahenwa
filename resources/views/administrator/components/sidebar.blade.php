@@ -71,6 +71,9 @@
                 <a class="collapse-item {{Route::is('business-ethics.index') ? 'active' : ''}}" href="{{route('business-ethics.index')}}">Business Ethcis</a>
                 <a class="collapse-item {{Route::is('code-of-conduct.index') ? 'active' : ''}}" href="{{route('code-of-conduct.index')}}">Code Of Conduct</a>
                 <a class="collapse-item {{Route::is('integrity-pact.index') ? 'active' : ''}}" href="{{route('integrity-pact.index')}}">Integrity Pact</a>
+                <a class="collapse-item {{Route::is('policies.index') ? 'active' : ''}}" href="{{route('policies.index')}}">Corporate Policy Manual</a>
+                <a class="collapse-item {{Route::is('whistleblowing.index') ? 'active' : ''}}" href="{{route('whistleblowing.index')}}">Whistleblowing System Page</a>
+                <a class="collapse-item {{Route::is('committees.index') ? 'active' : ''}}" href="{{route('committees.index')}}">Committee</a>
             </div>
         </div>
     </li>
