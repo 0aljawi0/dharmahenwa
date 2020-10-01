@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Option;
 use App\Models\Milestone;
+use App\Models\Executive;
+use App\Models\Award;
 
 class About extends Controller
 {
@@ -31,5 +33,55 @@ class About extends Controller
         $data['milestones'] = Milestone::orderBy('year', 'asc')->get();
 
         return view('web.milestone')->with($data);
+    }
+
+    public function commissioners()
+    {
+        $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['commissioners'] = Executive::where('board', 'Commissioners')->get();
+
+        return view('web.commisioners')->with($data);
+    }
+
+    public function directors()
+    {
+        $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['directors'] = Executive::where('board', 'Directors')->get();
+
+        return view('web.directors')->with($data);
+    }
+
+    public function management()
+    {
+        $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['management'] = Executive::where('board', 'Management')->get();
+
+        return view('web.management')->with($data);
+    }
+
+    public function awards()
+    {
+        $data['website'] = Option::firstWhere('key', 'website-profile');
+
+        $data['awards'] = Award::where('type', 'Awards')->get();
+
+        $year = Award::where('type', 'Awards')->pluck('year')->toArray();
+        rsort($year);
+        $data['year'] = array_unique($year);
+
+        return view('web.awards')->with($data);
+    }
+
+    public function certification()
+    {
+        $data['website'] = Option::firstWhere('key', 'website-profile');
+
+        $data['certification'] = Award::where('type', 'Certification')->get();
+
+        $year = Award::where('type', 'Certification')->pluck('year')->toArray();
+        rsort($year);
+        $data['year'] = array_unique($year);
+
+        return view('web.certification')->with($data);
     }
 }

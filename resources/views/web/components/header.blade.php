@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="logo" href="index.php">
+				<a class="logo" href="{{route('home')}}">
 					<img src="{{asset('storage/'.$website->logo)}}" alt="DarmaHenwa">
 				</a>
 			</div>
@@ -31,46 +31,43 @@
 								<a href="{{route('company-milestone')}}">{{Session::get('locale') == 'id' ? 'Tonggak Sejarah' : 'Milestone'}}</a>
 							</li>
 							<li class="dropdown-submenu">
-								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Executives</a>
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Eksekutif' : 'Executives'}}</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="boc.php">Board of Commissioners</a>
+										<a href="{{ route('commissioners') }}">{{Session::get('locale') == 'id' ? 'Dewan Komisaris' : 'Board Of Commisioners'}}</a>
 									</li>
 									<li>
-										<a href="bod.php">Board of Directors</a>
+										<a href="{{ route('directors') }}">{{Session::get('locale') == 'id' ? 'Jajaran Direktur' : 'Board Of Directors'}}</a>
 									</li>
 									<li>
-										<a href="bom.php">Board of Management</a>
+										<a href="{{ route('management') }}">{{Session::get('locale') == 'id' ? 'Dewan Manajemen' : 'Board Of Management'}}</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="awards.php">Awards &amp; Certifications</a>
+								<a href="{{ route('awards') }}">{{Session::get('locale') == 'id' ? 'Penghargaan & Sertifikasi' : 'Awards & Certification'}}</a>
 							</li>
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="coal-mining.php" data-toggle="dropdown" class="dropdown-toggle">Business</a>
+						<a href="{{ route('coal') }}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Bisnis' : 'Business'}}</a>
 						<ul class="dropdown-menu">
 							<li class="dropdown-submenu">
-								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Operational Activities</a>
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Kegiatan Operational' : 'Operational Activities'}}</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="coal-mining.php">Coal &amp; Mining Services</a>
-									</li>
-									<!-- <li>
-										<a href="mineral-mining.php">Mineral Mining</a>
-									</li> -->
-									<li>
-										<a href="mining-infrasutrure.php">mining infrastructure &amp; other services</a>
+										<a href="{{route('coal')}}">{{Session::get('locale') == 'id' ? 'Layanan Batubara & Pertambangan' : 'Coal & Mining Service'}}</a>
 									</li>
 									<li>
-										<a href="port-management-services.php">Port Management Services</a>
+										<a href="{{route('infrastructure')}}">{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Layanan Lainnya' : 'Mining Infrastructure & Other Service'}}</a>
+									</li>
+									<li>
+										<a href="{{route('port')}}">{{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Service'}}</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="operational-area.php">Operational Areas</a>
+								<a href="{{route('operational')}}">{{Session::get('locale') == 'id' ? 'Wilayah Operasional' : 'Operational Area'}}</a>
 							</li>
 						</ul>
 					</li>

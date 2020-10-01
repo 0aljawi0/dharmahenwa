@@ -13,19 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('home');
-});
+// Route::get('/', function () {
+//     return redirect('home');
+// });
 
 // Frontend
-Route::get('home', [App\Http\Controllers\Web\Home::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\Web\Home::class, 'index'])->name('home');
+
+// About Page
 Route::get('about-company-profile', [App\Http\Controllers\Web\About::class, 'company_profile'])->name('about-company-profile');
 Route::get('mission-vision-value', [App\Http\Controllers\Web\About::class, 'mvv'])->name('mission-vision-value');
 Route::get('company-milestone', [App\Http\Controllers\Web\About::class, 'milestone'])->name('company-milestone');
 Route::get('board-of-commissioners', [App\Http\Controllers\Web\About::class, 'commissioners'])->name('commissioners');
 Route::get('board-of-directors', [App\Http\Controllers\Web\About::class, 'directors'])->name('directors');
 Route::get('board-of-management', [App\Http\Controllers\Web\About::class, 'management'])->name('management');
-Route::get('awards-certification', [App\Http\Controllers\Web\About::class, 'awards'])->name('awards');
+Route::get('company-awards', [App\Http\Controllers\Web\About::class, 'awards'])->name('awards');
+Route::get('company-cetification', [App\Http\Controllers\Web\About::class, 'certification'])->name('certification');
+
+// Business Page
+Route::get('coal-and-mining-service', [App\Http\Controllers\Web\Business::class, 'coal'])->name('coal');
+Route::get('mining-infrastructure-and-other-service', [App\Http\Controllers\Web\Business::class, 'infrastructure'])->name('infrastructure');
+Route::get('port-management-service', [App\Http\Controllers\Web\Business::class, 'port'])->name('port');
+Route::get('company-operational-area', [App\Http\Controllers\Web\Business::class, 'operational'])->name('operational');
 
 // Backend
 Auth::routes(['register' => false]);
@@ -117,4 +126,4 @@ Route::post('whistleblowing', [App\Http\Controllers\Administrator\Whistleblowing
 Route::put('whistleblowing/{key}', [App\Http\Controllers\Administrator\Whistleblowing::class, 'update'])->name('whistleblowing.update');
 
 // Violation Reports
-Route::post('violation-reports', [App\Http\Controllers\Web\ViolationReport::class, 'store'])->name('violation-reports.store');
+Route::post('violation-reports', [App\Http\Controllers\Web\ViolationReports::class, 'store'])->name('violation-reports.store');

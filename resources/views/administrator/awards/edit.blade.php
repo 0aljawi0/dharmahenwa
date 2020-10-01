@@ -23,6 +23,15 @@
 
                 @method('PUT')
 
+                @component('administrator.components.input_filemanager')
+                    @slot('filetype') image @endslot
+                    @slot('name') image @endslot
+                    @slot('required') required @endslot
+
+                    @slot('value') {{$award->image}} @endslot
+                    @slot('image') <img src="{{asset('storage/'.$award->image)}}" alt="preview" width="200"> @endslot
+                @endcomponent
+
                 @component('administrator.components.input_textarea')
                     @slot('name') description @endslot
                     @slot('value') {{$award->description}} @endslot
@@ -43,15 +52,6 @@
                     <option value="">Choose</option>
                     <option value="Awards" {{$award->type == 'Awards' ? 'selected' : ''}}>Awards</option>
                     <option value="Certification" {{$award->type == 'Certification' ? 'selected' : ''}}>Certification</option>
-                @endcomponent
-
-                @component('administrator.components.input_filemanager')
-                    @slot('filetype') image @endslot
-                    @slot('name') image @endslot
-                    @slot('required') required @endslot
-
-                    @slot('value') {{$award->image}} @endslot
-                    @slot('image') <img src="{{asset('storage/'.$award->image)}}" alt="preview" width="200"> @endslot
                 @endcomponent
 
                 <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Update')}}</button>

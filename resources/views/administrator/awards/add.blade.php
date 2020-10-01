@@ -21,6 +21,12 @@
             <form action="{{route('awards.store')}}" method="POST">
                 @csrf
 
+                @component('administrator.components.input_filemanager')
+                    @slot('filetype') image @endslot
+                    @slot('name') image @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
                 @component('administrator.components.input_textarea')
                     @slot('name') description @endslot
                     @slot('value') {{old('description')}} @endslot
@@ -41,12 +47,6 @@
                     <option value="">Choose</option>
                     <option value="Awards">Awards</option>
                     <option value="Certification">Certification</option>
-                @endcomponent
-
-                @component('administrator.components.input_filemanager')
-                    @slot('filetype') image @endslot
-                    @slot('name') image @endslot
-                    @slot('required') required @endslot
                 @endcomponent
 
                 <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Create')}}</button>
