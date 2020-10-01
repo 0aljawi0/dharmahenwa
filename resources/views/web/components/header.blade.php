@@ -72,37 +72,37 @@
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="gcg-practices.php" data-toggle="dropdown" class="dropdown-toggle">Corporate Governance</a>
+						<a href="{{route('gcg')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Tata Kelola Perusahaan' : 'Corporate Governance'}}</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="gcg-practices.php">GCG Practices</a>
+								<a href="{{route('gcg')}}">{{Session::get('locale') == 'id' ? 'Praktik GCG' : 'GCG Practice'}}</a>
 							</li>
 							<li>
-								<a href="bussiness-ethics.php">Business Ethics</a>
+								<a href="{{route('ethics')}}">{{Session::get('locale') == 'id' ? 'Etika Bisnis' : 'Business Ethics'}}</a>
 							</li>
 							<li>
-								<a href="code-conduct.php">Code of Conduct</a>
+								<a href="{{route('coc')}}">{{Session::get('locale') == 'id' ? 'Kode Etik' : 'Code Of Conduct'}}</a>
 							</li>
 							<li>
-								<a href="integrity-pact.php">Integrity Pact</a>
+								<a href="{{route('integrity')}}">{{Session::get('locale') == 'id' ? 'Pakta Integritas' : 'Integrity Pact'}}</a>
 							</li>
 							<li>
-								<a href="corporate-policy-manual.php">Corporate Policy Manual</a>
+								<a href="{{route('policy')}}">{{Session::get('locale') == 'id' ? 'Manual Kebijakan Perusahaan' : 'Corporate Policy Manual'}}</a>
 							</li>
 							<li>
-								<a href="whistleblowing-system.php">Whistleblowing System</a>
+								<a href="{{route('whistleblowing')}}">{{Session::get('locale') == 'id' ? 'Sistem Pelaporan Pelanggaran' : 'Whistleblowing System'}}</a>
 							</li>
 							<li class="dropdown-submenu">
-								<a href="#" data-toggle="dropdown" class="dropdown-toggle">committee</a>
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Komite' : 'Committee'}}</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="audit-committee.php">Audit Committee</a>
+										<a href="{{route('audit')}}">{{Session::get('locale') == 'id' ? 'Komite Audit' : 'Audit Committee'}}</a>
 									</li>
 									<li>
-										<a href="nomination-remuneration-committee.php">Nomination &amp; Remuneration Commitee</a>
+										<a href="{{route('nomination')}}">{{Session::get('locale') == 'id' ? 'Komite Nominasi & Remunerasi' : 'Nomination & Remuneration Committee'}}</a>
 									</li>
 									<li>
-										<a href="risk-managemen-commitee.php">Risk Management Committee</a>
+										<a href="{{route('risk')}}">{{Session::get('locale') == 'id' ? 'Komite Manajemen Risiko' : 'Risk Management Committee'}}</a>
 									</li>
 								</ul>
 							</li>

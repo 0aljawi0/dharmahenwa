@@ -36,6 +36,17 @@ Route::get('mining-infrastructure-and-other-service', [App\Http\Controllers\Web\
 Route::get('port-management-service', [App\Http\Controllers\Web\Business::class, 'port'])->name('port');
 Route::get('company-operational-area', [App\Http\Controllers\Web\Business::class, 'operational'])->name('operational');
 
+// Corporate Governance
+Route::get('gcg-practice', [App\Http\Controllers\Web\CorporateGovernance::class, 'gcg'])->name('gcg');
+Route::get('company-business-ethics', [App\Http\Controllers\Web\CorporateGovernance::class, 'ethics'])->name('ethics');
+Route::get('company-code-of-conduct', [App\Http\Controllers\Web\CorporateGovernance::class, 'coc'])->name('coc');
+Route::get('company-integrity-pact', [App\Http\Controllers\Web\CorporateGovernance::class, 'integrity'])->name('integrity');
+Route::get('corporate-policy-manual', [App\Http\Controllers\Web\CorporateGovernance::class, 'policy'])->name('policy');
+Route::get('whistleblowing-system', [App\Http\Controllers\Web\CorporateGovernance::class, 'whistleblowing'])->name('whistleblowing');
+Route::get('audit-committee', [App\Http\Controllers\Web\CorporateGovernance::class, 'audit'])->name('audit');
+Route::get('nomination-and-remuneration-committee', [App\Http\Controllers\Web\CorporateGovernance::class, 'nomination'])->name('nomination');
+Route::get('risk-management-committee', [App\Http\Controllers\Web\CorporateGovernance::class, 'risk'])->name('risk');
+
 // Backend
 Auth::routes(['register' => false]);
 Route::get('dashboard', [App\Http\Controllers\Administrator\Dashboard::class, 'index'])->name('dashboard');

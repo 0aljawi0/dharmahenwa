@@ -95,6 +95,9 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
+    {{-- Clipboard js --}}
+    <script src="{{ asset('vendor/clipboardjs/clipboard.min.js') }}"></script>
+
     {{-- Sweetalert --}}
     <script src="{{ asset('vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
 

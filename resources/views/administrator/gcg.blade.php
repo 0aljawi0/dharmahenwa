@@ -50,6 +50,12 @@
                     </div>
                 </div>
 
+                @component('administrator.components.button_filemanager')
+                    @slot('filetype')
+                        document
+                    @endslot
+                @endcomponent
+
                 <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Update')}}</button>
             </form>
         </div>
@@ -57,7 +63,7 @@
     </div>
 </div>
 
-@include('administrator.components.modal_filemanager')
+@include('administrator.components.modal_copytext_filemanager')
 
 @endsection
 
