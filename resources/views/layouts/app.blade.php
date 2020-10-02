@@ -95,6 +95,9 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
+    {{-- Jquery Mask --}}
+    <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
+
     {{-- Clipboard js --}}
     <script src="{{ asset('vendor/clipboardjs/clipboard.min.js') }}"></script>
 

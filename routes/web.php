@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 // Frontend
 Route::get('/', [App\Http\Controllers\Web\Home::class, 'index'])->name('home');
 
+// Violation Reports
+Route::post('violation-reports', [App\Http\Controllers\Web\ViolationReports::class, 'store'])->name('violation-reports.store');
+
 // About Page
 Route::get('about-company-profile', [App\Http\Controllers\Web\About::class, 'company_profile'])->name('about-company-profile');
 Route::get('mission-vision-value', [App\Http\Controllers\Web\About::class, 'mvv'])->name('mission-vision-value');
@@ -136,5 +139,34 @@ Route::get('whistleblowing', [App\Http\Controllers\Administrator\Whistleblowing:
 Route::post('whistleblowing', [App\Http\Controllers\Administrator\Whistleblowing::class, 'store'])->name('whistleblowing.store');
 Route::put('whistleblowing/{key}', [App\Http\Controllers\Administrator\Whistleblowing::class, 'update'])->name('whistleblowing.update');
 
-// Violation Reports
-Route::post('violation-reports', [App\Http\Controllers\Web\ViolationReports::class, 'store'])->name('violation-reports.store');
+// Profile
+Route::get('profile', [App\Http\Controllers\Administrator\Profile::class, 'index'])->name('profile.index');
+Route::post('profile', [App\Http\Controllers\Administrator\Profile::class, 'store'])->name('profile.store');
+Route::put('profile/{key}', [App\Http\Controllers\Administrator\Profile::class, 'update'])->name('profile.update');
+
+// Shareholders
+Route::resource('shareholders', App\Http\Controllers\Administrator\Shareholders::class);
+
+// Meetings
+Route::resource('meetings', App\Http\Controllers\Administrator\Meetings::class);
+
+// Presentation
+Route::resource('presentations', App\Http\Controllers\Administrator\Presentations::class);
+
+// Annual Report
+Route::resource('annual-reports', App\Http\Controllers\Administrator\AnnualReports::class);
+
+// Financial Report
+Route::resource('financial-reports', App\Http\Controllers\Administrator\FinancialReports::class);
+
+// Financial Report
+Route::resource('financial-reports', App\Http\Controllers\Administrator\FinancialReports::class);
+
+// Newsletter
+Route::resource('newsletters', App\Http\Controllers\Administrator\Newsletters::class);
+
+// Monthly Reports
+Route::resource('monthly-reports', App\Http\Controllers\Administrator\MonthlyReports::class);
+
+// Analyst Coverage
+Route::resource('analyst-coverages', App\Http\Controllers\Administrator\AnalystCoverages::class);

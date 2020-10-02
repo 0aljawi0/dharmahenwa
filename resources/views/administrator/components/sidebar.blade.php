@@ -78,11 +78,26 @@
         </div>
     </li>
 
-    <li class="nav-item {{Route::is('blogs.index') ? 'active' : ''}}">
-        <a class="nav-link" href="{{route('blogs.index')}}">
-            <i class="fas fa-rss fa-fw"></i>
-            <span>Press Release</span>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#corporate-secretary" aria-expanded="true" aria-controls="corporate-secretary">
+            <i class="fas fa-pen-fancy fa-sm fa-fw"></i>
+            <span>Corporate Secretary</span>
         </a>
+        <div id="corporate-secretary" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Page:</h6>
+                <a class="collapse-item {{Route::is('profile.index') ? 'active' : ''}}" href="{{route('profile.index')}}">Profile</a>
+                <a class="collapse-item {{Route::is('shareholders.index') ? 'active' : ''}}" href="{{route('shareholders.index')}}">Shareholders Information</a>
+                <a class="collapse-item {{Route::is('meetings.index') ? 'active' : ''}}" href="{{route('meetings.index')}}">General Meeting Of Shareholders</a>
+                <a class="collapse-item {{Route::is('presentations.index') ? 'active' : ''}}" href="{{route('presentations.index')}}">Presentations</a>
+                <a class="collapse-item {{Route::is('annual-reports.index') ? 'active' : ''}}" href="{{route('annual-reports.index')}}">Annual Reports</a>
+                <a class="collapse-item {{Route::is('financial-reports.index') ? 'active' : ''}}" href="{{route('financial-reports.index')}}">Financial Reports</a>
+                <a class="collapse-item {{Route::is('newsletters.index') ? 'active' : ''}}" href="{{route('newsletters.index')}}">Quarterly Newsletters</a>
+                <a class="collapse-item {{Route::is('monthly-reports.index') ? 'active' : ''}}" href="{{route('monthly-reports.index')}}">Monthly Reports</a>
+                <a class="collapse-item {{Route::is('analyst-coverages.index') ? 'active' : ''}}" href="{{route('analyst-coverages.index')}}">Analyst Coverages</a>
+                <a class="collapse-item {{Route::is('blogs.index') ? 'active' : ''}}" href="{{route('blogs.index')}}">Press Release</a>
+            </div>
+        </div>
     </li>
 
     <!-- Divider -->

@@ -1,6 +1,6 @@
 <div class="form-group">
     <label>{{ucfirst(str_replace('_', ' ', $name))}}</label>
-    <input type="{{$type ?? 'text'}}" class="form-control" name="{{$name}}" value="{{$value ?? ''}}" {{$required ?? ''}}>
+    <input type="{{$type ?? 'text'}}" class="form-control" name="{{$name}}" value="{{$value ?? ''}}" {{$required ?? ''}} {{$data_attr ?? ''}}>
 </div>
 
 

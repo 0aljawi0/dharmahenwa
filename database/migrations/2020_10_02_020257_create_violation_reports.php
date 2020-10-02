@@ -22,6 +22,7 @@ class CreateViolationReports extends Migration
             $table->text('party_reported');
             $table->text('violation_detail');
             $table->json('evidence');
+            $table->string('is_read');
             $table->timestamps();
         });
     }
