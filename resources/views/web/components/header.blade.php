@@ -109,42 +109,42 @@
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="corporate-secretary.php" data-toggle="dropdown" class="dropdown-toggle">Corporate Secretary</a>
+						<a href="{{route('profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sekretaris Perusahaan' : 'Corporate Secretary'}}</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="corporate-secretary.php">Profile</a>
+								<a href="{{route('profile')}}">{{Session::get('locale') == 'id' ? 'Profil' : 'Profile'}}</a>
 							</li>
 							<li>
-								<a href="shareholders-information.php">Shareholders Information</a>
+								<a href="{{route('shareholder')}}">{{Session::get('locale') == 'id' ? 'Informasi Pemegang Saham' : 'Shareholders Information'}}</a>
 							</li>
 							<li>
-								<a href="gms.php">General Meeting Of Shareholders</a>
+								<a href="{{route('meeting')}}">{{Session::get('locale') == 'id' ? 'Rapat Umum Pemegang Saham' : 'General Meeting Of Shareholders'}}</a>
 							</li>
 							<li>
-								<a href="presentation.php">Presentation</a>
+								<a href="{{route('presentation')}}">{{Session::get('locale') == 'id' ? 'Presentasi' : 'Presentation'}}</a>
 							</li>
 							<li>
-								<a href="annual-report.php">Annual Report</a>
+								<a href="{{route('annual_report')}}">{{Session::get('locale') == 'id' ? 'Laporan Tahunan' : 'Annual Report'}}</a>
 							</li>
 							<li>
-								<a href="financial-statement.php">Financial Statement</a>
+								<a href="{{route('financial')}}">{{Session::get('locale') == 'id' ? 'Laporan Keuangan' : 'Financial Statement'}}</a>
 							</li>
 							<li class="dropdown-submenu">
-								<a href="#" data-toggle="dropdown" class="dropdown-toggle">Production Highlights</a>
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sorotan Produksi' : 'Production Highlights'}}</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="quarterly-newsletter.php">Quarterly Newsletter</a>
+										<a href="{{route('newsletter')}}">{{Session::get('locale') == 'id' ? 'Buletin Triwulanan' : 'Quarterly Newsletter'}}</a>
 									</li>
 									<li>
-										<a href="monthly-report.php">Monthly Report</a>
+										<a href="{{route('monthly_report')}}">{{Session::get('locale') == 'id' ? 'Laporan Bulanan' : 'Monthly Report'}}</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="analyst-coveragre.php">Analyst Coverage</a>
+								<a href="{{route('analyst_coverage')}}">{{Session::get('locale') == 'id' ? 'Cakupan Analis' : 'Analyst Coverage'}}</a>
 							</li>
 							<li>
-								<a href="press-release.php">Press Release</a>
+								<a href="{{route('press_release')}}">{{Session::get('locale') == 'id' ? 'Jumpa Pers' : 'Press Release'}}</a>
 							</li>
 						</ul>
 					</li>

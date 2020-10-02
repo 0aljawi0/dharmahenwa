@@ -50,6 +50,19 @@ Route::get('audit-committee', [App\Http\Controllers\Web\CorporateGovernance::cla
 Route::get('nomination-and-remuneration-committee', [App\Http\Controllers\Web\CorporateGovernance::class, 'nomination'])->name('nomination');
 Route::get('risk-management-committee', [App\Http\Controllers\Web\CorporateGovernance::class, 'risk'])->name('risk');
 
+// Corporate Secretary
+Route::get('secretary-profile', [App\Http\Controllers\Web\CorporateSecretary::class, 'profile'])->name('profile');
+Route::get('shareholders-information', [App\Http\Controllers\Web\CorporateSecretary::class, 'shareholder'])->name('shareholder');
+Route::get('general-meeting-of-shareholders', [App\Http\Controllers\Web\CorporateSecretary::class, 'meeting'])->name('meeting');
+Route::get('presentation', [App\Http\Controllers\Web\CorporateSecretary::class, 'presentation'])->name('presentation');
+Route::get('annual-report', [App\Http\Controllers\Web\CorporateSecretary::class, 'annual_report'])->name('annual_report');
+Route::get('financial-statement', [App\Http\Controllers\Web\CorporateSecretary::class, 'financial'])->name('financial');
+Route::get('quarterly-newsletter', [App\Http\Controllers\Web\CorporateSecretary::class, 'newsletter'])->name('newsletter');
+Route::get('monthly-report', [App\Http\Controllers\Web\CorporateSecretary::class, 'monthly_report'])->name('monthly_report');
+Route::get('analyst-coverage', [App\Http\Controllers\Web\CorporateSecretary::class, 'analyst_coverage'])->name('analyst_coverage');
+Route::get('press-release', [App\Http\Controllers\Web\CorporateSecretary::class, 'press_release'])->name('press_release');
+Route::get('press-release/{id}/{title}', [App\Http\Controllers\Web\CorporateSecretary::class, 'press_release_detail'])->name('press_release_detail');
+
 // Backend
 Auth::routes(['register' => false]);
 Route::get('dashboard', [App\Http\Controllers\Administrator\Dashboard::class, 'index'])->name('dashboard');
@@ -87,9 +100,6 @@ Route::resource('executives', App\Http\Controllers\Administrator\Executives::cla
 
 // Awards and Certification
 Route::resource('awards', App\Http\Controllers\Administrator\Awards::class);
-
-// Press Release
-Route::resource('blogs', App\Http\Controllers\Administrator\Blogs::class);
 
 // Coals
 Route::resource('coals', App\Http\Controllers\Administrator\Coals::class);
@@ -170,3 +180,6 @@ Route::resource('monthly-reports', App\Http\Controllers\Administrator\MonthlyRep
 
 // Analyst Coverage
 Route::resource('analyst-coverages', App\Http\Controllers\Administrator\AnalystCoverages::class);
+
+// Press Release
+Route::resource('blogs', App\Http\Controllers\Administrator\Blogs::class);

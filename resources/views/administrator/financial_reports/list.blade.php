@@ -5,11 +5,11 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 animate__animated animate__fadeInDown">
-        <h1 class="h3 mb-0 text-gray-800">Financial Reports</h1>
+        <h1 class="h3 mb-0 text-gray-800">Financial Statement</h1>
 
         <div class="btn-group" role="group">
             <a href="{{route('dashboard')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Go To Dashboard</a>
-            <a href="{{route('financial-reports.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Financial Report</a>
+            <a href="{{route('financial-reports.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Financial</a>
         </div>
     </div>
 

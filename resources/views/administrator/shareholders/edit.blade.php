@@ -39,6 +39,7 @@
                 @component('administrator.components.input_text')
                     @slot('name') percent @endslot
                     @slot('type') number @endslot
+                    @slot('data_attr') step=".01" @endslot
                     @slot('value') {{$shareholder->percent}} @endslot
                     @slot('required') required @endslot
                 @endcomponent
