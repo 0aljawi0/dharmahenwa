@@ -14,6 +14,7 @@ class About extends Controller
     public function company_profile()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['company_profile'] = Option::firstWhere('key', 'company-profile');
 
         return view('web.company_profile')->with($data);
@@ -22,6 +23,7 @@ class About extends Controller
     public function mvv()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['mvv'] = Option::firstWhere('key', 'mvv');
 
         return view('web.mvv')->with($data);
@@ -30,6 +32,7 @@ class About extends Controller
     public function milestone()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['milestones'] = Milestone::orderBy('year', 'asc')->get();
 
         return view('web.milestone')->with($data);
@@ -38,6 +41,7 @@ class About extends Controller
     public function commissioners()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['commissioners'] = Executive::where('board', 'Commissioners')->get();
 
         return view('web.commisioners')->with($data);
@@ -46,6 +50,7 @@ class About extends Controller
     public function directors()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['directors'] = Executive::where('board', 'Directors')->get();
 
         return view('web.directors')->with($data);
@@ -54,6 +59,7 @@ class About extends Controller
     public function management()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['management'] = Executive::where('board', 'Management')->get();
 
         return view('web.management')->with($data);
@@ -62,6 +68,7 @@ class About extends Controller
     public function awards()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
 
         $data['awards'] = Award::where('type', 'Awards')->get();
 
@@ -75,6 +82,7 @@ class About extends Controller
     public function certification()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
 
         $data['certification'] = Award::where('type', 'Certification')->get();
 

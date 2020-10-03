@@ -13,6 +13,7 @@ class Business extends Controller
     public function coal()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['coals'] = Coal::all();
 
         return view('web.coals')->with($data);
@@ -21,6 +22,7 @@ class Business extends Controller
     public function infrastructure()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['infrastructures'] = Infrastructure::all();
 
         return view('web.infrastructures')->with($data);
@@ -29,6 +31,7 @@ class Business extends Controller
     public function port()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['port'] = Option::firstWhere('key', 'port');
 
         return view('web.port')->with($data);
@@ -37,6 +40,7 @@ class Business extends Controller
     public function operational()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['operational_area'] = Option::firstWhere('key', 'operational-area');
 
         return view('web.operational_area')->with($data);

@@ -149,16 +149,16 @@
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="sustainability-report.php" data-toggle="dropdown" class="dropdown-toggle">Sustainability</a>
+						<a href="{{route('sustainability_report')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Keberlanjutan' : 'Sustainability'}}</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="sustainability-report.php">Sustainability Report</a>
+								<a href="{{route('sustainability_report')}}">{{Session::get('locale') == 'id' ? 'Laporan Keberlanjutan' : 'Sustainability Report'}}</a>
 							</li>
 							<li>
-								<a href="hse.php">Health, Safety, Environment</a>
+								<a href="{{route('hse')}}">{{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan, Lingkungan' : 'Health, Safety, Responsibility'}}</a>
 							</li>
 							<li>
-								<a href="csr.php">Corporate Social Responsibility</a>
+								<a href="{{route('web_csr')}}">{{Session::get('locale') == 'id' ? 'Tanggung Jawab Sosial Perusahaan' : 'Corporate Social Responsibility'}}</a>
 							</li>
 						</ul>
 					</li>
@@ -178,7 +178,7 @@
 				<div class="module module-search sizeSearch">
 					<div class="search-icon">
 						<i class="fa fa-search"></i>
-						<span class="title">search</span>
+						<span class="title">{{Session::get('locale') == 'id' ? 'Pencarian' : 'Search'}}</span>
 					</div>
 					<div class="search-box">
 						<form class="search-form">

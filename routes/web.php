@@ -63,6 +63,12 @@ Route::get('analyst-coverage', [App\Http\Controllers\Web\CorporateSecretary::cla
 Route::get('press-release', [App\Http\Controllers\Web\CorporateSecretary::class, 'press_release'])->name('press_release');
 Route::get('press-release/{id}/{title}', [App\Http\Controllers\Web\CorporateSecretary::class, 'press_release_detail'])->name('press_release_detail');
 
+// Sustainability
+Route::get('sustainability-report', [App\Http\Controllers\Web\WebSustainability::class, 'sustainability_report'])->name('sustainability_report');
+Route::get('health-safety-environment', [App\Http\Controllers\Web\WebSustainability::class, 'hse'])->name('hse');
+Route::get('corporate-social-responsibility', [App\Http\Controllers\Web\WebSustainability::class, 'web_csr'])->name('web_csr');
+Route::get('corporate-social-responsibility/{id}/{title}', [App\Http\Controllers\Web\WebSustainability::class, 'web_csr_detail'])->name('web_csr_detail');
+
 // Backend
 Auth::routes(['register' => false]);
 Route::get('dashboard', [App\Http\Controllers\Administrator\Dashboard::class, 'index'])->name('dashboard');
@@ -70,6 +76,11 @@ Route::get('user_logs', [App\Http\Controllers\Administrator\UserLogs::class, 'in
 Route::post('summernote', [App\Http\Controllers\Administrator\Summernote::class, 'upload']);
 Route::resource('users', App\Http\Controllers\Administrator\Users::class);
 Route::resource('sliders', App\Http\Controllers\Administrator\Sliders::class);
+
+// Address
+Route::get('address', [App\Http\Controllers\Administrator\Address::class, 'index'])->name('address.index');
+Route::post('address', [App\Http\Controllers\Administrator\Address::class, 'store'])->name('address.store');
+Route::put('address/{key}', [App\Http\Controllers\Administrator\Address::class, 'update'])->name('address.update');
 
 // File Manager
 Route::get('files', [App\Http\Controllers\Administrator\Files::class, 'index'])->name('files.index');
@@ -183,3 +194,22 @@ Route::resource('analyst-coverages', App\Http\Controllers\Administrator\AnalystC
 
 // Press Release
 Route::resource('blogs', App\Http\Controllers\Administrator\Blogs::class);
+
+// Sustainabilities
+Route::resource('sustainablities', App\Http\Controllers\Administrator\Sustainabilities::class);
+
+// Health Safety Environment
+Route::get('hse', [App\Http\Controllers\Administrator\HSE::class, 'index'])->name('hse.index');
+Route::post('hse', [App\Http\Controllers\Administrator\HSE::class, 'store'])->name('hse.store');
+Route::put('hse/{key}', [App\Http\Controllers\Administrator\HSE::class, 'update'])->name('hse.update');
+
+// CSR
+Route::resource('csr', App\Http\Controllers\Administrator\CSRs::class);
+
+// CSR Page
+Route::get('csr-page', [App\Http\Controllers\Administrator\CSRPage::class, 'index'])->name('csr-page.index');
+Route::post('csr-page', [App\Http\Controllers\Administrator\CSRPage::class, 'store'])->name('csr-page.store');
+Route::put('csr-page/{key}', [App\Http\Controllers\Administrator\CSRPage::class, 'update'])->name('csr-page.update');
+
+// CSR Galleries
+Route::resource('csr-galleries', App\Http\Controllers\Administrator\CSRGalleries::class);

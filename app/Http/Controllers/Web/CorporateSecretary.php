@@ -20,6 +20,7 @@ class CorporateSecretary extends Controller
     public function profile()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['profile'] = Option::firstWhere('key', 'profile');
 
         return view('web.profile')->with($data);
@@ -28,6 +29,7 @@ class CorporateSecretary extends Controller
     public function shareholder()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['shareholders'] = Shareholder::all();
 
         $data['name'] = Shareholder::pluck('name')->toArray();
@@ -47,6 +49,7 @@ class CorporateSecretary extends Controller
     public function meeting()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['meetings'] = Meeting::simplePaginate(5);
 
         return view('web.meeting')->with($data);
@@ -55,6 +58,7 @@ class CorporateSecretary extends Controller
     public function presentation()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['presentations'] = Presentation::all();
 
         return view('web.presentation')->with($data);
@@ -63,6 +67,7 @@ class CorporateSecretary extends Controller
     public function annual_report()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['annual_reports'] = AnnualReport::all();
 
         return view('web.annual_report')->with($data);
@@ -71,6 +76,7 @@ class CorporateSecretary extends Controller
     public function financial()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['financials'] = FinancialReport::all();
 
         $year = FinancialReport::pluck('year')->toArray();
@@ -83,6 +89,7 @@ class CorporateSecretary extends Controller
     public function newsletter()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['newsletters'] = Newsletter::all();
 
         return view('web.newsletter')->with($data);
@@ -91,6 +98,7 @@ class CorporateSecretary extends Controller
     public function monthly_report()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['monthly_reports'] = MonthlyReport::all();
 
         $year = MonthlyReport::pluck('year')->toArray();
@@ -103,6 +111,7 @@ class CorporateSecretary extends Controller
     public function analyst_coverage()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['analyst_coverages'] = AnalystCoverage::all();
 
         return view('web.analyst_coverage')->with($data);
@@ -111,6 +120,7 @@ class CorporateSecretary extends Controller
     public function press_release()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['blogs'] = Blog::simplePaginate(6);
 
         return view('web.press_release')->with($data);
@@ -119,6 +129,7 @@ class CorporateSecretary extends Controller
     public function press_release_detail($id, $title)
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['blog'] = Blog::firstWhere('id', $id);
 
         return view('web.press_release_detail')->with($data);

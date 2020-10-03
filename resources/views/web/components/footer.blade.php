@@ -1,5 +1,8 @@
-<!-- Call To Action #1
-============================================= -->
+
+@php
+    $address = json_decode($address->value);
+@endphp
+
 <section id="cta-1" class="cta pb-0">
 	<div class="container">
 			<div class="col-xs-12 col-sm-12 col-md-12 bg-theme">
@@ -10,9 +13,7 @@
 							    <div class="contact-details">
 							        <h4 class="pre-footer-title"><i class="fa fa-map-marker" aria-hidden="true"></i>HEAD OFFICE</h4>
 							        <p>
-							        	Bakrie Tower, 8th Floor<br />
-							        	Jl. HR Rasuna Said, Kuningan<br />
-							        	Jakarta 12940
+							        	{{$address->head_office}}
 							        </p>
 							        <p></p>
 							    </div>
@@ -28,15 +29,10 @@
 									    <div class="contact-details">
 									        <h4 class="pre-footer-title">
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
-									        	Asam Asam Site Office
+									        	{{$address->operational_title_1}}
 									        </h4>
 									        <p>
-									            Nirwana Camp<br />
-									            Jl. A. Yani, km 130, <br />
-									            Desa Pandan Sari<br />
-									            Kec. Kintap, Kab.
-									            Tanah Laut <br />
-									            Kalimantan Selatan 70882
+									            {{$address->operational_address_1}}
 									        </p>
 									    </div>
 									</div>
@@ -46,14 +42,10 @@
 									    <div class="contact-details">
 									        <h4 class="pre-footer-title">
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
-									        	Satui Site Office
+									        	{{$address->operational_title_2}}
 									        </h4>
 									        <p>
-									        	Camp Bukit Baru, <br />
-									        	Jl. Sumpol Km. 20 <br />
-									        	Desa Sejahtera Mulia, <br />
-									        	Kec. Satui, Kab. Tanah Bumbu <br />
-									        	Kalimantan Selatan 72276
+									            {{$address->operational_address_2}}
 									        </p>
 									    </div>
 									</div>
@@ -63,13 +55,10 @@
 									    <div class="contact-details">
 									        <h4 class="pre-footer-title">
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
-									        	Bengalon Site Office
+									        	{{$address->operational_title_3}}
 									        </h4>
 									        <p>
-									            Dulun Kelawitan Dusun II, <br />
-									            Desa Sepaso Timur, <br />
-									            Kec. Bengalon, Kab. Kutai Timur, <br />
-									            Kalimantan Timur 75618
+									            {{$address->operational_address_3}}
 									        </p>
 									    </div>
 									</div>
@@ -79,15 +68,10 @@
 									    <div class="contact-details">
 									        <h4 class="pre-footer-title">
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
-									        	Balikpapan Office
+									        	{{$address->operational_title_4}}
 									        </h4>
 									        <p>
-									            Komplek Perkantoran <br />
-									            Centra Bizpark 2, Blok BRM no. 08 <br />
-									            Jl. Syafruddin Yoes <br />
-									            Kel. Sepinggan Baru, <br />
-									            Kec. Balikpapan Selatan <br />
-									            Kalimantan Timur 76115
+									            {{$address->operational_address_4}}
 									        </p>
 									    </div>
 									</div>
@@ -144,13 +128,13 @@
 						<div class="col-xs-6 col-sm-6 col-md-6">
 							<ul class="list-unstyled text-capitalize">
 								<li>
-									<a href="company-profile.php">About Us</a>
+									<a href="{{route('about-company-profile')}}">{{Session::get('locale') == 'id' ? 'Tentang Kami' : 'About Us'}}</a>
 								</li>
 								<li>
-									<a href="coal-mining.php">Business</a>
+									<a href="{{route('coal')}}">{{Session::get('locale') == 'id' ? 'Bisnis' : 'Business'}}</a>
 								</li>
 								<li>
-									<a href="gcg-practices.php">Corporate Governance</a>
+									<a href="{{route('gcg')}}">{{Session::get('locale') == 'id' ? 'Tata Kelola Perusahaan' : 'Corporate Governance'}}</a>
 								</li>
 
 							</ul>
@@ -158,13 +142,13 @@
 						<div class="col-xs-6 col-sm-6 col-md-6">
 							<ul class="list-unstyled text-capitalize">
 								<li>
-									<a href="corporate-secretary.php">Corporate Secretary</a>
+									<a href="{{route('profile')}}">{{Session::get('locale') == 'id' ? 'Sekretaris Perusahaan' : 'Corporate Secretary'}}</a>
 								</li>
 								<li>
-									<a href="sustainability-report.php">Sustainability</a>
+									<a href="{{route('sustainability_report')}}">{{Session::get('locale') == 'id' ? 'Keberlanjutan' : 'Sustainability'}}</a>
 								</li>
 								<li>
-									<a href="contact-us.php">Contact Us</a>
+									<a href="#">{{Session::get('locale') == 'id' ? 'Kontak Kami' : 'Contact Us'}}</a>
 								</li>
 							</ul>
 						</div>
@@ -176,13 +160,13 @@
 						<div class="col-xs-12 col-sm-12">
 							<ul class="list-unstyled text-capitalize">
 								<li>
-									<a href="whistleblowing-system.php">Whistleblowing System</a>
+									<a href="{{route('whistleblowing')}}">{{Session::get('locale') == 'id' ? 'Sistem Pelaporan Pelanggaran' : 'Whistleblowing System'}}</a>
 								</li>
 								<li>
-									<a href="career.php">Careers</a>
+									<a href="#">{{Session::get('locale') == 'id' ? 'Karir' : 'Career'}}</a>
 								</li>
 								<li>
-									<a href="procurment.php">Procurement</a>
+									<a href="#">{{Session::get('locale') == 'id' ? 'Usaha Memperoleh' : 'Procurement'}}</a>
 								</li>
 							</ul>
 						</div>

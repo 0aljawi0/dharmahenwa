@@ -12,6 +12,7 @@ class Home extends Controller
     public function index()
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
+        $data['address'] = Option::firstWhere('key', 'address');
         $data['sliders'] = Slider::all();
 
         return view('web.home')->with($data);
