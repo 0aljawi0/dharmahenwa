@@ -116,6 +116,12 @@
                     @slot('required') required @endslot
                 @endcomponent
 
+                @component('administrator.components.input_textarea')
+                    @slot('name') map @endslot
+                    @slot('value') {{$data ? $value->map : ''}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
                 <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Update')}}</button>
             </form>
         </div>

@@ -109,7 +109,7 @@
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="{{route('profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sekretaris Perusahaan' : 'Corporate Secretary'}}</a>
+						<a href="{{route('profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sekretaris' : 'Corporate Secretary'}}</a>
 						<ul class="dropdown-menu">
 							<li>
 								<a href="{{route('profile')}}">{{Session::get('locale') == 'id' ? 'Profil' : 'Profile'}}</a>
@@ -169,8 +169,8 @@
 					</div>
 					<div class="search-box">
 						<ul class="menu-dropdown">
-					        <li><a href="#">Indonesia</a></li>
-					        <li><a href="#">English</a></li>
+					        <li><a href="{{route('change-language', ['lang' => 'id'])}}">Indonesia</a></li>
+					        <li><a href="{{route('change-language', ['lang' => 'en'])}}">English</a></li>
 					    </ul>
 					</div>
 				</div>
@@ -181,11 +181,13 @@
 						<span class="title">{{Session::get('locale') == 'id' ? 'Pencarian' : 'Search'}}</span>
 					</div>
 					<div class="search-box">
-						<form class="search-form">
+						<form class="search-form" action="{{route('search')}}" method="GET">
+                            @csrf
+
 							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Search...">
+								<input type="text" name="q" class="form-control" placeholder="Search...">
 								<span class="input-group-btn">
-								<button class="btn" type="button"><i class="fa fa-search"></i></button>
+								    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
 								</span>
 							</div>
 							<!-- /input-group -->

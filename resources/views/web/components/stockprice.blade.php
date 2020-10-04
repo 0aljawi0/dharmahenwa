@@ -10,7 +10,7 @@
 					</div>
 				</div>
 				<div class="col-bg">
-					<img src="assets/images/features/1.jpg" alt="Background"/>
+					<img src="{{asset('web/background/1.jpg')}}" alt="Background"/>
 				</div>
 			</div>
 			<!-- .col-md-4 end -->
@@ -54,7 +54,7 @@
 		        	</div>
 		        </div>
 		        <div class="col-bg">
-					<img src="assets/images/home/home-as.jpg" alt="Background"/>
+					<img src="{{asset('web/background/home-as.jpg')}}" alt="Background"/>
 				</div>
 			</div>
 			<!-- .col-md-4 end -->
@@ -64,7 +64,12 @@
 <div class="popupVideo columns no-padding">
 	<div class="bgVideo"></div>
 	<div class="boxVideoHome">
-		<iframe width="900" height="560" src="https://www.youtube.com/embed/gVbTh6TI46A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        @php
+            $youtube = str_replace('watch?v=', 'embed/', $home_section->video)
+        @endphp
+
+		<iframe width="900" height="560" src="{{$youtube}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<span class="close"></span>
 	</div>
 </div>

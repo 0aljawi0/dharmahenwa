@@ -17,11 +17,32 @@ use Illuminate\Support\Facades\Route;
 //     return redirect('home');
 // });
 
+// Change Language
+Route::get('change-language/{lang}', function ($lang) {
+
+    Session::put('locale', $lang);
+
+    return redirect()->back();
+})->name('change-language');
+
 // Frontend
 Route::get('/', [App\Http\Controllers\Web\Home::class, 'index'])->name('home');
 
+// Search
+Route::get('search', [App\Http\Controllers\Web\Home::class, 'search'])->name('search');
+
+// Contact
+Route::get('contact', [App\Http\Controllers\Web\Home::class, 'contact'])->name('contact');
+Route::post('message', [App\Http\Controllers\Web\Home::class, 'message_store'])->name('message.store');
+
 // Violation Reports
 Route::post('violation-reports', [App\Http\Controllers\Web\ViolationReports::class, 'store'])->name('violation-reports.store');
+
+// Career
+Route::get('company-career', [App\Http\Controllers\Web\Home::class, 'career'])->name('career');
+
+// Procurement
+Route::get('company-procurement', [App\Http\Controllers\Web\Home::class, 'procurement'])->name('procurement');
 
 // About Page
 Route::get('about-company-profile', [App\Http\Controllers\Web\About::class, 'company_profile'])->name('about-company-profile');
@@ -71,11 +92,20 @@ Route::get('corporate-social-responsibility/{id}/{title}', [App\Http\Controllers
 
 // Backend
 Auth::routes(['register' => false]);
+
 Route::get('dashboard', [App\Http\Controllers\Administrator\Dashboard::class, 'index'])->name('dashboard');
+Route::delete('message/{id}', [App\Http\Controllers\Administrator\Dashboard::class, 'message_destroy'])->name('message.destroy');
+Route::delete('violation/{id}', [App\Http\Controllers\Administrator\Dashboard::class, 'violation_destroy'])->name('violation.destroy');
+
 Route::get('user_logs', [App\Http\Controllers\Administrator\UserLogs::class, 'index'])->name('user_logs');
 Route::post('summernote', [App\Http\Controllers\Administrator\Summernote::class, 'upload']);
 Route::resource('users', App\Http\Controllers\Administrator\Users::class);
 Route::resource('sliders', App\Http\Controllers\Administrator\Sliders::class);
+
+// Home Section
+Route::get('home-section', [App\Http\Controllers\Administrator\HomeSection::class, 'index'])->name('home-section.index');
+Route::post('home-section', [App\Http\Controllers\Administrator\HomeSection::class, 'store'])->name('home-section.store');
+Route::put('home-section/{key}', [App\Http\Controllers\Administrator\HomeSection::class, 'update'])->name('home-section.update');
 
 // Address
 Route::get('address', [App\Http\Controllers\Administrator\Address::class, 'index'])->name('address.index');
@@ -213,3 +243,17 @@ Route::put('csr-page/{key}', [App\Http\Controllers\Administrator\CSRPage::class,
 
 // CSR Galleries
 Route::resource('csr-galleries', App\Http\Controllers\Administrator\CSRGalleries::class);
+
+// Career
+Route::get('career', [App\Http\Controllers\Administrator\Career::class, 'index'])->name('career.index');
+Route::post('career', [App\Http\Controllers\Administrator\Career::class, 'store'])->name('career.store');
+Route::put('career/{key}', [App\Http\Controllers\Administrator\Career::class, 'update'])->name('career.update');
+
+// Procurement
+Route::get('procurement', [App\Http\Controllers\Administrator\Procurement::class, 'index'])->name('procurement.index');
+Route::post('procurement', [App\Http\Controllers\Administrator\Procurement::class, 'store'])->name('procurement.store');
+Route::put('procurement/{key}', [App\Http\Controllers\Administrator\Procurement::class, 'update'])->name('procurement.update');
+
+
+// Stock Prices
+Route::resource('stock-prices', App\Http\Controllers\Administrator\StockPrices::class);

@@ -3,23 +3,23 @@
 		<div class="row">
 			<div class="col-md-2 col-sm-12">
 				<h2 class="title t-black s-32 lh-1-3">
-					Integrated <br>
-					Mining <br>
-					Services
+					{{Session::get('locale') == 'id' ? 'Layanan' : 'Integrated'}} <br>
+					{{Session::get('locale') == 'id' ? 'Pertambangan' : 'Mining'}} <br>
+					{{Session::get('locale') == 'id' ? 'Terintegrasi' : 'Service'}}
 				</h2>
 			</div>
 			<div class="col-md-10 col-sm-12 panel-about-line">
 				<div class="area-hover-toogle col-xs-12 col-md-4">
 					<div class="o-hide col-xs-12 p-0">
 						<div class="img-vmv-layer">
-							<img src="assets/images/about/visi.jpg" alt="">
+							<img src="{{asset('storage/'.$home_section->image_1)}}" alt="service">
 						</div>
 						<!-- <div class="panel-heading" style="background-image: url(assets/images/about/visi.jpg)"> -->
 						<div class="panel-heading">
-							<a href="coal-mining.php" class="panel-title t-center">
-								<span>Coal &amp; Mineral Mining Services</span>
+							<a href="{{route('coal')}}" class="panel-title t-center">
+								<span>{{Session::get('locale') == 'id' ? 'Layanan Batubara & Pertambangan' : 'Coal & Mining Service'}}</span>
 							</a>
-							<a href="coal-mining.php" class="show-more-ar">
+							<a href="{{route('coal')}}" class="show-more-ar">
 								show more >>
 							</a>
 						</div>
@@ -28,14 +28,14 @@
 				<div class="area-hover-toogle col-xs-12 col-md-4">
 					<div class="o-hide col-xs-12 p-0">
 						<div class="img-vmv-layer">
-							<img src="assets/images/about/misi.jpg" alt="">
+							<img src="{{asset('storage/'.$home_section->image_2)}}" alt="service">
 						</div>
 						<!-- <div class="panel-heading" style="background-image: url(assets/images/about/misi.jpg)"> -->
 						<div class="panel-heading">
-							<a href="port-management-services.php" class="panel-title t-center">
-								<span>Port Management Services</span>
+							<a href="{{route('port')}}" class="panel-title t-center">
+								<span>{{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Service'}}</span>
 							</a>
-							<a href="port-management-services.php" class="show-more-ar">
+							<a href="{{route('port')}}" class="show-more-ar">
 								show more >>
 							</a>
 						</div>
@@ -44,14 +44,14 @@
 				<div class="area-hover-toogle col-xs-12 col-md-4">
 					<div class="o-hide col-xs-12 p-0">
 						<div class="img-vmv-layer">
-							<img src="assets/images/home/home-1.jpg" alt="">
+							<img src="{{asset('storage/'.$home_section->image_3)}}" alt="service">
 						</div>
 						<!-- <div class="panel-heading" style="background-image: url(assets/images/home/home-1.jpg)"> -->
 						<div class="panel-heading">
-							<a href="mining-infrasutrure.php" class="panel-title t-center">
-								<span>Mining Infrastructure & Services</span>
+							<a href="{{route('infrastructure')}}" class="panel-title t-center">
+								<span>{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Layanan Lainnya' : 'Mining Infrastructure & Other Service'}}</span>
 							</a>
-							<a href="mining-infrasutrure.php" class="show-more-ar">
+							<a href="{{route('infrastructure')}}" class="show-more-ar">
 								show more >>
 							</a>
 						</div>

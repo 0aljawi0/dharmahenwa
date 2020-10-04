@@ -40,28 +40,29 @@
                         <i>Form</i>
                     </h3>
                     <div class="row">
-                        <form id="contact-form" class="form-ws" action="assets/php/sendmail.php" method="post">
+                        <form class="form-ws" action="{{route('violation-reports.store')}}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
 
                                 <div class="col-sm-12">
                                     <div class="col-md-6 col-sm-12">
-                                        <input type="text" class="form-control mb-sm" name="contact-name" id="name" placeholder="Name" required/>
+                                        <input type="text" class="form-control mb-sm" name="name" id="name" placeholder="Name" required/>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control mb-sm" name="contact-email" id="email" placeholder="Your Email" required/>
+                                        <input type="email" class="form-control mb-sm" name="email" id="email" placeholder="Your Email" required/>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control mb-sm" name="contact-phone" id="phone" placeholder="Mobile Number" required/>
+                                        <input type="text" class="form-control mb-sm" name="phone" id="phone" placeholder="Mobile Number" required/>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="col-md-6">
                                         <div class="select form-control mb-sm">
-                                            <select class="" name="contact-violation" id="">
+                                            <select class="" name="category_violation" id="" required>
                                                 <option>Category of violation</option>
                                                 <option>Corruption</option>
                                                 <option>Fraud</option>
@@ -81,12 +82,12 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="col-md-8">
-                                        <textarea class="form-control mb-sm" name="contact-reported" id="reported" rows="3" placeholder="Party’s reported" required></textarea>
+                                        <textarea class="form-control mb-sm" name="party_reported" id="reported" rows="3" placeholder="Party’s reported" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="col-md-8">
-                                        <textarea class="form-control mb-sm" name="contact-details" id="details" rows="3" placeholder="Violation details" required></textarea>
+                                        <textarea class="form-control mb-sm" name="violation_detail" id="details" rows="3" placeholder="Violation details" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -98,19 +99,19 @@
                                             <div class="img-upload columns">
                                                 <div class="images">
                                                     <div class="pic">
-                                                        <input type="file" />
+                                                        <input type="file" accept="image/*" name="evidence_0" required/>
                                                         <span class="icon-hover"><i class="fa fa-plus-square-o"></i></span>
                                                     </div>
                                                 </div>
                                                 <div class="images">
                                                     <div class="pic">
-                                                        <input type="file" />
+                                                        <input type="file" accept="image/*" name="evidence_1" required/>
                                                         <span class="icon-hover"><i class="fa fa-plus-square-o"></i></span>
                                                     </div>
                                                 </div>
                                                 <div class="images">
                                                     <div class="pic">
-                                                        <input type="file" />
+                                                        <input type="file" accept="image/*" name="evidence_2" required/>
                                                         <span class="icon-hover"><i class="fa fa-plus-square-o"></i></span>
                                                     </div>
                                                 </div>
@@ -126,8 +127,16 @@
 
                                 <div class="col-sm-12">
                                     <div class="col-xs-12 col-sm-12 col-md-12 mt-xs">
-                                        <!--Alert Message-->
                                         <div id="contact-result">
+                                            @if (Session::has('message'))
+                                                <div class="alert alert-{{Session::get('type')}} animate__animated animate__fadeInDown" role="alert">
+                                                    {{Session::get('message')}}
+
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -147,20 +156,32 @@
 <script>
 	(function ($) {
 		$(document).ready(function(){
-			uploadImage();
+            uploadImage();
+
 			function uploadImage() {
 				var pic = $('.images .pic');
-				var button = $('.images .pic input');
+                var button = $('.images .pic input');
+
 				button.on('change', function () {
 					var $this = $(this);
-					var $pc = $(this).parent('.pic');
-					var reader = new FileReader();
-					reader.onload = function(event) {
-						$pc.css({
-		                    'background-image': 'url('+event.target.result+')'
-		                });
-					}
-					reader.readAsDataURL($this[0].files[0])
+                    var $pc = $(this).parent('.pic');
+
+                    var file = $this[0].files[0];
+
+                    if (file) {
+                        if (file.size > 1000000) {
+                            alert('Ukuran gambar Max 1Mb');
+                        } else {
+                            var reader = new FileReader();
+                            reader.onload = function(event) {
+                                $pc.css({
+                                    'background-image': 'url('+event.target.result+')'
+                                });
+                            }
+                            reader.readAsDataURL($this[0].files[0]);
+                        }
+                    }
+
 				});
 			}
 		});

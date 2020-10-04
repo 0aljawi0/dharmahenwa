@@ -10,8 +10,8 @@
 						<li class="col-md-6 col-xs-6 active" role="presentation">
 							<a href="#tiling" aria-controls="tiling" role="tab" data-toggle="tab">
 								<div class="service-icon">
-									<img src="assets/images/services/icons/i48/1.png" alt="icon"/>
-									<img src="assets/images/services/icons/i48/1w.png" alt="icon"/>
+									<img src="{{asset('web/icons/icons/i48/1.png')}}" alt="icon"/>
+									<img src="{{asset('web/icons/icons/i48/1w.png')}}" alt="icon"/>
 								</div>
 								PERFORMANCE HIGHLIGHT </a>
 						</li>
@@ -19,8 +19,8 @@
 						<li class="col-md-6 col-xs-6" role="presentation">
 							<a href="#financial-statement" aria-controls="financial-statement" role="tab" data-toggle="tab">
 								<div class="service-icon">
-									<img src="assets/images/services/icons/i48/3.png" alt="icon"/>
-									<img src="assets/images/services/icons/i48/3w.png" alt="icon"/>
+									<img src="{{asset('web/icons/icons/i48/3.png')}}" alt="icon"/>
+									<img src="{{asset('web/icons/icons/i48/3w.png')}}" alt="icon"/>
 								</div>
 								FINANCIAL STATEMENT </a>
 						</li>
@@ -44,7 +44,7 @@
 								<div class="flex-6 performance-hlg text-white col-img">
 
 									<div class="col-bg">
-										<img src="assets/images/home/coal-barging.jpg" alt="Coal Barging"/>
+										<img src="{{ asset('web/background/coal-barging.jpg')}}" alt="Coal Barging"/>
 									</div>
 									<div class="title-headline">
 										monthly production report
@@ -52,22 +52,16 @@
 									<div class="d-flex">
 										<!--- service block #1 -->
 										<div class="col-xs-12 service-block list-green">
-											<div class="service-desc">
-												<h4 class="titlePain">Oktober 2019</h4>
-												<a href="#" class="open">Open</a>
+                                            @foreach ($monthly_reports as $item)
+                                            <div class="service-desc">
+												<h4 class="titlePain">{{$item->month}} {{$item->year}}</h4>
+												<a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
 											</div>
-											<div class="service-desc">
-												<h4 class="titlePain">September 2019</h4>
-												<a href="#" class="open">Open</a>
-											</div>
-											<div class="service-desc">
-												<h4 class="titlePain">Agustus 2019</h4>
-												<a href="#" class="open">Open</a>
-											</div>
+                                            @endforeach
 										</div>
 										<!-- .col-xs-12 end -->
 									</div>
-									<a href="#" class="show-more-ar">
+									<a href="{{route('monthly_report')}}" class="show-more-ar">
 										show more >>
 									</a>
 									<!-- .row end -->
@@ -75,7 +69,7 @@
 								<div class="flex-6 performance-hlg text-white col-img">
 
 									<div class="col-bg">
-										<img src="assets/images/home/coal-barging.jpg" alt="Coal Barging"/>
+										<img src="{{ asset('web/background/coal-barging.jpg')}}" alt="Coal Barging"/>
 									</div>
 									<div class="title-headline">
 										Quarterly Newsletter
@@ -83,22 +77,16 @@
 									<div class="d-flex">
 										<!--- service block #1 -->
 										<div class="col-xs-12 service-block list-green">
-											<div class="service-desc">
-												<h4 class="titlePain">Oktober 2019</h4>
-												<a href="#" class="open">Open</a>
-											</div>
-											<div class="service-desc">
-												<h4 class="titlePain">September 2019</h4>
-												<a href="#" class="open">Open</a>
-											</div>
-											<div class="service-desc">
-												<h4 class="titlePain">Agustus 2019</h4>
-												<a href="#" class="open">Open</a>
-											</div>
+                                            @foreach ($newsletters as $item)
+                                                <div class="service-desc">
+                                                    <h4 class="titlePain">{{$item->title}}</h4>
+                                                    <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
+                                                </div>
+                                            @endforeach
 										</div>
 										<!-- .col-xs-12 end -->
 									</div>
-									<a href="#" class="show-more-ar">
+									<a href="{{route('newsletter')}}" class="show-more-ar">
 										show more >>
 									</a>
 									<!-- .row end -->
@@ -114,26 +102,20 @@
 									<div class="d-flex hei-full">
 										<!--- service block #1 -->
 										<div class="col-xs-12 service-block p-0">
-											<div class="list-green">
-												<h4 class="titlePain mb-sm">2019</h4>
-												<div class="service-desc">
-													<a href="#" class="open">Financial Statement Maret</a>
-													<a href="#" class="open">Financial Statement Juni</a>
-													<a href="#" class="open">Financial Statement September</a>
-													<a href="#" class="open">Financial Statement Desember</a>
-												</div>
-											</div>
-											<div class="list-green">
-												<h4 class="titlePain mb-sm">2018</h4>
-												<div class="service-desc">
-													<a href="#" class="open">Financial Statement Maret</a>
-													<a href="#" class="open">Financial Statement Juni</a>
-													<a href="#" class="open">Financial Statement September</a>
-													<a href="#" class="open">Financial Statement Desember</a>
-												</div>
-											</div>
+                                            @foreach ($year as $item)
+                                                <div class="list-green">
+                                                    <h4 class="titlePain mb-sm">{{$item}}</h4>
+                                                    <div class="service-desc">
+                                                        @foreach ($financials as $f)
+                                                            @if ($f->year == $item)
+                                                                <a href="{{asset('storage/'.$f->pdf)}}" class="open">Financial Statement {{$f->month}}</a>
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            @endforeach
 										</div>
-										<a href="#" class="show-more-ar">
+										<a href="{{route('financial')}}" class="show-more-ar">
 											show more >>
 										</a>
 										<!-- .col-xs-12 end -->
@@ -142,7 +124,7 @@
 								<!-- .col-md-6 end -->
 								<div class="col-xs-12 col-sm-6 col-md-6 col-img trans-layer">
 									<div class="col-bg">
-										<img src="assets/images/services/full/3.jpg" alt="Background"/>
+										<img src="{{asset('web/background/3.jpg')}}" alt="Background"/>
 									</div>
 								</div>
 								<!-- .col-md-6 end -->

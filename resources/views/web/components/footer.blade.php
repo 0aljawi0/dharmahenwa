@@ -148,7 +148,7 @@
 									<a href="{{route('sustainability_report')}}">{{Session::get('locale') == 'id' ? 'Keberlanjutan' : 'Sustainability'}}</a>
 								</li>
 								<li>
-									<a href="#">{{Session::get('locale') == 'id' ? 'Kontak Kami' : 'Contact Us'}}</a>
+									<a href="{{route('contact')}}">{{Session::get('locale') == 'id' ? 'Kontak Kami' : 'Contact Us'}}</a>
 								</li>
 							</ul>
 						</div>
@@ -163,10 +163,10 @@
 									<a href="{{route('whistleblowing')}}">{{Session::get('locale') == 'id' ? 'Sistem Pelaporan Pelanggaran' : 'Whistleblowing System'}}</a>
 								</li>
 								<li>
-									<a href="#">{{Session::get('locale') == 'id' ? 'Karir' : 'Career'}}</a>
+									<a href="{{route('career')}}">{{Session::get('locale') == 'id' ? 'Karir' : 'Career'}}</a>
 								</li>
 								<li>
-									<a href="#">{{Session::get('locale') == 'id' ? 'Usaha Memperoleh' : 'Procurement'}}</a>
+									<a href="{{route('procurement')}}">{{Session::get('locale') == 'id' ? 'Procurement' : 'Procurement'}}</a>
 								</li>
 							</ul>
 						</div>
@@ -180,7 +180,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
-				<p class="text-capitalize">© 2019 DarmaHenwa. all rights reserved</p>
+				<p class="text-capitalize"> <i class="fas fa-copyright fa-sm fa-fw"></i> {{date('Y')}} DarmaHenwa. all rights reserved</p>
 			</div>
 		</div>
 	</div>

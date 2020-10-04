@@ -117,6 +117,20 @@
         </div>
     </li>
 
+    <li class="nav-item {{Route::is('career.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('career.index')}}">
+            <i class="fas fa-bars fa-sm fa-fw"></i>
+            <span>Career Page</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{Route::is('procurement.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('procurement.index')}}">
+            <i class="fas fa-bars fa-sm fa-fw"></i>
+            <span>Procurement Page</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -137,10 +151,24 @@
         </a>
     </li>
 
+    <li class="nav-item {{Route::is('home-section.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('home-section.index')}}">
+            <i class="fas fa-home fa-sm fa-fw"></i>
+            <span>Home Section</span>
+        </a>
+    </li>
+
     <li class="nav-item {{Route::is('sliders.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('sliders.index')}}">
             <i class="fas fa-fw fa-image"></i>
             <span>Sliders</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{Route::is('stock-prices.index') ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('stock-prices.index')}}">
+            <i class="fas fa-box fa-sm fa-fw"></i>
+            <span>Stock Price</span>
         </a>
     </li>
 

@@ -15,23 +15,23 @@
 	12. Ajax Campaignmonito
 	13. Ajax Contact Form
 	14. Ajax Quote Form
-	15. Ajax POPUP Quote Form 
+	15. Ajax POPUP Quote Form
 	16. Ajax POPUP Quote Form 2
 	17. Ajax Header POPUP Quote Form
 	18. MAGNIFIC POPUP
 	19. PROJECTS FLITER / SHOP FLITER
 	20. Shop Pricing Range
-*/	
+*/
 $(document).ready(function() {
     "use strict";
 
     /* ------------------  1.Loading Screen ------------------ */
-	
+
     $(window).on("load", function() {
         $(".preloader").fadeOut("slow");
         $(".preloader").remove();
     });
-	
+
     /* ------------------  2.Mobile Menu ------------------ */
 
     var $dropToggle = $("ul.dropdown-menu [data-toggle=dropdown]"),
@@ -287,25 +287,25 @@ $(document).ready(function() {
 
     /* ------------------  13.Ajax Contact Form  ------------------ */
 
-    var contactForm = $("#contact-form");
-    var contactResult = $('#contact-result');
-    contactForm.validate({
-        debug: false,
-        submitHandler: function(contactForm) {
-            $(contactResult, contactForm).html('Please Wait...');
-            $.ajax({
-                type: "POST",
-                url: "assets/php/sendmail.php",
-                data: $(contactForm).serialize(),
-                timeout: 20000,
-                success: function(msg) {
-                    $(contactResult, contactForm).html('<div class="alert alert-success" role="alert"><strong>Thank you. We will contact you shortly.</strong></div>').delay(3000).fadeOut(2000);
-                },
-                error: $('.thanks').show()
-            });
-            return false;
-        }
-    });
+    // var contactForm = $("#contact-form");
+    // var contactResult = $('#contact-result');
+    // contactForm.validate({
+    //     debug: false,
+    //     submitHandler: function(contactForm) {
+    //         $(contactResult, contactForm).html('Please Wait...');
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "assets/php/sendmail.php",
+    //             data: $(contactForm).serialize(),
+    //             timeout: 20000,
+    //             success: function(msg) {
+    //                 $(contactResult, contactForm).html('<div class="alert alert-success" role="alert"><strong>Thank you. We will contact you shortly.</strong></div>').delay(3000).fadeOut(2000);
+    //             },
+    //             error: $('.thanks').show()
+    //         });
+    //         return false;
+    //     }
+    // });
 
     /* ------------------  14.Ajax Quote Form  ------------------ */
 
