@@ -21,11 +21,11 @@
     - `git clone https://github.com/0aljawi0/dharmahenwa.git`
 1. Install Database MySQL, database ada di root project 'darmahenwa.sql'
     - Gunakan external tools seperti heidisql, or
-    - Dengan cli : `mysqldump -u NAMAUSER -p darmahenwa < darmahenwa.sql`
+    - Dengan cli : `mysql -u NAMAUSER -p darmahenwa < darmahenwa.sql`
 2. Install Vendor
     - cli : `composer install`
 3. Link storage
-    - cli : `php artisan route:link`
+    - cli : `php artisan storage:link`
 4. Buat `.env` file
     - Copy `.env.example`
     - Rename jadi `.env`
