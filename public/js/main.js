@@ -1,8 +1,4 @@
 // GLOBAL HOST
-var global_host = window.location.origin;
-
-// ==================================================
-
 $(function () {
     $(".readonly").on('keydown paste', function(e){
         e.preventDefault();
@@ -42,7 +38,7 @@ function sendFile (files, summernote) {
     let data = new FormData();
     data.append('image', files[0], files[0].name);
 
-    var url = global_host+'/summernote';
+    var url = window.location.origin+'/darmahenwa2/summernote';
 
     $.ajax({
         type: 'POST',
