@@ -48,7 +48,7 @@
                                         <div class="content-layer">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
-                                                    {{Session::get('locale') == 'id' ? 'Visi Kami' : 'Out Vision'}}
+                                                    {{Session::get('locale') == 'id' ? 'Visi Kami' : 'Our Vision'}}
                                                 </h4>
                                             </div>
                                             <div class="panel-body">
@@ -65,7 +65,7 @@
                                         <div class="content-layer">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
-                                                    {{Session::get('locale') == 'id' ? 'Misi Kami' : 'Out Mission'}}
+                                                    {{Session::get('locale') == 'id' ? 'Misi Kami' : 'Our Mission'}}
                                                 </h4>
                                             </div>
                                             <div class="panel-body">

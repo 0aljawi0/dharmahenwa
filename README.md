@@ -42,3 +42,9 @@
     - cli : `php artisan key:generate`
 6. Selesai.
 
+### Jika menggunakan Sub Folder sebagai HOST maka ganti global host
+1. Open file `main.js` di `public/js/main.js`
+2. Tambahakan nama subfolder pada `var global_host = window.location.origin` ,
+    - contoh : `var global_host = window.location.origin+'darmahenwa2'`
+3. Save! Done!
+

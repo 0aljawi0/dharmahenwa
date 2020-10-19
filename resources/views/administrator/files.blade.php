@@ -147,7 +147,7 @@
                     return xhr;
                 },
                 type : 'POST',
-                url : window.location.origin+'/files',
+                url : global_host+'/files',
                 data : formData,
                 processData : false,
                 contentType : false,

@@ -96,7 +96,7 @@
                     return xhr;
                 },
                 type : 'POST',
-                url : window.location.origin+'/files',
+                url : global_host+'/files',
                 data : formData,
                 processData : false,
                 contentType : false,
@@ -158,7 +158,7 @@
     }
 
     function getAllFiles() {
-        $.get(window.location.origin+'/files_all', function (data, textStatus, jqXHR) {
+        $.get(global_host+'/files_all', function (data, textStatus, jqXHR) {
 
             $('#images').empty();
             $('#documents').empty();
@@ -166,12 +166,12 @@
             $.each(data.images, function (i, item) {
                  $('#images').append(`
                     <div class="card p-2">
-                        <img class="card-img-top" src="${window.location.origin}/storage/${item.path}" alt="Images">
+                        <img class="card-img-top" src="${global_host}/storage/${item.path}" alt="Images">
                         <small>${item.name}</small>
                         <div class="input-group mb-3">
-                            <input type="text" id="copylink-image${item.id}" class="form-control" value="${window.location.origin}/storage/${item.path}">
+                            <input type="text" id="copylink-image${item.id}" class="form-control" value="${global_host}/storage/${item.path}">
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-sm btn-primary copy-btn" data-clipboard-target="#copylink-image${item.id}" onclick="closeModal('${window.location.origin}/storage/${item.path}')">
+                                <button type="button" class="btn btn-sm btn-primary copy-btn" data-clipboard-target="#copylink-image${item.id}" onclick="closeModal('${global_host}/storage/${item.path}')">
                                     <i class="fas fa-copy fa-sm fa-fw"></i>
                                     Copy Link
                                 </button>
@@ -186,9 +186,9 @@
                     <div class="card p-2 text-center">
                         <p class="mb-0"><i class="fas fa-file-alt fa-sm fa-fw"></i> ${item.name}</p>
                         <div class="input-group mb-3">
-                            <input type="text" id="copylink-pdf${item.id}" class="form-control" value="${window.location.origin}/storage/${item.path}">
+                            <input type="text" id="copylink-pdf${item.id}" class="form-control" value="${global_host}/storage/${item.path}">
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-sm btn-primary copy-btn" data-clipboard-target="#copylink-pdf${item.id}" onclick="closeModal('${window.location.origin}/storage/${item.path}')">
+                                <button type="button" class="btn btn-sm btn-primary copy-btn" data-clipboard-target="#copylink-pdf${item.id}" onclick="closeModal('${global_host}/storage/${item.path}')">
                                     <i class="fas fa-copy fa-sm fa-fw"></i>
                                     Copy Link
                                 </button>
