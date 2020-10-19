@@ -93,7 +93,7 @@
                     return xhr;
                 },
                 type : 'POST',
-                url : global_host+'/files',
+                url : '{{route('files.store')}}',
                 data : formData,
                 processData : false,
                 contentType : false,
@@ -156,7 +156,7 @@
     }
 
     function getAllFiles() {
-        $.get(global_host+'/files_all', function (data, textStatus, jqXHR) {
+        $.get('{{route('files.all')}}', function (data, textStatus, jqXHR) {
 
             $('#images').empty();
             $('#documents').empty();
@@ -164,7 +164,7 @@
             $.each(data.images, function (i, item) {
                  $('#images').append(`
                     <div class="card p-2 file-manager" onclick="choose('${item.type}', '${item.path}')">
-                        <img class="card-img-top" src="${global_host}/storage/${item.path}" alt="Images">
+                        <img class="card-img-top" src="{{URL::to('/')}}/storage/${item.path}" alt="Images">
                         <small>${item.name}</small>
                     </div>
                  `);
@@ -188,7 +188,7 @@
         if (type == 'image') {
 
             $('[name="'+name+'"]').val(path);
-            $('#image-preview-'+name).empty().append(`<img src="${global_host}/storage/${path}" alt="preview" width="200">`);
+            $('#image-preview-'+name).empty().append(`<img src="{{URL::to('/')}}/storage/${path}" alt="preview" width="200">`);
 
             Swal.fire({
                 icon: 'success',

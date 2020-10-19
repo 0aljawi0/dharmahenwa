@@ -147,7 +147,7 @@
                     return xhr;
                 },
                 type : 'POST',
-                url : global_host+'/files',
+                url : '{{route('files.store')}}',
                 data : formData,
                 processData : false,
                 contentType : false,
