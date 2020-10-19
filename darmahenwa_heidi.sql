@@ -228,40 +228,6 @@ INSERT INTO `messages` (`id`, `name`, `email`, `phone`, `subject`, `message`, `c
 	(3, 'Lorem ipsum', 'admin@darmahenwa.com', '+62 21 2991 2350', 'Test', 'asdasdasdasdasdas', '2020-10-03 14:54:20', '2020-10-03 14:54:20');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 
--- Dumping data for table darmahenwa.migrations: ~29 rows (approximately)
-/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-	(1, '2014_10_12_000000_create_users_table', 1),
-	(2, '2014_10_12_100000_create_password_resets_table', 1),
-	(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-	(5, '2020_09_25_031119_create_user_logs', 2),
-	(7, '2020_09_25_083008_create_files', 3),
-	(9, '2020_09_26_032629_create_sliders', 4),
-	(14, '2020_09_28_024914_create_options', 5),
-	(15, '2020_09_28_051331_create_blogs', 5),
-	(16, '2020_09_29_070046_create_milestones', 6),
-	(17, '2020_09_29_082229_create_executives', 7),
-	(18, '2020_09_29_112341_create_awards', 8),
-	(19, '2020_09_30_013650_create_coals', 9),
-	(21, '2020_09_30_013816_create_infrastructures', 10),
-	(22, '2020_09_30_060125_create_policies', 11),
-	(24, '2020_09_30_060336_create_committees', 11),
-	(25, '2020_10_02_020257_create_violation_reports', 12),
-	(26, '2020_10_02_034503_create_shareholders', 12),
-	(27, '2020_10_02_041532_create_meetings', 13),
-	(28, '2020_10_02_063456_create_presentations', 14),
-	(29, '2020_10_02_082633_create_annual_reports', 15),
-	(30, '2020_10_02_090524_create_financial_reports', 16),
-	(31, '2020_10_02_113214_create_newsletters', 17),
-	(32, '2020_10_02_120003_create_monthly_reports', 18),
-	(33, '2020_10_02_130201_create_analyst_coverages', 19),
-	(34, '2020_10_03_024759_create_sustainabilities', 20),
-	(35, '2020_10_03_024950_create_csr', 20),
-	(36, '2020_10_03_024958_create_csr_galleries', 20),
-	(37, '2020_10_03_102343_create_messages', 21),
-	(39, '2020_10_04_010151_create_stock_prices', 22);
-/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
-
 -- Dumping data for table darmahenwa.milestones: ~3 rows (approximately)
 /*!40000 ALTER TABLE `milestones` DISABLE KEYS */;
 INSERT INTO `milestones` (`id`, `image`, `year`, `title`, `description`, `created_at`, `updated_at`) VALUES
@@ -689,7 +655,3 @@ INSERT INTO `violation_reports` (`id`, `name`, `email`, `phone`, `category_viola
 	(3, 'Lorem ipsum', 'admin@darmahenwa.com', '+62 21 2991 2350', 'Fraud', 'asdasdasdasd', 'asdasdasdasdas', '["evidence_2020_10\\/evidence_003145202.jpg","evidence_2020_10\\/evicence_103145202.jpg","evidence_2020_10\\/evidence_203145202.jpg"]', 'No', '2020-10-03 14:52:02', '2020-10-03 14:52:02'),
 	(4, 'John', 'admin@darmahenwa.com', '+62 21 2991 2350', 'Conflict of Interest', 'asdasd', 'asdasdasd', '["evidence_2020_10\\/evidence_003145239.jpg","evidence_2020_10\\/evicence_103145239.jpg","evidence_2020_10\\/evidence_203145239.jpg"]', 'No', '2020-10-03 14:52:39', '2020-10-03 14:52:39');
 /*!40000 ALTER TABLE `violation_reports` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
