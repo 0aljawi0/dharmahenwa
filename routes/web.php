@@ -98,7 +98,7 @@ Route::delete('message/{id}', [App\Http\Controllers\Administrator\Dashboard::cla
 Route::delete('violation/{id}', [App\Http\Controllers\Administrator\Dashboard::class, 'violation_destroy'])->name('violation.destroy');
 
 Route::get('user_logs', [App\Http\Controllers\Administrator\UserLogs::class, 'index'])->name('user_logs');
-Route::post('summernote', [App\Http\Controllers\Administrator\Summernote::class, 'upload']);
+Route::post('summernote', [App\Http\Controllers\Administrator\Summernote::class, 'upload'])->name('summernote');
 Route::resource('users', App\Http\Controllers\Administrator\Users::class);
 Route::resource('sliders', App\Http\Controllers\Administrator\Sliders::class);
 
