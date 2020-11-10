@@ -44,14 +44,19 @@
                         <div class="contentmg p-0">
                             <ul class="list-management">
                                 @foreach ($commissioners as $item)
+                                    @php
+                                        $position = json_decode($item->position);
+                                        $bio = json_decode($item->bio);
+                                    @endphp
+
                                     <li>
                                         <div class="imagemng col-md-4 col-sm-12 columns p-0">
                                             <img src="{{ asset('storage/'.$item->photo) }}" alt="{{ $item->name }}" />
                                         </div>
                                         <div class="detailmg col-md-8 col-sm-12 columns p-0">
                                             <h1>{{ $item->name }}</h1>
-                                            <h2>{{ $item->position }}</h2>
-                                            <p>{{ $item->bio }}</p>
+                                            <h2>{{ Session::get('locale') == 'id' ? $position->id ?? '' : $position->en ?? '' }}</h2>
+                                            <p>{{ Session::get('locale') == 'id' ? $bio->id ?? '' : $bio->en ?? '' }}</p>
                                         </div>
                                     </li>
                                 @endforeach

@@ -33,17 +33,35 @@
                     @slot('required') required @endslot
                 @endcomponent
 
-                @component('administrator.components.input_text')
-                    @slot('name') position @endslot
-                    @slot('value') {{old('position')}} @endslot
-                    @slot('required') required @endslot
-                @endcomponent
+                <div class="row">
+                    <div class="col-md-6">
+                        @component('administrator.components.input_text')
+                            @slot('name') position_id @endslot
+                            @slot('value') {{old('position_id')}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
 
-                @component('administrator.components.input_textarea')
-                    @slot('name') bio @endslot
-                    @slot('value') {{old('bio')}} @endslot
-                    @slot('required') required @endslot
-                @endcomponent
+                        @component('administrator.components.input_textarea')
+                            @slot('name') bio_id @endslot
+                            @slot('value') {{old('bio_id')}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+                    </div>
+
+                    <div class="col-md-6">
+                        @component('administrator.components.input_text')
+                            @slot('name') position_en @endslot
+                            @slot('value') {{old('position_en')}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_textarea')
+                            @slot('name') bio_en @endslot
+                            @slot('value') {{old('bio_en')}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+                    </div>
+                </div>
 
                 @component('administrator.components.input_select')
                     @slot('name') board @endslot

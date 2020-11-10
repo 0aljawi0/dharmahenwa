@@ -28,10 +28,16 @@ class Executives extends Controller
 
     public function store(Request $request)
     {
+        $position['id'] = $request->position_id;
+        $position['en'] = $request->position_en;
+
+        $bio['id'] = $request->bio_id;
+        $bio['en'] = $request->bio_en;
+
         $executive = new Executive;
         $executive->name = $request->name;
-        $executive->position = $request->position;
-        $executive->bio = $request->bio;
+        $executive->position = json_encode($position);
+        $executive->bio = json_encode($bio);
         $executive->board = $request->board;
         $executive->photo = $request->photo;
         $saved = $executive->save();
@@ -54,10 +60,16 @@ class Executives extends Controller
 
     public function update(Request $request, $id)
     {
+        $position['id'] = $request->position_id;
+        $position['en'] = $request->position_en;
+
+        $bio['id'] = $request->bio_id;
+        $bio['en'] = $request->bio_en;
+
         $executive = Executive::firstWhere('id', $id);
         $executive->name = $request->name;
-        $executive->position = $request->position;
-        $executive->bio = $request->bio;
+        $executive->position = json_encode($position);
+        $executive->bio = json_encode($bio);
         $executive->board = $request->board;
         $executive->photo = $request->photo;
         $saved = $executive->save();

@@ -16,7 +16,7 @@
     <div class="row animate__animated animate__fadeInUp">
 
         <!-- Content Column -->
-        <div class="col-lg-12 mb-4">
+        <div class="col-lg-6 mb-4">
 
             <form action="{{route('executives.update', ['executive' => $executive->id])}}" method="POST">
                 @csrf
@@ -38,17 +38,42 @@
                     @slot('required') required @endslot
                 @endcomponent
 
-                @component('administrator.components.input_text')
-                    @slot('name') position @endslot
-                    @slot('value') {{$executive->position}} @endslot
-                    @slot('required') required @endslot
-                @endcomponent
+                @php
+                    $position = json_decode($executive->position);
+                    $bio = json_decode($executive->bio);
+                @endphp
 
-                @component('administrator.components.input_textarea')
-                    @slot('name') bio @endslot
-                    @slot('value') {{$executive->bio}} @endslot
-                    @slot('required') required @endslot
-                @endcomponent
+                <div class="row">
+                    <div class="col-md-6">
+                        @component('administrator.components.input_text')
+                            @slot('name') position_en @endslot
+                            @slot('value') {{$position->id ?? ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_textarea')
+                            @slot('name') bio_en @endslot
+                            @slot('value') {{$bio->id ?? ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+                    </div>
+
+                    <div class="col-md-6">
+                        @component('administrator.components.input_text')
+                            @slot('name') position_id @endslot
+                            @slot('value') {{$position->en ?? ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_textarea')
+                            @slot('name') bio_id @endslot
+                            @slot('value') {{$position->en ?? ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+                    </div>
+                </div>
+
+
 
                 @component('administrator.components.input_select')
                     @slot('name') board @endslot

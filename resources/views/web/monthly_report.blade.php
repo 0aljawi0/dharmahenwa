@@ -55,7 +55,7 @@
                                                             @foreach ($monthly_reports as $m)
                                                                 @if ($m->year == $item)
                                                                     <li>
-                                                                        <a href="#" data-pdf="{{asset('storage/'.$m->pdf)}} class="view-pdf block">{{$m->month}}</a>
+                                                                        <a href="#" data-pdf="{{asset('storage/'.$m->pdf)}} class="view-pdf block">{{Month::lang($m->month)}}</a>
                                                                     </li>
                                                                 @endif
                                                             @endforeach
