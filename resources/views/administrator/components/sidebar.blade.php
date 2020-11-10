@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">DarmaHenwa <sup>Panel</sup></div>
+        <div class="sidebar-brand-text mx-3">Darma Henwa <sup>Panel</sup></div>
     </a>
 
     <!-- Divider -->
@@ -35,10 +35,10 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Page:</h6>
                 <a class="collapse-item {{Route::is('company-profile.index') ? 'active' : ''}}" href="{{route('company-profile.index')}}">Company Profile</a>
-                <a class="collapse-item {{Route::is('mvv.index') ? 'active' : ''}}" href="{{route('mvv.index')}}">Mission, Vision, Value</a>
+                <a class="collapse-item {{Route::is('mvv.index') ? 'active' : ''}}" href="{{route('mvv.index')}}">Mission, Vision, Values</a>
                 <a class="collapse-item {{Route::is('milestones.index') ? 'active' : ''}}" href="{{route('milestones.index')}}">Milestones</a>
                 <a class="collapse-item {{Route::is('executives.index') ? 'active' : ''}}" href="{{route('executives.index')}}">Executives</a>
-                <a class="collapse-item {{Route::is('awards.index') ? 'active' : ''}}" href="{{route('awards.index')}}">Awards / Certification</a>
+                <a class="collapse-item {{Route::is('awards.index') ? 'active' : ''}}" href="{{route('awards.index')}}">Awards / Certifications</a>
             </div>
         </div>
     </li>
@@ -51,9 +51,9 @@
         <div id="business" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Page:</h6>
-                <a class="collapse-item {{Route::is('coals.index') ? 'active' : ''}}" href="{{route('coals.index')}}">Coal & Mining Service</a>
-                <a class="collapse-item {{Route::is('infrastructures.index') ? 'active' : ''}}" href="{{route('infrastructures.index')}}">Mining Infratructure & Other Service</a>
-                <a class="collapse-item {{Route::is('port.index') ? 'active' : ''}}" href="{{route('port.index')}}">Port Management Service</a>
+                <a class="collapse-item {{Route::is('coals.index') ? 'active' : ''}}" href="{{route('coals.index')}}">Coal & Mineral Mining Services</a>
+                <a class="collapse-item {{Route::is('infrastructures.index') ? 'active' : ''}}" href="{{route('infrastructures.index')}}">Mining Infratructure & Other Services</a>
+                <a class="collapse-item {{Route::is('port.index') ? 'active' : ''}}" href="{{route('port.index')}}">Port Management Services</a>
                 <a class="collapse-item {{Route::is('operational-area.index') ? 'active' : ''}}" href="{{route('operational-area.index')}}">Operational Area</a>
             </div>
         </div>
@@ -109,7 +109,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Page:</h6>
                 <a class="collapse-item {{Route::is('sustainablities.index') ? 'active' : ''}}" href="{{route('sustainablities.index')}}">Sustainability Reports</a>
-                <a class="collapse-item {{Route::is('hse.index') ? 'active' : ''}}" href="{{route('hse.index')}}">Health Safety Environment</a>
+                <a class="collapse-item {{Route::is('hse.index') ? 'active' : ''}}" href="{{route('hse.index')}}">Health, Safety, Environment</a>
                 <a class="collapse-item {{Route::is('csr.index') ? 'active' : ''}}" href="{{route('csr.index')}}">Corporate Social Responsibilities</a>
                 <a class="collapse-item {{Route::is('csr-page.index') ? 'active' : ''}}" href="{{route('csr-page.index')}}">CSR Page</a>
                 <a class="collapse-item {{Route::is('csr-galleries.index') ? 'active' : ''}}" href="{{route('csr-galleries.index')}}">CSR Galleries</a>

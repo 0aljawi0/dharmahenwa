@@ -25,7 +25,7 @@
 								<a href="{{route('about-company-profile')}}">{{Session::get('locale') == 'id' ? 'Profil Perusahaan' : 'Company Profile'}}</a>
 							</li>
 							<li>
-								<a href="{{route('mission-vision-value')}}">{{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}}</a>
+								<a href="{{route('mission-vision-value')}}">{{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Values'}}</a>
 							</li>
 							<li>
 								<a href="{{route('company-milestone')}}">{{Session::get('locale') == 'id' ? 'Tonggak Sejarah' : 'Milestone'}}</a>
@@ -45,7 +45,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="{{ route('awards') }}">{{Session::get('locale') == 'id' ? 'Penghargaan & Sertifikasi' : 'Awards & Certification'}}</a>
+								<a href="{{ route('awards') }}">{{Session::get('locale') == 'id' ? 'Penghargaan & Sertifikasi' : 'Awards & Certifications'}}</a>
 							</li>
 						</ul>
 					</li>
@@ -56,13 +56,13 @@
 								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Kegiatan Operational' : 'Operational Activities'}}</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="{{route('coal')}}">{{Session::get('locale') == 'id' ? 'Layanan Batubara & Pertambangan' : 'Coal & Mining Service'}}</a>
+										<a href="{{route('coal')}}">{{Session::get('locale') == 'id' ? 'Layanan Pertambangan Batubara & Mineral' : 'Coal & Mineral Mining Services'}}</a>
 									</li>
 									<li>
-										<a href="{{route('infrastructure')}}">{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Layanan Lainnya' : 'Mining Infrastructure & Other Service'}}</a>
+										<a href="{{route('infrastructure')}}">{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Layanan Lainnya' : 'Mining Infrastructure & Other Services'}}</a>
 									</li>
 									<li>
-										<a href="{{route('port')}}">{{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Service'}}</a>
+										<a href="{{route('port')}}">{{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Services'}}</a>
 									</li>
 								</ul>
 							</li>
@@ -155,7 +155,7 @@
 								<a href="{{route('sustainability_report')}}">{{Session::get('locale') == 'id' ? 'Laporan Keberlanjutan' : 'Sustainability Report'}}</a>
 							</li>
 							<li>
-								<a href="{{route('hse')}}">{{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan, Lingkungan' : 'Health, Safety, Responsibility'}}</a>
+								<a href="{{route('hse')}}">{{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan, Lingkungan' : 'Health, Safety, Environment'}}</a>
 							</li>
 							<li>
 								<a href="{{route('web_csr')}}">{{Session::get('locale') == 'id' ? 'Tanggung Jawab Sosial Perusahaan' : 'Corporate Social Responsibility'}}</a>

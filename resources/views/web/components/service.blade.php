@@ -17,7 +17,7 @@
 						<!-- <div class="panel-heading" style="background-image: url(assets/images/about/visi.jpg)"> -->
 						<div class="panel-heading">
 							<a href="{{route('coal')}}" class="panel-title t-center">
-								<span>{{Session::get('locale') == 'id' ? 'Layanan Batubara & Pertambangan' : 'Coal & Mining Service'}}</span>
+								<span>{{Session::get('locale') == 'id' ? 'Layanan Pertambangan Batubara & Mineral' : 'Coal & Mineral Mining Services'}}</span>
 							</a>
 							<a href="{{route('coal')}}" class="show-more-ar">
 								show more >>
@@ -33,7 +33,7 @@
 						<!-- <div class="panel-heading" style="background-image: url(assets/images/about/misi.jpg)"> -->
 						<div class="panel-heading">
 							<a href="{{route('port')}}" class="panel-title t-center">
-								<span>{{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Service'}}</span>
+								<span>{{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Services'}}</span>
 							</a>
 							<a href="{{route('port')}}" class="show-more-ar">
 								show more >>
@@ -49,7 +49,7 @@
 						<!-- <div class="panel-heading" style="background-image: url(assets/images/home/home-1.jpg)"> -->
 						<div class="panel-heading">
 							<a href="{{route('infrastructure')}}" class="panel-title t-center">
-								<span>{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Layanan Lainnya' : 'Mining Infrastructure & Other Service'}}</span>
+								<span>{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Layanan Lainnya' : 'Mining Infrastructure & Other Services'}}</span>
 							</a>
 							<a href="{{route('infrastructure')}}" class="show-more-ar">
 								show more >>

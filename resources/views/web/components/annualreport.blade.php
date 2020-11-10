@@ -19,7 +19,7 @@
                                             <span class="name-ar">{{$item->title}}</span>
                                         </div>
                                         <div class="fram-img-ar">
-                                            <img src="{{asset('storage/'.$item->image)}}" alt="">
+                                            <img src="{{asset('storage/'.$item->image)}}" alt="" width="200">
                                         </div>
                                         <div class="show-action">
                                             <a href="{{asset('storage/'.$item->pdf)}}" class="download-pdf"><i class="fa fa-download"></i> PDF</a>
@@ -52,7 +52,7 @@
                                             <span class="name-ar">{{$item->title}}</span>
                                         </div>
                                         <div class="fram-img-ar">
-                                            <img src="{{asset('storage/'.$item->image)}}" alt="">
+                                            <img src="{{asset('storage/'.$item->image)}}" alt="" width="200">
                                         </div>
                                         <div class="show-action">
                                             <a href="{{asset('storage/'.$item->pdf)}}" class="download-pdf"><i class="fa fa-download"></i> PDF</a>

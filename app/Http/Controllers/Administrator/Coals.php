@@ -58,11 +58,11 @@ class Coals extends Controller
 
     public function update(Request $request, $id)
     {
-        $title['en'] = $request->title_english;
-        $title['id'] = $request->title_indonesia;
+        $title['en'] = $request->title_en;
+        $title['id'] = $request->title_id;
 
-        $description['en'] = $request->description_english;
-        $description['id'] = $request->description_indonesia;
+        $description['en'] = $request->description_en;
+        $description['id'] = $request->description_id;
 
         $coal = Coal::firstWhere('id', $id);
         $coal->title = json_encode($title);

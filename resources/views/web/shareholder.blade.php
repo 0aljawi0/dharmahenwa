@@ -105,7 +105,7 @@
                 ],
                 backgroundColor: [
                     @foreach($percent as $item)
-                        'rgb({{rand(0, 255)}}, {{rand(0, 255)}}, {{rand(0, 255)}})',
+                        'hsl(97, {{rand(30, 60)}}%, {{rand(30, 60)}}%)',
                     @endforeach
 		      	],
 		      	borderWidth: 0
