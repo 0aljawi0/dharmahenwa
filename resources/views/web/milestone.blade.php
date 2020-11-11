@@ -52,11 +52,15 @@
                                     @endphp
 
                                     <li>
-                                        <span class="range-year">{{$item->year}}</span>
+                                        <span class="range-year">{{$item->year ?? ''}}</span>
                                         <div class="small-12 detail-history">
-                                            <p><strong>{{Session::get('locale') == 'id' ? $title->id : $title->en}}</strong></p>
-                                            <p>{{Session::get('locale') == 'id' ? $description->id : $description->en}}</p>
-                                            <img src="{{asset('storage/'.$item->image)}}" alt="{{Session::get('locale') == 'id' ? $title->id : $title->en}}"/>
+                                            <p><strong>{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</strong></p>
+                                            <p>{{Session::get('locale') == 'id' ? $description->id ?? '' : $description->en ?? ''}}</p>
+
+                                            @if ($item->image)
+                                                <img src="{{asset('storage/'.$item->image)}}" alt="{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}"/>
+                                            @endif
+
                                         </div>
                                     </li>
                                 @endforeach

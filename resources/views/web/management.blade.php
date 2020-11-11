@@ -16,7 +16,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Dewan Manajemen' : 'Board Of Management'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Manajemen' : 'Board Of Management'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -34,7 +34,7 @@
                                 {{Session::get('locale') == 'id' ? 'Eksekutif' : 'Executives'}}
                             </li>
                             <li class="active">
-                                {{Session::get('locale') == 'id' ? 'Dewan Manajemen' : 'Board Of Management'}}
+                                {{Session::get('locale') == 'id' ? 'Manajemen' : 'Board Of Management'}}
                             </li>
                         </ol>
                     </div>

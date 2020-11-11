@@ -113,7 +113,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
-				<div class="col-xs-12 col-sm-12 col-md-5 widget-about text-center-xs mb-30-xs">
+				<div class="col-xs-12 col-sm-12 col-md-4 widget-about text-center-xs mb-30-xs">
 					<!-- <div class="widget-about-logo pull-left pull-none-xs">
 						<img src="assets/images/footer-logo.png" alt="logo"/>
 					</div> -->
@@ -122,7 +122,7 @@
 						<p class="mb-0">{{$website->footer_description}}</p>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-md-5 widget-navigation text-center-xs mb-30-xs">
+				<div class="col-xs-12 col-sm-6 col-md-4 widget-navigation text-center-xs mb-30-xs">
 					<h5 class="text-capitalize text-white">navigation</h5>
 					<div class="row">
 						<div class="col-xs-6 col-sm-6 col-md-6">
@@ -154,7 +154,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-md-2 widget-services text-center-xs">
+				<div class="col-xs-12 col-sm-6 col-md-3 widget-services text-center-xs">
 					<h5 class="text-capitalize text-white">Other</h5>
 					<div class="row">
 						<div class="col-xs-12 col-sm-12">
@@ -166,7 +166,7 @@
 									<a href="{{route('career')}}">{{Session::get('locale') == 'id' ? 'Karir' : 'Career'}}</a>
 								</li>
 								<li>
-									<a href="{{route('procurement')}}">{{Session::get('locale') == 'id' ? 'Procurement' : 'Procurement'}}</a>
+									<a href="{{route('procurement')}}">{{Session::get('locale') == 'id' ? 'Pengadaan' : 'Procurement'}}</a>
 								</li>
 							</ul>
 						</div>

@@ -25,12 +25,11 @@
 
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Year</th>
-                        <th>Created At</th>
-                        <th>Action</th>
+                        <th width="10%">No</th>
+                        <th width="50%">Title</th>
+                        <th width="10%">Year</th>
+                        <th width="20%">Created At</th>
+                        <th width="10%">Action</th>
                     </tr>
                 </thead>
 
@@ -42,14 +41,13 @@
 
                         <tr>
                             <td>{{ $key+1 }}</td>
-                            <td><img src="{{asset('storage/'.$item->image)}}" alt="image" width="100"></td>
-                            <td>{{ $title->en }}</td>
-                            <td>{{ $item->year }}</td>
+                            <td>{{ $title->en ?? '' }}</td>
+                            <td>{{ $item->year ?? '' }}</td>
                             <td>{{ date('d F Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>
                                 <div class="btn-group" role="group">
                                     <a href="{{route('milestones.edit', ['milestone' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$title->en}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$title->en ?? ''}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
                                 </div>
 
                                 <form id="destroy_{{$item->id}}" action="{{route('milestones.destroy', ['milestone' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>

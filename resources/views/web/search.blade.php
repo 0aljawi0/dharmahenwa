@@ -53,8 +53,11 @@
 
                                 @if ($newsletters)
                                     @foreach ($newsletters as $item)
+                                        @php
+                                            $title = json_decode($item->title);
+                                        @endphp
                                         <li>
-                                            <a href="{{asset('storage/'.$item->pdf)}}">Quarterly Newsletter : {{$item->title}}</a>
+                                            <a href="{{asset('storage/'.$item->pdf)}}">Quarterly Newsletter : {{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</a>
                                         </li>
                                     @endforeach
                                 @endif
@@ -77,16 +80,22 @@
 
                                 @if ($monthly_reports)
                                     @foreach ($monthly_reports as $item)
+                                        @php
+                                            $title = json_decode($item->title);
+                                        @endphp
                                         <li>
-                                            <a href="{{asset('storage/'.$item->pdf)}}">Monthly Report : {{$item->month}} {{$item->year}}</a>
+                                            <a href="{{asset('storage/'.$item->pdf)}}">Monthly Report : {{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</a>
                                         </li>
                                     @endforeach
                                 @endif
 
                                 @if ($financials)
                                     @foreach ($financials as $item)
+                                        @php
+                                            $title = json_decode($item->title);
+                                        @endphp
                                         <li>
-                                            <a href="{{asset('storage/'.$item->pdf)}}">Financial Statement : {{$item->month}} {{$item->year}}</a>
+                                            <a href="{{asset('storage/'.$item->pdf)}}">Financial Statement : {{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</a>
                                         </li>
                                     @endforeach
                                 @endif

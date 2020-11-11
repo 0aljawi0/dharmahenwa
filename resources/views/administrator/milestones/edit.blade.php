@@ -32,15 +32,15 @@
                     <div class="col-lg-6">
                         @component('administrator.components.input_text')
                             @slot('name') title_en @endslot
-                            @slot('value') {{$title->en}} @endslot
-                            @slot('required') required @endslot
+                            @slot('value') {{$title->en ?? ''}} @endslot
+
                         @endcomponent
                     </div>
                     <div class="col-lg-6">
                         @component('administrator.components.input_text')
                             @slot('name') title_id @endslot
-                            @slot('value') {{$title->id}} @endslot
-                            @slot('required') required @endslot
+                            @slot('value') {{$title->id ?? ''}} @endslot
+
                         @endcomponent
                     </div>
                 </div>
@@ -49,15 +49,15 @@
                     <div class="col-lg-6">
                         @component('administrator.components.input_textarea')
                             @slot('name') description_en @endslot
-                            @slot('value') {{$description->en}} @endslot
-                            @slot('required') required @endslot
+                            @slot('value') {{$description->en ?? ''}} @endslot
+
                         @endcomponent
                     </div>
                     <div class="col-lg-6">
                         @component('administrator.components.input_textarea')
                             @slot('name') description_id @endslot
-                            @slot('value') {{$description->id}} @endslot
-                            @slot('required') required @endslot
+                            @slot('value') {{$description->id ?? ''}} @endslot
+
                         @endcomponent
                     </div>
                 </div>
@@ -65,17 +65,20 @@
                 @component('administrator.components.input_text')
                     @slot('name') year @endslot
                     @slot('type') number @endslot
-                    @slot('value') {{$milestone->year}} @endslot
-                    @slot('required') required @endslot
+                    @slot('value') {{$milestone->year ?? ''}} @endslot
+
                 @endcomponent
 
                 @component('administrator.components.input_filemanager')
                     @slot('filetype') image @endslot
                     @slot('name') image @endslot
-                    @slot('required') required @endslot
 
-                    @slot('value') {{$milestone->image}} @endslot
-                    @slot('image') <img src="{{asset('storage/'.$milestone->image)}}" alt="preview" width="200"> @endslot
+
+                    @slot('value') {{$milestone->image ?? ''}} @endslot
+
+                    @if ($milestone->image)
+                        @slot('image') <img src="{{asset('storage/'.$milestone->image)}}" alt="preview" width="200"> @endslot
+                    @endif
                 @endcomponent
 
 

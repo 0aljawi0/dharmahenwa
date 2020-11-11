@@ -28,8 +28,11 @@ class Newsletters extends Controller
 
     public function store(Request $request)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $newsletter = new Newsletter;
-        $newsletter->title = $request->title;
+        $newsletter->title = json_encode($title);
         $newsletter->pdf = $request->pdf;
         $saved = $newsletter->save();
 
@@ -51,8 +54,11 @@ class Newsletters extends Controller
 
     public function update(Request $request, $id)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $newsletter = Newsletter::firstWhere('id', $id);
-        $newsletter->title = $request->title;
+        $newsletter->title = json_encode($title);
         $newsletter->pdf = $request->pdf;
         $saved = $newsletter->save();
 

@@ -21,31 +21,21 @@
             <form action="{{route('monthly-reports.store')}}" method="POST">
                 @csrf
 
-                @component('administrator.components.input_filemanager')
-                    @slot('filetype') document @endslot
-                    @slot('name') pdf @endslot
+                @component('administrator.components.input_text')
+                    @slot('name') title_id @endslot
+                    @slot('value') {{old('title_id')}} @endslot
                     @slot('required') required @endslot
-                @endcomponent
-
-
-                @component('administrator.components.input_select')
-                    @slot('name') month @endslot
-                    @slot('required') required @endslot
-
-                    @php
-                        $month = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-                    @endphp
-
-                    <option value="">Choose Month</option>
-                    @foreach ($month as $item)
-                        <option value="{{$item}}">{{$item}}</option>
-                    @endforeach
                 @endcomponent
 
                 @component('administrator.components.input_text')
-                    @slot('name') year @endslot
-                    @slot('type') number @endslot
-                    @slot('value') {{old('year')}} @endslot
+                    @slot('name') title_en @endslot
+                    @slot('value') {{old('title_en')}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
+                @component('administrator.components.input_filemanager')
+                    @slot('filetype') document @endslot
+                    @slot('name') pdf @endslot
                     @slot('required') required @endslot
                 @endcomponent
 

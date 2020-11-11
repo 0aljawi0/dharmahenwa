@@ -16,7 +16,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Buletin Triwulanan' : 'Quarterly Newsletter'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Kuartalan' : 'Quarterly Newsletter'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -30,12 +30,11 @@
                                 <a href="{{route('profile')}}">Corporate Secretary</a>
                             </li>
                             <li class="active">
-                                {{Session::get('locale') == 'id' ? 'Buletin Triwulanan' : 'Quarterly Newsletter'}}
+                                {{Session::get('locale') == 'id' ? 'Kuartalan' : 'Quarterly Newsletter'}}
                             </li>
                         </ol>
                     </div>
                     <div class="row">
-
 
                         <div class="col-xs-12 col-sm-12 col-md-12 entry">
                             <h2>
@@ -44,13 +43,16 @@
                             <div class="entry-content">
 
                                 <div class="clear-l showCaption ">
-
                                     <div class="d-flex">
                                         @foreach ($newsletters as $item)
+                                            @php
+                                                $title = json_decode($item->title);
+                                            @endphp
+
                                             <div class="col-xs-12 col-lg-3 col-md-6 gms-list align-center border-bg hv-green">
                                                 <div class="col-md-12">
                                                     <div class="cnt-list flex-85">
-                                                        <p><strong>{{$item->title}}</strong></p>
+                                                        <p><strong>{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</strong></p>
                                                     </div>
                                                     <div class="link-list flex-1 mt-sm btn-kecil">
                                                         <a href="#" data-pdf="{{asset('storage/'.$item->pdf)}}" class="open view-pdf">Open</a>
@@ -59,7 +61,12 @@
                                             </div>
                                         @endforeach
                                     </div>
+                                </div>
 
+                                <div class="row justify-content-center">
+                                    <div class="col-12 text-center">
+                                        {{$newsletters->links()}}
+                                    </div>
                                 </div>
                             </div>
                         </div>

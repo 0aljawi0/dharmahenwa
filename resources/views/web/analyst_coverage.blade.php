@@ -16,7 +16,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Cakupan Analis' : 'Analyst Coverage'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Laporan Analis' : 'Analyst Coverage'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -30,7 +30,7 @@
                                 <a href="{{route('profile')}}">Corporate Secretary</a>
                             </li>
                             <li class="active">
-                                {{Session::get('locale') == 'id' ? 'Cakupan Analis' : 'Analyst Coverage'}}
+                                {{Session::get('locale') == 'id' ? 'Laporan Analis' : 'Analyst Coverage'}}
                             </li>
                         </ol>
                     </div>

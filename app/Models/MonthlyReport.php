@@ -10,8 +10,7 @@ class MonthlyReport extends Model
     use HasFactory;
 
     protected $fillable = [
-        'month',
-        'year',
+        'title',
         'pdf'
     ];
 }

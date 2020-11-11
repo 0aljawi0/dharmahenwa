@@ -17,7 +17,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Tanggungjawab Sosial Perusahaan' : 'Corporate Social Responsibility'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Tanggung Jawab Sosial Perusahaan' : 'Corporate Social Responsibility'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -31,7 +31,7 @@
                                 Sustainability
                             </li>
                             <li class="active">
-                                {{Session::get('locale') == 'id' ? 'Tanggungjawab Sosial Perusahaan' : 'Corporate Social Responsibility'}}
+                                {{Session::get('locale') == 'id' ? 'Tanggung Jawab Sosial Perusahaan' : 'Corporate Social Responsibility'}}
                             </li>
                         </ol>
                     </div>

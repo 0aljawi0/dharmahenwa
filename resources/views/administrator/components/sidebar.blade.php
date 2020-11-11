@@ -62,7 +62,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#corporate-governance" aria-expanded="true" aria-controls="corporate-governance">
             <i class="fas fa-building fa-sm fa-fw"></i>
-            <span>Corporate Governace</span>
+            <span>Corporate Governance</span>
         </a>
         <div id="corporate-governance" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
@@ -91,10 +91,10 @@
                 <a class="collapse-item {{Route::is('meetings.index') ? 'active' : ''}}" href="{{route('meetings.index')}}">General Meeting Of Shareholders</a>
                 <a class="collapse-item {{Route::is('presentations.index') ? 'active' : ''}}" href="{{route('presentations.index')}}">Presentations</a>
                 <a class="collapse-item {{Route::is('annual-reports.index') ? 'active' : ''}}" href="{{route('annual-reports.index')}}">Annual Reports</a>
-                <a class="collapse-item {{Route::is('financial-reports.index') ? 'active' : ''}}" href="{{route('financial-reports.index')}}">Financial Reports</a>
+                <a class="collapse-item {{Route::is('financial-reports.index') ? 'active' : ''}}" href="{{route('financial-reports.index')}}">Financial Statements</a>
                 <a class="collapse-item {{Route::is('newsletters.index') ? 'active' : ''}}" href="{{route('newsletters.index')}}">Quarterly Newsletters</a>
                 <a class="collapse-item {{Route::is('monthly-reports.index') ? 'active' : ''}}" href="{{route('monthly-reports.index')}}">Monthly Reports</a>
-                <a class="collapse-item {{Route::is('analyst-coverages.index') ? 'active' : ''}}" href="{{route('analyst-coverages.index')}}">Analyst Coverages</a>
+                <a class="collapse-item {{Route::is('analyst-coverages.index') ? 'active' : ''}}" href="{{route('analyst-coverages.index')}}">Analyst Coverage</a>
                 <a class="collapse-item {{Route::is('blogs.index') ? 'active' : ''}}" href="{{route('blogs.index')}}">Press Release</a>
             </div>
         </div>
@@ -110,7 +110,7 @@
                 <h6 class="collapse-header">Page:</h6>
                 <a class="collapse-item {{Route::is('sustainablities.index') ? 'active' : ''}}" href="{{route('sustainablities.index')}}">Sustainability Reports</a>
                 <a class="collapse-item {{Route::is('hse.index') ? 'active' : ''}}" href="{{route('hse.index')}}">Health, Safety, Environment</a>
-                <a class="collapse-item {{Route::is('csr.index') ? 'active' : ''}}" href="{{route('csr.index')}}">Corporate Social Responsibilities</a>
+                <a class="collapse-item {{Route::is('csr.index') ? 'active' : ''}}" href="{{route('csr.index')}}">Corporate Social Responsibility</a>
                 <a class="collapse-item {{Route::is('csr-page.index') ? 'active' : ''}}" href="{{route('csr-page.index')}}">CSR Page</a>
                 <a class="collapse-item {{Route::is('csr-galleries.index') ? 'active' : ''}}" href="{{route('csr-galleries.index')}}">CSR Galleries</a>
             </div>

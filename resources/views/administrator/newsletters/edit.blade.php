@@ -16,16 +16,25 @@
     <div class="row animate__animated animate__fadeInUp">
 
         <!-- Content Column -->
-        <div class="col-lg-12 mb-4">
+        <div class="col-lg-6 mb-4">
 
             <form action="{{route('newsletters.update', ['newsletter' => $newsletter->id])}}" method="POST">
                 @csrf
-
                 @method('PUT')
 
+                @php
+                    $title = json_decode($newsletter->title);
+                @endphp
+
                 @component('administrator.components.input_text')
-                    @slot('name') title @endslot
-                    @slot('value') {{$newsletter->title}} @endslot
+                    @slot('name') title_id @endslot
+                    @slot('value') {{$title->id ?? ''}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
+                @component('administrator.components.input_text')
+                    @slot('name') title_en @endslot
+                    @slot('value') {{$title->en ?? ''}} @endslot
                     @slot('required') required @endslot
                 @endcomponent
 

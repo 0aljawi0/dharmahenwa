@@ -16,7 +16,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Layanan Batubara & Pertambangan' : 'Coal & Mining Service'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Jasa Pertambangan Batubara & Mineral' : 'Coal & Mineral Mining Services'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -33,7 +33,7 @@
                                     {{Session::get('locale') == 'id' ? 'Kegiatan Operasional' : 'Operational Activities'}}
                             </li>
                             <li class="active">
-                                    {{Session::get('locale') == 'id' ? 'Layanan Batubara & Pertambangan' : 'Coal & Mining Service'}}
+                                    {{Session::get('locale') == 'id' ? 'Jasa Pertambangan Batubara & Mineral' : 'Coal & Mineral Mining Services'}}
                             </li>
                         </ol>
                     </div>

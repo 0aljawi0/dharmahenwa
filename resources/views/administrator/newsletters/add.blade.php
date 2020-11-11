@@ -22,8 +22,14 @@
                 @csrf
 
                 @component('administrator.components.input_text')
-                    @slot('name') title @endslot
-                    @slot('value') {{old('title')}} @endslot
+                    @slot('name') title_id @endslot
+                    @slot('value') {{old('title_id')}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
+                @component('administrator.components.input_text')
+                    @slot('name') title_en @endslot
+                    @slot('value') {{old('title_en')}} @endslot
                     @slot('required') required @endslot
                 @endcomponent
 

@@ -22,34 +22,28 @@
                 @csrf
                 @method('PUT')
 
+                @php
+                    $title = json_decode($monthly_report->title);
+                @endphp
+
+                @component('administrator.components.input_text')
+                    @slot('name') title_id @endslot
+                    @slot('value') {{$title->id ?? ''}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
+                @component('administrator.components.input_text')
+                    @slot('name') title_en @endslot
+                    @slot('value') {{$title->en ?? ''}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
                 @component('administrator.components.input_filemanager')
                     @slot('filetype') document @endslot
                     @slot('name') pdf @endslot
                     @slot('required') required @endslot
 
                     @slot('value') {{$monthly_report->pdf}} @endslot
-                @endcomponent
-
-
-                @component('administrator.components.input_select')
-                    @slot('name') month @endslot
-                    @slot('required') required @endslot
-
-                    @php
-                        $month = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-                    @endphp
-
-                    <option value="">Choose Month</option>
-                    @foreach ($month as $item)
-                        <option value="{{$item}}" {{ $item == $monthly_report->month ? 'selected' : ''}}>{{$item}}</option>
-                    @endforeach
-                @endcomponent
-
-                @component('administrator.components.input_text')
-                    @slot('name') year @endslot
-                    @slot('type') number @endslot
-                    @slot('value') {{$monthly_report->year}} @endslot
-                    @slot('required') required @endslot
                 @endcomponent
 
                 <button type="submit" class="d-none d-sm-inline-block btn btn-primary shadow-sm" >{{__('Update')}}</button>

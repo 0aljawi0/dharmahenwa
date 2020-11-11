@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeExecutivesTableColumn extends Migration
+class ChangeNewslettersTableColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class ChangeExecutivesTableColumn extends Migration
      */
     public function up()
     {
-        Schema::table('executives', function (Blueprint $table) {
-            $table->json('position')->change();
-            $table->json('bio')->change();
+        Schema::table('newsletters', function (Blueprint $table) {
+            $table->json('title')->change();
         });
     }
 
@@ -26,9 +25,8 @@ class ChangeExecutivesTableColumn extends Migration
      */
     public function down()
     {
-        Schema::table('executives', function (Blueprint $table) {
-            $table->string('position')->change();
-            $table->text('bio')->change();
+        Schema::table('newsletters', function (Blueprint $table) {
+            $table->string('title')->change();
         });
     }
 }

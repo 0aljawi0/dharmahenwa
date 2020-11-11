@@ -77,11 +77,11 @@ class CorporateSecretary extends Controller
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
-        $data['financials'] = FinancialReport::all();
+        $data['financials'] = FinancialReport::latest()->paginate(12);
 
-        $year = FinancialReport::pluck('year')->toArray();
-        rsort($year);
-        $data['year'] = array_unique($year);
+        // $year = FinancialReport::pluck('year')->toArray();
+        // rsort($year);
+        // $data['year'] = array_unique($year);
 
         return view('web.financial')->with($data);
     }
@@ -90,7 +90,7 @@ class CorporateSecretary extends Controller
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
-        $data['newsletters'] = Newsletter::all();
+        $data['newsletters'] = Newsletter::latest()->paginate(12);
 
         return view('web.newsletter')->with($data);
     }
@@ -99,11 +99,11 @@ class CorporateSecretary extends Controller
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
-        $data['monthly_reports'] = MonthlyReport::all();
+        $data['monthly_reports'] = MonthlyReport::latest()->paginate(12);
 
-        $year = MonthlyReport::pluck('year')->toArray();
-        rsort($year);
-        $data['year'] = array_unique($year);
+        // $year = MonthlyReport::pluck('year')->toArray();
+        // rsort($year);
+        // $data['year'] = array_unique($year);
 
         return view('web.monthly_report')->with($data);
     }

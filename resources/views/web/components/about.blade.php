@@ -53,10 +53,13 @@
 										<!--- service block #1 -->
 										<div class="col-xs-12 service-block list-green">
                                             @foreach ($monthly_reports as $item)
-                                            <div class="service-desc">
-												<h4 class="titlePain">{{$item->month}} {{$item->year}}</h4>
-												<a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
-											</div>
+                                                @php
+                                                    $title = json_decode($item->title);
+                                                @endphp
+                                                <div class="service-desc">
+                                                    <h4 class="titlePain">{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</h4>
+                                                    <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
+                                                </div>
                                             @endforeach
 										</div>
 										<!-- .col-xs-12 end -->
@@ -78,8 +81,11 @@
 										<!--- service block #1 -->
 										<div class="col-xs-12 service-block list-green">
                                             @foreach ($newsletters as $item)
+                                                @php
+                                                    $title = json_decode($item->title);
+                                                @endphp
                                                 <div class="service-desc">
-                                                    <h4 class="titlePain">{{$item->title}}</h4>
+                                                    <h4 class="titlePain">{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</h4>
                                                     <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
                                                 </div>
                                             @endforeach
@@ -98,28 +104,33 @@
 						<!-- Panel #2 -->
 						<div role="tabpanel" class="tab-pane fade" id="financial-statement">
 							<div class="d-flex financial-state">
-								<div class="col-xs-12 col-sm-6 col-md-6 bg-theme box-green">
-									<div class="d-flex hei-full">
+								<div class="flex-6 performance-hlg text-white col-img">
+
+									<div class="col-bg">
+										<img src="{{ asset('web/background/coal-barging.jpg')}}" alt="Coal Barging"/>
+									</div>
+									<div class="title-headline">
+										Financial Statement
+									</div>
+									<div class="d-flex">
 										<!--- service block #1 -->
-										<div class="col-xs-12 service-block p-0">
-                                            @foreach ($year as $item)
-                                                <div class="list-green">
-                                                    <h4 class="titlePain mb-sm">{{$item}}</h4>
-                                                    <div class="service-desc">
-                                                        @foreach ($financials as $f)
-                                                            @if ($f->year == $item)
-                                                                <a href="{{asset('storage/'.$f->pdf)}}" class="open">Financial Statement {{$f->month}}</a>
-                                                            @endif
-                                                        @endforeach
-                                                    </div>
+										<div class="col-xs-12 service-block list-green">
+                                            @foreach ($financials as $item)
+                                                @php
+                                                    $title = json_decode($item->title);
+                                                @endphp
+                                                <div class="service-desc">
+                                                    <h4 class="titlePain">{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</h4>
+                                                    <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
                                                 </div>
                                             @endforeach
 										</div>
-										<a href="{{route('financial')}}" class="show-more-ar">
-											show more >>
-										</a>
 										<!-- .col-xs-12 end -->
 									</div>
+									<a href="{{route('newsletter')}}" class="show-more-ar">
+										show more >>
+									</a>
+									<!-- .row end -->
 								</div>
 								<!-- .col-md-6 end -->
 								<div class="col-xs-12 col-sm-6 col-md-6 col-img trans-layer">

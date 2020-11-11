@@ -26,14 +26,14 @@
                         @component('administrator.components.input_text')
                             @slot('name') title_en @endslot
                             @slot('value') {{old('title_en')}} @endslot
-                            @slot('required') required @endslot
+
                         @endcomponent
                     </div>
                     <div class="col-lg-6">
                         @component('administrator.components.input_text')
                             @slot('name') title_id @endslot
                             @slot('value') {{old('title_id')}} @endslot
-                            @slot('required') required @endslot
+
                         @endcomponent
                     </div>
                 </div>
@@ -43,14 +43,14 @@
                         @component('administrator.components.input_textarea')
                             @slot('name') description_en @endslot
                             @slot('value') {{old('description_en')}} @endslot
-                            @slot('required') required @endslot
+
                         @endcomponent
                     </div>
                     <div class="col-lg-6">
                         @component('administrator.components.input_textarea')
                             @slot('name') description_id @endslot
                             @slot('value') {{old('description_id')}} @endslot
-                            @slot('required') required @endslot
+
                         @endcomponent
                     </div>
                 </div>
@@ -59,13 +59,13 @@
                     @slot('name') year @endslot
                     @slot('type') number @endslot
                     @slot('value') {{old('year')}} @endslot
-                    @slot('required') required @endslot
+
                 @endcomponent
 
                 @component('administrator.components.input_filemanager')
                     @slot('filetype') image @endslot
                     @slot('name') image @endslot
-                    @slot('required') required @endslot
+
                 @endcomponent
 
 

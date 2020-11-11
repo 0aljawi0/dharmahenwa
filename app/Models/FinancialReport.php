@@ -10,8 +10,7 @@ class FinancialReport extends Model
     use HasFactory;
 
     protected $fillable = [
-        'year',
-        'month',
+        'title',
         'pdf'
     ];
 }

@@ -25,18 +25,18 @@ class Home extends Controller
 
         $data['sliders'] = Slider::all();
         $data['home_section'] = Option::firstWhere('key', 'home-section');
-        $data['newsletters'] = Newsletter::orderBy('created_at', 'desc')->limit(3)->get();
-        $data['monthly_reports'] = MonthlyReport::orderBy('created_at', 'desc')->limit(3)->get();
-        $data['financials'] = FinancialReport::all();
+        $data['newsletters'] = Newsletter::latest()->limit(3)->get();
+        $data['monthly_reports'] = MonthlyReport::latest()->limit(3)->get();
+        $data['financials'] = FinancialReport::latest()->limit(3)->get();
 
-        $year = FinancialReport::pluck('year')->toArray();
-        rsort($year);
-        $year = array_unique($year);
-        $year = array_slice($year, 0, 2);
-        $data['year'] = $year;
+        // $year = FinancialReport::pluck('year')->toArray();
+        // rsort($year);
+        // $year = array_unique($year);
+        // $year = array_slice($year, 0, 2);
+        // $data['year'] = $year;
 
-        $data['annual_reports'] = AnnualReport::orderBy('created_at', 'desc')->limit(6)->get();
-        $data['sustainabilities'] = Sustainability::orderBy('created_at', 'desc')->limit(3)->get();
+        $data['annual_reports'] = AnnualReport::latest()->limit(6)->get();
+        $data['sustainabilities'] = Sustainability::latest()->limit(3)->get();
         $data['blogs'] = Blog::limit(3)->get();
         $data['stock_prices'] = StockPrice::all();
 
@@ -96,8 +96,8 @@ class Home extends Controller
         $data['annual_reports'] = AnnualReport::where('title', 'like', '%'.$q.'%')->get();
         $data['sustainabilities'] = Sustainability::where('title', 'like', '%'.$q.'%')->get();
         $data['blogs'] = Blog::where('title', 'like', '%'.$q.'%')->get();
-        $data['monthly_reports'] = MonthlyReport::where('year', 'like', '%'.$q.'%')->orWhere('month', 'like', '%'.$q.'%')->get();
-        $data['financials'] = FinancialReport::where('year', 'like', '%'.$q.'%')->orWhere('month', 'like', '%'.$q.'%')->get();
+        $data['monthly_reports'] = MonthlyReport::where('title', 'like', '%'.$q.'%')->get();
+        $data['financials'] = FinancialReport::where('title', 'like', '%'.$q.'%')->get();
 
         return view('web.search')->with($data);
     }

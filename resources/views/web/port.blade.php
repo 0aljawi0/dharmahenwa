@@ -17,7 +17,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Service'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Jasa Management Pelabuhan' : 'Port Management Services'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -34,7 +34,7 @@
                             {{Session::get('locale') == 'id' ? 'Kegiatan Operasional' : 'Operational Activities'}}
                        </li>
                        <li class="active">
-                            {{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Service'}}
+                            {{Session::get('locale') == 'id' ? 'Jasa Management Pelabuhan' : 'Port Management Services'}}
                        </li>
                     </ol>
                  </div>

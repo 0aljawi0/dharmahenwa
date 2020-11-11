@@ -17,7 +17,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Values'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -52,7 +52,7 @@
                                                 </h4>
                                             </div>
                                             <div class="panel-body">
-                                                {{Session::get('locale') == 'id' ? $mvv->vision_id : $mvv->vision_en}}
+                                                {!! Session::get('locale') == 'id' ? $mvv->vision_id : $mvv->vision_en !!}
                                             </div>
                                         </div>
                                     </div>
@@ -65,11 +65,11 @@
                                         <div class="content-layer">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
-                                                    {{Session::get('locale') == 'id' ? 'Misi Kami' : 'Our Mission'}}
+                                                    {!! Session::get('locale') == 'id' ? 'Misi Kami' : 'Our Mission' !!}
                                                 </h4>
                                             </div>
                                             <div class="panel-body">
-                                                {{Session::get('locale') == 'id' ? $mvv->mission_id : $mvv->mission_en}}
+                                                {!! Session::get('locale') == 'id' ? $mvv->mission_id : $mvv->mission_en !!}
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="heading heading-3 t-center">
-                            <h2>{{ Session::get('locale') == 'id' ? 'Nilai Perusahaan' : 'Corporate Value' }}</h2>
+                            <h2>{{ Session::get('locale') == 'id' ? 'Nilai Perusahaan' : 'Corporate Values' }}</h2>
                     </div>
                 </div>
             </div>

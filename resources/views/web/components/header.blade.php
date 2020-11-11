@@ -37,10 +37,10 @@
 										<a href="{{ route('commissioners') }}">{{Session::get('locale') == 'id' ? 'Dewan Komisaris' : 'Board Of Commisioners'}}</a>
 									</li>
 									<li>
-										<a href="{{ route('directors') }}">{{Session::get('locale') == 'id' ? 'Jajaran Direktur' : 'Board Of Directors'}}</a>
+										<a href="{{ route('directors') }}">{{Session::get('locale') == 'id' ? 'Direksi' : 'Board Of Directors'}}</a>
 									</li>
 									<li>
-										<a href="{{ route('management') }}">{{Session::get('locale') == 'id' ? 'Dewan Manajemen' : 'Board Of Management'}}</a>
+										<a href="{{ route('management') }}">{{Session::get('locale') == 'id' ? 'Manajemen' : 'Board Of Management'}}</a>
 									</li>
 								</ul>
 							</li>
@@ -56,13 +56,13 @@
 								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Kegiatan Operational' : 'Operational Activities'}}</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="{{route('coal')}}">{{Session::get('locale') == 'id' ? 'Layanan Pertambangan Batubara & Mineral' : 'Coal & Mineral Mining Services'}}</a>
+										<a href="{{route('coal')}}">{{Session::get('locale') == 'id' ? 'Jasa Pertambangan Batubara & Mineral' : 'Coal & Mineral Mining Services'}}</a>
 									</li>
 									<li>
-										<a href="{{route('infrastructure')}}">{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Layanan Lainnya' : 'Mining Infrastructure & Other Services'}}</a>
+										<a href="{{route('infrastructure')}}">{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Jasa Lainnya' : 'Mining Infrastructure & Other Services'}}</a>
 									</li>
 									<li>
-										<a href="{{route('port')}}">{{Session::get('locale') == 'id' ? 'Layanan Management Pelabuhan' : 'Port Management Services'}}</a>
+										<a href="{{route('port')}}">{{Session::get('locale') == 'id' ? 'Jasa Management Pelabuhan' : 'Port Management Services'}}</a>
 									</li>
 								</ul>
 							</li>
@@ -81,7 +81,7 @@
 								<a href="{{route('ethics')}}">{{Session::get('locale') == 'id' ? 'Etika Bisnis' : 'Business Ethics'}}</a>
 							</li>
 							<li>
-								<a href="{{route('coc')}}">{{Session::get('locale') == 'id' ? 'Kode Etik' : 'Code Of Conduct'}}</a>
+								<a href="{{route('coc')}}">{{Session::get('locale') == 'id' ? 'Pedoman Perilaku' : 'Code Of Conduct'}}</a>
 							</li>
 							<li>
 								<a href="{{route('integrity')}}">{{Session::get('locale') == 'id' ? 'Pakta Integritas' : 'Integrity Pact'}}</a>
@@ -130,21 +130,21 @@
 								<a href="{{route('financial')}}">{{Session::get('locale') == 'id' ? 'Laporan Keuangan' : 'Financial Statement'}}</a>
 							</li>
 							<li class="dropdown-submenu">
-								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sorotan Produksi' : 'Production Highlights'}}</a>
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Laporan Produksi' : 'Production Highlights'}}</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="{{route('newsletter')}}">{{Session::get('locale') == 'id' ? 'Buletin Triwulanan' : 'Quarterly Newsletter'}}</a>
+										<a href="{{route('newsletter')}}">{{Session::get('locale') == 'id' ? 'Kuartalan' : 'Quarterly Newsletter'}}</a>
 									</li>
 									<li>
-										<a href="{{route('monthly_report')}}">{{Session::get('locale') == 'id' ? 'Laporan Bulanan' : 'Monthly Report'}}</a>
+										<a href="{{route('monthly_report')}}">{{Session::get('locale') == 'id' ? 'Bulanan' : 'Monthly Report'}}</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="{{route('analyst_coverage')}}">{{Session::get('locale') == 'id' ? 'Cakupan Analis' : 'Analyst Coverage'}}</a>
+								<a href="{{route('analyst_coverage')}}">{{Session::get('locale') == 'id' ? 'Laporan Analis' : 'Analyst Coverage'}}</a>
 							</li>
 							<li>
-								<a href="{{route('press_release')}}">{{Session::get('locale') == 'id' ? 'Jumpa Pers' : 'Press Release'}}</a>
+								<a href="{{route('press_release')}}">{{Session::get('locale') == 'id' ? 'Siaran Pers' : 'Press Release'}}</a>
 							</li>
 						</ul>
 					</li>

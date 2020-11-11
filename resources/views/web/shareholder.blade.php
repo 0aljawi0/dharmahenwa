@@ -51,8 +51,8 @@
                                 <table>
                                     <thead>
                                         <tr class="no-b">
-                                            <th width="35%">Name</th>
-                                            <th width="33%">Number of Shares</th>
+                                            <th width="35%">{{Session::get('locale') == 'id' ? 'Nama' : 'Name'}}</th>
+                                            <th width="33%">{{Session::get('locale') == 'id' ? 'Jumlah Saham' : 'Numbers Of Share'}}</th>
                                             <th width="32%">(%)</th>
                                         </tr>
                                     </thead>
@@ -85,6 +85,10 @@
     @include('web.components.footer')
 @endsection
 
+@php
+    $colors = ['#80c252', '#598e34', '#457324', '#282d24', '#fff278']
+@endphp
+
 @push('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <script>
@@ -104,8 +108,8 @@
                     @endforeach
                 ],
                 backgroundColor: [
-                    @foreach($percent as $item)
-                        'hsl(97, {{rand(30, 60)}}%, {{rand(30, 60)}}%)',
+                    @foreach($percent as $k => $item)
+                        'hsl({{110 - ($k * 5)}}, {{40 + ($k * 8)}}%, {{40 - ($k * 8)}}%)',
                     @endforeach
 		      	],
 		      	borderWidth: 0

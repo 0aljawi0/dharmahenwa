@@ -28,9 +28,11 @@ class MonthlyReports extends Controller
 
     public function store(Request $request)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $monthly_report = new MonthlyReport;
-        $monthly_report->year = $request->year;
-        $monthly_report->month = $request->month;
+        $monthly_report->title = json_encode($title);
         $monthly_report->pdf = $request->pdf;
         $saved = $monthly_report->save();
 
@@ -52,9 +54,11 @@ class MonthlyReports extends Controller
 
     public function update(Request $request, $id)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $monthly_report = MonthlyReport::firstWhere('id', $id);
-        $monthly_report->year = $request->year;
-        $monthly_report->month = $request->month;
+        $monthly_report->title = json_encode($title);
         $monthly_report->pdf = $request->pdf;
         $saved = $monthly_report->save();
 

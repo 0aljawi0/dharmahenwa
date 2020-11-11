@@ -28,9 +28,11 @@ class FinancialReports extends Controller
 
     public function store(Request $request)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $financial_report = new FinancialReport;
-        $financial_report->year = $request->year;
-        $financial_report->month = $request->month;
+        $financial_report->title = json_encode($title);
         $financial_report->pdf = $request->pdf;
         $saved = $financial_report->save();
 
@@ -52,9 +54,11 @@ class FinancialReports extends Controller
 
     public function update(Request $request, $id)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $financial_report = FinancialReport::firstWhere('id', $id);
-        $financial_report->year = $request->year;
-        $financial_report->month = $request->month;
+        $financial_report->title = json_encode($title);
         $financial_report->pdf = $request->pdf;
         $saved = $financial_report->save();
 
