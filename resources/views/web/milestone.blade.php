@@ -37,11 +37,11 @@
                  <div class="row">
 
                     <div class="col-xs-12 col-sm-12 col-md-12 entry">
-                       <div class="col-md-8 col-sm-12 p-0 mb-15">
+                       {{-- <div class="col-md-8 col-sm-12 p-0 mb-15">
                           <p>
                             PT Darma Henwa Tbk (Perseroan) didirikan sebagai perusahaan berstatus Penanaman Modal Dalam Negeri (PMDN) dengan nama PT Darma Henwa berdasarkan Undang-Undang Republik Indonesia dengan Akta No. 54, tanggal 8 Oktober 1991.
                           </p>
-                       </div>
+                       </div> --}}
                        <div class="col-xs-12 col-sm-12 col-md-12 milestone-company p-0">
                              <ul class="list-history medium-block-grid-2">
                                 @foreach ($milestones as $item)
