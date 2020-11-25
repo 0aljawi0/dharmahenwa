@@ -28,8 +28,11 @@ class Presentations extends Controller
 
     public function store(Request $request)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $presentation = new Presentation;
-        $presentation->title = $request->title;
+        $presentation->title = json_encode($title);
         $presentation->image = $request->image;
         $presentation->pdf = $request->pdf;
         $saved = $presentation->save();
@@ -52,8 +55,11 @@ class Presentations extends Controller
 
     public function update(Request $request, $id)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $presentation = Presentation::firstWhere('id', $id);
-        $presentation->title = $request->title;
+        $presentation->title = json_encode($title);
         $presentation->image = $request->image;
         $presentation->pdf = $request->pdf;
         $saved = $presentation->save();

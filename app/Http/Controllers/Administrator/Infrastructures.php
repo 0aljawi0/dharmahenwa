@@ -54,8 +54,8 @@ class Infrastructures extends Controller
 
     public function update(Request $request, $id)
     {
-        $title['en'] = $request->title_english;
-        $title['id'] = $request->title_indonesia;
+        $title['en'] = $request->title_en;
+        $title['id'] = $request->title_id;
 
         $infrastructure = Infrastructure::firstWhere('id', $id);
         $infrastructure->title = json_encode($title);

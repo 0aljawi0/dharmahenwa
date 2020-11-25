@@ -28,11 +28,17 @@ class Committees extends Controller
 
     public function store(Request $request)
     {
+        $position['id'] = $request->position_id;
+        $position['en'] = $request->position_en;
+
+        $bio['id'] = $request->bio_id;
+        $bio['en'] = $request->bio_en;
+
         $committee = new Committee;
         $committee->photo = $request->photo;
         $committee->name = $request->name;
-        $committee->position = $request->position;
-        $committee->bio = $request->bio;
+        $committee->position = json_encode($position);
+        $committee->bio = json_encode($bio);
         $committee->type = $request->type;
         $saved = $committee->save();
 
@@ -54,12 +60,17 @@ class Committees extends Controller
 
     public function update(Request $request, $id)
     {
+        $position['id'] = $request->position_id;
+        $position['en'] = $request->position_en;
+
+        $bio['id'] = $request->bio_id;
+        $bio['en'] = $request->bio_en;
 
         $committee = Committee::firstWhere('id', $id);
         $committee->photo = $request->photo;
         $committee->name = $request->name;
-        $committee->position = $request->position;
-        $committee->bio = $request->bio;
+        $committee->position = json_encode($position);
+        $committee->bio = json_encode($bio);
         $committee->type = $request->type;
         $saved = $committee->save();
 

@@ -28,8 +28,11 @@ class Meetings extends Controller
 
     public function store(Request $request)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $meeting = new Meeting;
-        $meeting->title = $request->title;
+        $meeting->title = json_encode($title);
         $meeting->year = $request->year;
         $meeting->pdf = $request->pdf;
         $saved = $meeting->save();
@@ -52,8 +55,11 @@ class Meetings extends Controller
 
     public function update(Request $request, $id)
     {
+        $title['id'] = $request->title_id;
+        $title['en'] = $request->title_en;
+
         $meeting = Meeting::firstWhere('id', $id);
-        $meeting->title = $request->title;
+        $meeting->title = json_encode($title);
         $meeting->year = $request->year;
         $meeting->pdf = $request->pdf;
         $saved = $meeting->save();

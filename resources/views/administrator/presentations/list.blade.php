@@ -28,7 +28,7 @@
                         <th>No</th>
                         <th>Image</th>
                         <th>PDF</th>
-                        <th>Image</th>
+                        <th>Title</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -37,16 +37,20 @@
                 <tbody>
                     @foreach ($presentations as $key => $item)
 
+                        @php
+                            $title = json_decode($item->title);
+                        @endphp
+
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td><img src="{{asset('storage/'.$item->image)}}" alt="image" width="100"></td>
                             <td><a href="{{asset('storage/'.$item->pdf)}}">File PDF</a></td>
-                            <td>{{ $item->title }}</td>
+                            <td>{{ $title->en ?? '' }}</td>
                             <td>{{ date('d F Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>
                                 <div class="btn-group" role="group">
                                     <a href="{{route('presentations.edit', ['presentation' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$item->title}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$title->en ?? ''}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
                                 </div>
 
                                 <form id="destroy_{{$item->id}}" action="{{route('presentations.destroy', ['presentation' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>

@@ -16,7 +16,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Manual Kebijakan Perusahaan' : 'Code Of Conduct'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Manual Kebijakan Perusahaan' : 'Corporate Policy Manual'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">

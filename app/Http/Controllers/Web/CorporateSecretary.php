@@ -68,7 +68,7 @@ class CorporateSecretary extends Controller
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
-        $data['annual_reports'] = AnnualReport::all();
+        $data['annual_reports'] = AnnualReport::latest()->get();
 
         return view('web.annual_report')->with($data);
     }
@@ -121,7 +121,7 @@ class CorporateSecretary extends Controller
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
-        $data['blogs'] = Blog::simplePaginate(6);
+        $data['blogs'] = Blog::latest()->simplePaginate(6);
 
         return view('web.press_release')->with($data);
     }

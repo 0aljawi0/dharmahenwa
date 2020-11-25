@@ -42,6 +42,11 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 entry">
                         <ul class="comitee">
                             @foreach ($nomination as $item)
+                                @php
+                                    $position = json_decode($item->position);
+                                    $bio = json_decode($item->bio);
+                                @endphp
+
                                 <li>
                                     <div class="row">
                                         <div class="col-md-4 col-xs-12">
@@ -49,8 +54,8 @@
                                         </div>
                                         <div class="col-md-6 col-xs-12">
                                             <span class="name-title">{{ $item->name }}</span>
-                                            <p class="headline">{{ $item->position }}</p>
-                                            <p>{{ $item->bio }}</p>
+                                            <p class="headline">{{Session::get('locale') == 'id' ? $position->id ?? '' : $position->en ?? ''}}</p>
+                                            <p>{{Session::get('locale') == 'id' ? $bio->id ?? '' : $bio->en ?? ''}}</p>
                                         </div>
                                     </div>
                                 </li>

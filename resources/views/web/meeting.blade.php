@@ -46,9 +46,14 @@
                                 <div id="projects-all" class="row showCaption">
 
                                     @foreach ($meetings as $item)
+
+                                        @php
+                                            $title = json_decode($item->title);
+                                        @endphp
+
                                         <div class="col-xs-12 gms-list align-center project-item sertification-item bg-semigreen {{$item->year}}">
                                             <div class="cnt-list flex-85">
-                                                <p><strong>{{$item->title}} {{$item->year}}</strong></p>
+                                                <p><strong>{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}} {{$item->year}}</strong></p>
                                             </div>
                                             <div class="link-list flex-1 text-right">
                                                 <a href="#" data-pdf="{{asset('storage/'.$item->pdf)}}" class="open view-pdf">Open</a>

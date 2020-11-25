@@ -16,16 +16,28 @@
     <div class="row animate__animated animate__fadeInUp">
 
         <!-- Content Column -->
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-8 mb-4">
 
             <form action="{{route('presentations.store')}}" method="POST">
                 @csrf
 
-                @component('administrator.components.input_text')
-                    @slot('name') title @endslot
-                    @slot('value') {{old('title')}} @endslot
-                    @slot('required') required @endslot
-                @endcomponent
+                <div class="row">
+                    <div class="col-md-6">
+                        @component('administrator.components.input_text')
+                            @slot('name') title_id @endslot
+                            @slot('value') {{old('title_id')}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+                    </div>
+
+                    <div class="col-md-6">
+                        @component('administrator.components.input_text')
+                            @slot('name') title_en @endslot
+                            @slot('value') {{old('title_en')}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+                    </div>
+                </div>
 
                 @component('administrator.components.input_filemanager')
                     @slot('filetype') image @endslot

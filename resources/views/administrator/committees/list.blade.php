@@ -38,11 +38,15 @@
                 <tbody>
                     @foreach ($committees as $key => $item)
 
+                        @php
+                            $position = json_decode($item->position);
+                        @endphp
+
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td><img src="{{asset('storage/'.$item->photo)}}" alt="image" width="100"></td>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->position }}</td>
+                            <td>{{ $position->en ?? '' }}</td>
                             <td>{{ $item->type }}</td>
                             <td>{{ date('d F Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>

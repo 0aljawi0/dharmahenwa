@@ -41,10 +41,15 @@
 
                             <div class="entry-content pull-report">
                                 @foreach ($presentations as $item)
+
+                                    @php
+                                        $title = json_decode($item->title);
+                                    @endphp
+
                                     <div class="col-xs-12 col-sm-6 col-md-4 space-report">
                                         <div class="area-ar cl-default">
                                             <div class="caption-ar sz-caption-pr">
-                                                <span class="name-pr">{{$item->title}}</span>
+                                                <span class="name-pr">{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</span>
                                                 <span class="date-pr">{{date('d F Y', strtotime($item->created_at))}}</span>
                                             </div>
                                             <div class="img-full h-100">
