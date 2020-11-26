@@ -1151,7 +1151,7 @@ footer {
 .list-green .titlePain {
 	color: #fff;
 }
-.performance-hlg .list-green .titlePain {	
+.performance-hlg .list-green .titlePain {
 	line-height: 1;
 	display: flex;
 	flex: 1 0 0;
@@ -1634,7 +1634,7 @@ section {
 	background-color: #e4e4e4
 }
 
-.bg-dark h6 { color:#f6f6f7} 
+.bg-dark h6 { color:#f6f6f7}
 /* Background Image */
 .bg-section {
 	position: relative;
@@ -2077,7 +2077,7 @@ transform: scale(1.0);
 }
 
 .navbar-nav >li {
-	margin-right: 30px;
+	margin-right: 20px;
 	height: 94px;
 }
 
@@ -2205,7 +2205,7 @@ transform: scale(1.0);
 	}
 }
 .pull-bottom-110px {
-	margin-bottom:-110px; 
+	margin-bottom:-110px;
 }
 footer .pull-top-150px {
 	padding-top: 150px;
@@ -3021,7 +3021,7 @@ footer .pull-top-150px {
 	color: #fff !important
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .navbar-nav {
@@ -4001,7 +4001,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
     padding:0;
 }
 .menu-dropdown li a {
-	
+
 }
 
 .menu-dropdown .menu-dropdown:before {
@@ -4250,7 +4250,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	padding-right: 20px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .heading {
@@ -4280,7 +4280,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .heading-bg.heading-right h2,
@@ -4480,7 +4480,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	line-height: 34px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .page-title h2 {
@@ -4511,7 +4511,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .page-title h2 {
@@ -4822,7 +4822,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	outline: 2px solid #78b833 !important
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .rev_slider h1 {
@@ -4880,7 +4880,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .rev_slider h1 {
@@ -5639,7 +5639,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	border: 1px solid rgba(49, 49, 49, 0.1);
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .shotcode-1 .feature .feature-icon {
@@ -5651,7 +5651,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 320px)and (max-width : 767px ) {
 
 .shortcode-3 .pr-50 {
@@ -6121,11 +6121,11 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	color: #78b833
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 }
 
@@ -6380,7 +6380,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	margin-top: 20px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .testimonial .testimonial-content {
@@ -6407,7 +6407,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .testimonial-3 .testimonial-content:before {
@@ -6534,7 +6534,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	flex: 0 0 100%;
 	/* height: 100%; */
 	text-transform: uppercase;
-	
+
 	color: #78b833;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
@@ -6603,7 +6603,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 
 @media (min-width: 992px) {
 	.page-boardof .project-item {
-		flex: 0 0 33.33333333%;	
+		flex: 0 0 33.33333333%;
 	}
 }
 
@@ -7062,7 +7062,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	margin-bottom: 50px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .service-1 .service-img img,
@@ -7148,7 +7148,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .single-service .service-img img {
@@ -7408,7 +7408,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 .showCaption .project-item:hover .project-hover .project-zoom .img-popup {
 	background-color: #78b833;
 	color: #fff;
-	border-color: #78b833;	
+	border-color: #78b833;
 }
 .project-img .project-hover {
 	position: absolute;
@@ -7894,7 +7894,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	color: #78b833;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .projects-filter ul li {
@@ -7935,7 +7935,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .projects-filter ul li {
@@ -8257,7 +8257,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	text-transform: uppercase;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px ) {
 
 .cta {
@@ -8331,7 +8331,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .cta-2 .btn-primary {
@@ -8824,7 +8824,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	-ms-transform: scale(1.1);
 }
 .projects-grid .entry:hover {
-	
+
 }
 .entry:hover a.entry-more span {
 	opacity: 1;
@@ -9124,7 +9124,7 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 	margin-bottom: 30px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .entry-next,
@@ -9462,7 +9462,7 @@ margin-bottom: 0
 }
 .size-wdcontent .download .download-desc {
 	position: relative;
-	flex: 1 1 auto; 
+	flex: 1 1 auto;
 }
 .size-wdcontent .download .download-desc h4 {
 	line-height: 1;
@@ -9678,7 +9678,7 @@ margin-bottom: 0
 	width: auto
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .sidebar {
@@ -9690,7 +9690,7 @@ margin-bottom: 0
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 }
 
@@ -10497,7 +10497,7 @@ td.cart-product-quantity {
 	border-bottom: 2px solid #78b833
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .product-img img {
@@ -10726,7 +10726,7 @@ button.btn:hover {
     font-size: 20px;
     position: relative;
     left: 0;
-    
+
 }
 .contact-box {
     padding: 20px 0px;
@@ -10868,7 +10868,7 @@ input[aria-invalid="true"] {
 	font-size: 16px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .contact .widgets-contact .widget {
@@ -11139,7 +11139,7 @@ footer hr {
 	border-bottom: 1px solid rgba(47, 47, 47, 0.2);
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .widgets-links {
@@ -11285,7 +11285,7 @@ footer hr {
 	margin-right: 30px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .error-page .btn-primary {
@@ -11477,7 +11477,7 @@ footer hr {
 	margin-bottom: 47px
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .mainten-page h1,
@@ -11492,7 +11492,7 @@ footer hr {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .mainten-page h1,
@@ -11695,7 +11695,7 @@ footer hr {
 	right: 0;
 	z-index: -1;
 }
-.popup-pdf, 
+.popup-pdf,
 .popup-board-of {
 	display: none;
 	position: fixed;
@@ -11726,7 +11726,7 @@ footer hr {
 	font-family: 'Raleway', sans-serif;
 }
 .title-headline:after {
-	
+
 	transition: all 0.3s ease;
 }
 .caption-ar span {
@@ -11939,7 +11939,7 @@ footer hr {
 	bottom:0;
 	display: flex;
 	align-items: center;
-	
+
 	z-index: 3;
 	width: 35px;
 	text-indent: 99999em;
@@ -11990,14 +11990,14 @@ footer hr {
 }
 .gms-list {
 	display: flex;
-	
+
 }
 .flex-1 {
 	flex: 1;
 }
-.performance-hlg .list-green .titlePain {	
+.performance-hlg .list-green .titlePain {
 	line-height: 1;
-	
+
 }
 .gms-list {
 	padding: 20px;
@@ -12647,7 +12647,7 @@ html[xmlns] .flexslider .slides {
 @media screen and (min-width: 921px) {
 	.tumbnailmg .slides li {
 	  	max-height: 300px;
-	}	
+	}
 }
 .tumbnailmg li.hnw-active-slide img, .tumbnailmg li:hover img {
 	opacity: 1;

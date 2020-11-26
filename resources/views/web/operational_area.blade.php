@@ -17,7 +17,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Wilayan Operasional' : 'Operational Area'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Wilayah Operasional' : 'Operational Area'}} @endslot
     @endcomponent
 
     @component('web.components.page_single')

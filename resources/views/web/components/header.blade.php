@@ -28,7 +28,7 @@
 								<a href="{{route('mission-vision-value')}}">{{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Values'}}</a>
 							</li>
 							<li>
-								<a href="{{route('company-milestone')}}">{{Session::get('locale') == 'id' ? 'Tonggak Sejarah' : 'Milestone'}}</a>
+								<a href="{{route('company-milestone')}}">{{Session::get('locale') == 'id' ? 'Jejak Langkah' : 'Milestone'}}</a>
 							</li>
 							<li class="dropdown-submenu">
 								<a href="#" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Eksekutif' : 'Executives'}}</a>
@@ -62,7 +62,7 @@
 										<a href="{{route('infrastructure')}}">{{Session::get('locale') == 'id' ? 'Infrastruktur Pertambangan & Jasa Lainnya' : 'Mining Infrastructure & Other Services'}}</a>
 									</li>
 									<li>
-										<a href="{{route('port')}}">{{Session::get('locale') == 'id' ? 'Jasa Management Pelabuhan' : 'Port Management Services'}}</a>
+										<a href="{{route('port')}}">{{Session::get('locale') == 'id' ? 'Jasa Manajemen Pelabuhan' : 'Port Management Services'}}</a>
 									</li>
 								</ul>
 							</li>
@@ -109,7 +109,7 @@
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="{{route('profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sekretaris' : 'Corporate Secretary'}}</a>
+						<a href="{{route('profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sekretaris Perusahaan' : 'Corporate Secretary'}}</a>
 						<ul class="dropdown-menu">
 							<li>
 								<a href="{{route('profile')}}">{{Session::get('locale') == 'id' ? 'Profil' : 'Profile'}}</a>
@@ -155,7 +155,7 @@
 								<a href="{{route('sustainability_report')}}">{{Session::get('locale') == 'id' ? 'Laporan Keberlanjutan' : 'Sustainability Report'}}</a>
 							</li>
 							<li>
-								<a href="{{route('hse')}}">{{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan, Lingkungan' : 'Health, Safety, Environment'}}</a>
+								<a href="{{route('hse')}}">{{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan Kerja, Lingkungan' : 'Health, Safety, Environment'}}</a>
 							</li>
 							<li>
 								<a href="{{route('web_csr')}}">{{Session::get('locale') == 'id' ? 'Tanggung Jawab Sosial Perusahaan' : 'Corporate Social Responsibility'}}</a>

@@ -17,12 +17,12 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan, Lingkungan' : 'Health, Safety, Environment'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan Kerja, Lingkungan' : 'Health, Safety, Environment'}} @endslot
     @endcomponent
 
     @component('web.components.page_single')
         @slot('route_back') <a href="{{route('sustainability_report')}}">Sustainability</a> @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan, Lingkungan' : 'Health, Safety, Environment'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Kesehatan, Keselamatan Kerja, Lingkungan' : 'Health, Safety, Environment'}} @endslot
 
         @if (Session::get('locale') == 'id')
             {!! $hse->description_id !!}

@@ -38,7 +38,7 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12 entry">
                             <h2>
-                                {{Session::get('locale') == 'id' ? 'Buletin Triwulanan' : 'Quarterly Newsletter'}}
+                                {{Session::get('locale') == 'id' ? 'Buletin Kuartalan' : 'Quarterly Newsletter'}}
                             </h2>
                             <div class="entry-content">
 
