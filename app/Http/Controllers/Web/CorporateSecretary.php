@@ -59,7 +59,7 @@ class CorporateSecretary extends Controller
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
-        $data['presentations'] = Presentation::all();
+        $data['presentations'] = Presentation::latest()->get();
 
         return view('web.presentation')->with($data);
     }
