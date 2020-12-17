@@ -43,8 +43,8 @@
                                 <table class="tftable">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:left">NO</th>
-                                            <th style="text-align:left">FIRM</th>
+                                            <th style="text-align:left">No</th>
+                                            <th style="text-align:left">Firm</th>
                                             <th style="text-align:left">Analyst</th>
                                             <th style="text-align:left">Report</th>
                                         </tr>

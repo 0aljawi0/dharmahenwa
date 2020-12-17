@@ -16,7 +16,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Penghargaan & Sertifikasi' : 'Awards & Certification'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Penghargaan & Sertifikasi' : 'Awards & Certifications'}} @endslot
     @endcomponent
 
     <section class="single-post">
@@ -28,14 +28,14 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 link-head">
                             <ul class="link-center-abt">
                                 <li class="current"><a href="{{ route('awards') }}">{{Session::get('locale') == 'id' ? 'Penghargaan' : 'Awards'}}</a></li>
-                                <li><a href="{{ route('certification') }}">{{Session::get('locale') == 'id' ? 'Sertifikasi' : 'Certification'}}</a></li>
+                                <li><a href="{{ route('certification') }}">{{Session::get('locale') == 'id' ? 'Sertifikasi' : 'Certifications'}}</a></li>
                             </ul>
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 projects-filter">
                             <ul class="list-inline">
                                 <li>
-                                    <a class="active-filter" href="#" data-filter="*">All Award</a>
+                                    <a class="active-filter" href="#" data-filter="*">All Awards</a>
                                 </li>
 
                                 @foreach ($year as $item)

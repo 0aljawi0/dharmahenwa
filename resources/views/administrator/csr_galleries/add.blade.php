@@ -21,6 +21,12 @@
             <form action="{{route('csr-galleries.store')}}" method="POST">
                 @csrf
 
+                @component('administrator.components.input_text')
+                    @slot('name') title @endslot
+                    @slot('value') {{old('title')}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
                 @component('administrator.components.input_filemanager')
                     @slot('filetype') image @endslot
                     @slot('name') image @endslot

@@ -104,12 +104,12 @@
 	    	datasets: [{
 		      	data: [
                     @foreach($percent as $item)
-                        {{round($item)}},
+                        {{$item}},
                     @endforeach
                 ],
                 backgroundColor: [
                     @foreach($percent as $k => $item)
-                        'hsl({{110 - ($k * 5)}}, {{40 + ($k * 8)}}%, {{40 - ($k * 8)}}%)',
+                        'hsl({{110 - ($k * 2)}}, {{40 + ($k * 15)}}%, {{40 - ($k * 15)}}%)',
                     @endforeach
 		      	],
 		      	borderWidth: 0
@@ -136,7 +136,8 @@
 							return previousValue + currentValue;
 						});
 						var currentValue = dataset.data[tooltipItem.index];
-						var percentage = Math.floor(((currentValue/total) * 100)+0.5);
+						var percentage = ((currentValue/total) * 100).toFixed(2);
+                        //console.log(percentage);
 						return percentage + "%";
 		            }
 		        }

@@ -28,9 +28,7 @@ class CSRGalleries extends Controller
 
     public function store(Request $request)
     {
-        $csr_gallery = new CSRGallery;
-        $csr_gallery->image = $request->image;
-        $saved = $csr_gallery->save();
+        $saved = CSRGallery::create($request->all());
 
         // Make log
         Logs::add(Auth::user()->name.' Menambahkan csr gallery baru');
@@ -50,9 +48,8 @@ class CSRGalleries extends Controller
 
     public function update(Request $request, $id)
     {
-        $csr_gallery = CSRGallery::firstWhere('id', $id);
-        $csr_gallery->image = $request->image;
-        $saved = $csr_gallery->save();
+        $csr_gallery = CSRGallery::find($id);
+        $saved = $csr_gallery->fill($request->all())->save();
 
         // Make log
         Logs::add(Auth::user()->name.' Mengubah csr gallery');

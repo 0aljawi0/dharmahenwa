@@ -31,7 +31,7 @@
                                 <a href="{{route('about-company-profile')}}">About</a>
                             </li>
                             <li class="active">
-                                {{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Value'}}
+                                {{Session::get('locale') == 'id' ? 'Misi, Visi, Nilai' : 'Mission, Vision, Values'}}
                             </li>
                         </ol>
                     </div>

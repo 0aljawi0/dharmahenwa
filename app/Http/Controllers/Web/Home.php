@@ -37,7 +37,7 @@ class Home extends Controller
 
         $data['annual_reports'] = AnnualReport::latest()->limit(6)->get();
         $data['sustainabilities'] = Sustainability::latest()->limit(3)->get();
-        $data['blogs'] = Blog::limit(3)->get();
+        $data['blogs'] = Blog::latest()->limit(3)->get();
         $data['stock_prices'] = StockPrice::all();
 
 

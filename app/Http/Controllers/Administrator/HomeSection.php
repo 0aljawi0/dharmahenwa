@@ -23,15 +23,9 @@ class HomeSection extends Controller
 
     public function store(Request $request)
     {
-        $value['image_1'] = $request->image_1;
-        $value['image_2'] = $request->image_2;
-        $value['image_3'] = $request->image_3;
-
-        $value['video'] = $request->video;
-
         $option = new Option;
         $option->key = 'home-section';
-        $option->value = json_encode($value);
+        $option->value = json_encode($request->all());
         $saved = $option->save();
 
         // Make log
@@ -43,13 +37,8 @@ class HomeSection extends Controller
 
     public function update(Request $request, $key)
     {
-        $value['image_1'] = $request->image_1;
-        $value['image_2'] = $request->image_2;
-        $value['image_3'] = $request->image_3;
-        $value['video'] = $request->video;
-
         $option = Option::firstWhere('key', $key);
-        $option->value = json_encode($value);
+        $option->value = json_encode($request->all());
         $saved = $option->save();
 
         // Make log

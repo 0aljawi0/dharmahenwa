@@ -16,7 +16,7 @@
     <div class="row animate__animated animate__fadeInUp">
 
         <!-- Content Column -->
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-12 mb-4">
 
             @php
                 if($data) {
@@ -33,41 +33,153 @@
 
                 <h4>Home Section : Services</h4>
 
+                <div class="row">
+                    <div class="col-md-3">
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1_en @endslot
+                            @slot('value') {{$data ? $value->title_section_1_en ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1_id @endslot
+                            @slot('value') {{$data ? $value->title_section_1_id ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+                    </div>
+                    <div class="col-md-3">
+
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1a_en @endslot
+                            @slot('value') {{$data ? $value->title_section_1a_en ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1a_id @endslot
+                            @slot('value') {{$data ? $value->title_section_1a_id ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_filemanager')
+                            @slot('filetype') image @endslot
+                            @slot('name') image_1 @endslot
+                            @slot('required') required @endslot
+
+                            @if ($data)
+                                @slot('value') {{$value->image_1}} @endslot
+                                @slot('image') <img src="{{asset('storage/'.$value->image_1)}}" alt="preview" width="200"> @endslot
+                            @endif
+
+                        @endcomponent
+                    </div>
+                    <div class="col-md-3">
+
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1b_en @endslot
+                            @slot('value') {{$data ? $value->title_section_1b_en ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1b_id @endslot
+                            @slot('value') {{$data ? $value->title_section_1b_id ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_filemanager')
+                            @slot('filetype') image @endslot
+                            @slot('name') image_2 @endslot
+                            @slot('required') required @endslot
+
+                            @if ($data)
+                                @slot('value') {{$value->image_2}} @endslot
+                                @slot('image') <img src="{{asset('storage/'.$value->image_2)}}" alt="preview" width="200"> @endslot
+                            @endif
+
+                        @endcomponent
+                    </div>
+                    <div class="col-md-3">
+
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1c_en @endslot
+                            @slot('value') {{$data ? $value->title_section_1c_en ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_text')
+                            @slot('name') title_section_1c_id @endslot
+                            @slot('value') {{$data ? $value->title_section_1c_id ?? '' : ''}} @endslot
+                            @slot('required') required @endslot
+                        @endcomponent
+
+                        @component('administrator.components.input_filemanager')
+                            @slot('filetype') image @endslot
+                            @slot('name') image_3 @endslot
+                            @slot('required') required @endslot
+
+                            @if ($data)
+                                @slot('value') {{$value->image_3}} @endslot
+                                @slot('image') <img src="{{asset('storage/'.$value->image_3)}}" alt="preview" width="200"> @endslot
+                            @endif
+
+                        @endcomponent
+                    </div>
+                </div>
+
+                <hr>
+
+
                 @component('administrator.components.input_filemanager')
                     @slot('filetype') image @endslot
-                    @slot('name') image_1 @endslot
+                    @slot('name') image_background_1 @endslot
                     @slot('required') required @endslot
 
                     @if ($data)
-                        @slot('value') {{$value->image_1}} @endslot
-                        @slot('image') <img src="{{asset('storage/'.$value->image_1)}}" alt="preview" width="200"> @endslot
+                        @php
+                            $image = $value->image_background_1 ?? '';
+                        @endphp
+                        @slot('value') {{$image}} @endslot
+                        @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
                     @endif
-
                 @endcomponent
 
-                @component('administrator.components.input_filemanager')
-                    @slot('filetype') image @endslot
-                    @slot('name') image_2 @endslot
-                    @slot('required') required @endslot
+                <hr>
 
-                    @if ($data)
-                        @slot('value') {{$value->image_2}} @endslot
-                        @slot('image') <img src="{{asset('storage/'.$value->image_2)}}" alt="preview" width="200"> @endslot
-                    @endif
+                <div class="row">
+                    <div class="col-md-6">
+                        @component('administrator.components.input_filemanager')
+                            @slot('filetype') image @endslot
+                            @slot('name') image_background_2 @endslot
+                            @slot('required') required @endslot
 
-                @endcomponent
+                            @if ($data)
+                                @php
+                                    $image = $value->image_background_2 ?? '';
+                                @endphp
+                                @slot('value') {{$image}} @endslot
+                                @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
+                            @endif
+                        @endcomponent
+                    </div>
+                    <div class="col-md-6">
+                        @component('administrator.components.input_filemanager')
+                            @slot('filetype') image @endslot
+                            @slot('name') image_background_3 @endslot
+                            @slot('required') required @endslot
 
-                @component('administrator.components.input_filemanager')
-                    @slot('filetype') image @endslot
-                    @slot('name') image_3 @endslot
-                    @slot('required') required @endslot
+                            @if ($data)
+                                @php
+                                    $image = $value->image_background_3 ?? '';
+                                @endphp
+                                @slot('value') {{$image}} @endslot
+                                @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
+                            @endif
+                        @endcomponent
+                    </div>
+                </div>
 
-                    @if ($data)
-                        @slot('value') {{$value->image_3}} @endslot
-                        @slot('image') <img src="{{asset('storage/'.$value->image_3)}}" alt="preview" width="200"> @endslot
-                    @endif
 
-                @endcomponent
 
                 <hr>
 

@@ -11,5 +11,5 @@ class CSRGallery extends Model
 
     protected $table = 'csr_galleries';
 
-    protected $fillable = ['image'];
+    protected $fillable = ['title', 'image'];
 }

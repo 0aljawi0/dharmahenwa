@@ -88,7 +88,7 @@
                                                 <h6>Judul Image CSR</h6>
                                             </div> --}}
                                             <div class="project-zoom">
-                                                <a class="img-popup" href="{{asset('storage/'.$item->image)}}" title="gallery"><i class="fa fa-plus"></i></a>
+                                                <a class="img-popup" href="{{asset('storage/'.$item->image)}}" title="{{$item->title}}"><i class="fa fa-plus"></i></a>
                                             </div>
                                         </div>
                                     </div>

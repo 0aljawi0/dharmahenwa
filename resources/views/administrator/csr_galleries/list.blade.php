@@ -27,6 +27,7 @@
                     <tr>
                         <th>No</th>
                         <th>Image</th>
+                        <th>Title</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -37,6 +38,7 @@
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td><img src="{{asset('storage/'.$item->image)}}" alt="image" width="100"></td>
+                            <td>{{$item->title}}</td>
                             <td>{{ date('d F Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>
                                 <div class="btn-group" role="group">

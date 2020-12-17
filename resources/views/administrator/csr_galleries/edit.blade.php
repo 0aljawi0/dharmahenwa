@@ -22,6 +22,12 @@
                 @csrf
                 @method('PUT')
 
+                @component('administrator.components.input_text')
+                    @slot('name') title @endslot
+                    @slot('value') {{$csr_gallery->title}} @endslot
+                    @slot('required') required @endslot
+                @endcomponent
+
                 @component('administrator.components.input_filemanager')
                     @slot('filetype') image @endslot
                     @slot('name') image @endslot

@@ -6,7 +6,7 @@
 					show more >>
 				</a>
 				<div class="col-bg">
-					<img src="{{asset('web/background/hand-coal.jpg')}}" alt="Background"/>
+					<img src="{{asset('storage/'.$home_section->image_background_2)}}" alt="Background"/>
 				</div>
 				<div class="center-ar">
 					<div class="col-xs-12 col-sm-12">
@@ -39,7 +39,7 @@
 					show more >>
 				</a>
 				<div class="col-bg">
-					<img src="{{asset('web/background/coal-getting.jpg')}}" alt="Background"/>
+					<img src="{{asset('storage/'.$home_section->image_background_3)}}" alt="Background"/>
 				</div>
 				<div class="center-ar">
 					<div class="col-xs-12 col-sm-12">

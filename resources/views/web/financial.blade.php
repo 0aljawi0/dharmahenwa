@@ -16,7 +16,7 @@
 
     @component('web.components.page_title')
         @slot('image') {{asset('storage/'.$website->page_title_image)}} @endslot
-        @slot('title') {{Session::get('locale') == 'id' ? 'Laporan Finansial' : 'Financial Statement'}} @endslot
+        @slot('title') {{Session::get('locale') == 'id' ? 'Laporan Keuangan' : 'Financial Statement'}} @endslot
     @endcomponent
 
     <section class="single-post pt-0">
@@ -30,7 +30,7 @@
                                 <a href="{{route('profile')}}">Corporate Secretary</a>
                             </li>
                             <li class="active">
-                                {{Session::get('locale') == 'id' ? 'Laporan Finansial' : 'Financial Statement'}}
+                                {{Session::get('locale') == 'id' ? 'Laporan Keuangan' : 'Financial Statement'}}
                             </li>
                         </ol>
                     </div>
@@ -38,7 +38,7 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12 entry">
                             <h2>
-                                {{Session::get('locale') == 'id' ? 'Laporan Finansial' : 'Financial Statement'}}
+                                {{Session::get('locale') == 'id' ? 'Laporan Keuangan' : 'Financial Statement'}}
                             </h2>
                             <div class="entry-content">
 
