@@ -6,7 +6,7 @@
 					show more >>
 				</a>
 				<div class="col-bg">
-					<img src="{{asset('storage/'.$home_section->image_background_2)}}" alt="Background"/>
+					<img src="{{asset('storage/'.$home_section->image_background_annual_report)}}" alt="Background"/>
 				</div>
 				<div class="center-ar">
 					<div class="col-xs-12 col-sm-12">
@@ -39,7 +39,7 @@
 					show more >>
 				</a>
 				<div class="col-bg">
-					<img src="{{asset('storage/'.$home_section->image_background_3)}}" alt="Background"/>
+					<img src="{{asset('storage/'.$home_section->image_background_sustaihnability_report)}}" alt="Background"/>
 				</div>
 				<div class="center-ar">
 					<div class="col-xs-12 col-sm-12">

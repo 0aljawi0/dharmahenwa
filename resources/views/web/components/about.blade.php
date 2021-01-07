@@ -44,7 +44,7 @@
 								<div class="flex-6 performance-hlg text-white col-img">
 
 									<div class="col-bg">
-										<img src="{{ asset('storage/'.$home_section->image_background_1)}}" alt="Coal Barging"/>
+										<img src="{{ asset('storage/'.$home_section->image_background_peformance_highlight)}}" alt="Coal Barging"/>
 									</div>
 									<div class="title-headline">
 										monthly production report
@@ -72,7 +72,7 @@
 								<div class="flex-6 performance-hlg text-white col-img">
 
 									<div class="col-bg">
-										<img src="{{ asset('storage/'.$home_section->image_background_1)}}" alt="Coal Barging"/>
+										<img src="{{ asset('storage/'.$home_section->image_background_peformance_highlight)}}" alt="Coal Barging"/>
 									</div>
 									<div class="title-headline">
 										Quarterly Newsletter
@@ -107,7 +107,7 @@
 								<div class="flex-6 performance-hlg text-white col-img">
 
 									<div class="col-bg">
-										<img src="{{ asset('storage/'.$home_section->image_background_1)}}" alt="Coal Barging"/>
+										<img src="{{ asset('storage/'.$home_section->image_background_financial_statement)}}" alt="Coal Barging"/>
 									</div>
 									<div class="title-headline">
 										Financial Statement
@@ -135,7 +135,7 @@
 								<!-- .col-md-6 end -->
 								<div class="col-xs-12 col-sm-6 col-md-6 col-img trans-layer">
 									<div class="col-bg">
-										<img src="{{asset('web/background/3.jpg')}}" alt="Background"/>
+										<img src="{{ asset('storage/'.$home_section->image_background_financial_statement)}}" alt="Background"/>
 									</div>
 								</div>
 								<!-- .col-md-6 end -->

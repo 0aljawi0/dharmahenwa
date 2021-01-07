@@ -62,7 +62,7 @@
                                             <tr>
                                                 <td>{{$item->name}}</td>
                                                 <td>{{$item->share}}</td>
-                                                <td>{{$item->percent}}</td>
+                                                <td>{{ str_replace('.', ',', $item->percent)}}</td>
                                             </tr>
                                         @endforeach
 

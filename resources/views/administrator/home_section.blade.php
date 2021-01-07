@@ -129,33 +129,18 @@
 
                 <hr>
 
-
-                @component('administrator.components.input_filemanager')
-                    @slot('filetype') image @endslot
-                    @slot('name') image_background_1 @endslot
-                    @slot('required') required @endslot
-
-                    @if ($data)
-                        @php
-                            $image = $value->image_background_1 ?? '';
-                        @endphp
-                        @slot('value') {{$image}} @endslot
-                        @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
-                    @endif
-                @endcomponent
-
-                <hr>
+                <h5>Background Image : Peformance Highlight & Financial Statement</h5>
 
                 <div class="row">
                     <div class="col-md-6">
                         @component('administrator.components.input_filemanager')
                             @slot('filetype') image @endslot
-                            @slot('name') image_background_2 @endslot
+                            @slot('name') image_background_peformance_highlight @endslot
                             @slot('required') required @endslot
 
                             @if ($data)
                                 @php
-                                    $image = $value->image_background_2 ?? '';
+                                    $image = $value->image_background_peformance_highlight ?? '';
                                 @endphp
                                 @slot('value') {{$image}} @endslot
                                 @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
@@ -165,12 +150,49 @@
                     <div class="col-md-6">
                         @component('administrator.components.input_filemanager')
                             @slot('filetype') image @endslot
-                            @slot('name') image_background_3 @endslot
+                            @slot('name') image_background_financial_statement @endslot
                             @slot('required') required @endslot
 
                             @if ($data)
                                 @php
-                                    $image = $value->image_background_3 ?? '';
+                                    $image = $value->image_background_financial_statement ?? '';
+                                @endphp
+                                @slot('value') {{$image}} @endslot
+                                @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
+                            @endif
+                        @endcomponent
+                    </div>
+                </div>
+
+                <hr>
+
+                <h5>Background Image : Annual Report & Sustainability Report</h5>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        @component('administrator.components.input_filemanager')
+                            @slot('filetype') image @endslot
+                            @slot('name') image_background_annual_report @endslot
+                            @slot('required') required @endslot
+
+                            @if ($data)
+                                @php
+                                    $image = $value->image_background_annual_report ?? '';
+                                @endphp
+                                @slot('value') {{$image}} @endslot
+                                @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
+                            @endif
+                        @endcomponent
+                    </div>
+                    <div class="col-md-6">
+                        @component('administrator.components.input_filemanager')
+                            @slot('filetype') image @endslot
+                            @slot('name') image_background_sustaihnability_report @endslot
+                            @slot('required') required @endslot
+
+                            @if ($data)
+                                @php
+                                    $image = $value->image_background_sustaihnability_report ?? '';
                                 @endphp
                                 @slot('value') {{$image}} @endslot
                                 @slot('image') <img src="{{asset('storage/'.$image)}}" alt="preview" width="200"> @endslot
