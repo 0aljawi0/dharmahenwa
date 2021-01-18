@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Session;
 //     return redirect('home');
 // });
 
+Route::get('test', [App\Http\Controllers\Test::class, 'index']);
+
 // Change Language
 Route::get('change-language/{lang}', function ($lang) {
 

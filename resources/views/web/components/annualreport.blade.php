@@ -22,7 +22,7 @@
                                             <img src="{{asset('storage/'.$item->image)}}" alt="" width="200">
                                         </div>
                                         <div class="show-action">
-                                            <a href="{{asset('storage/'.$item->pdf)}}" class="download-pdf"><i class="fa fa-download"></i> PDF</a>
+                                            <a href="{{asset('storage/'.$item->pdf)}}" target="_blank" class="download-pdf"><i class="fa fa-download"></i> PDF</a>
                                             <a data-pdf="{{asset('storage/'.$item->pdf)}}" class="view-pdf"><i class="fa fa-eye"></i> PDF</a>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                             <img src="{{asset('storage/'.$item->image)}}" alt="" width="200">
                                         </div>
                                         <div class="show-action">
-                                            <a href="{{asset('storage/'.$item->pdf)}}" class="download-pdf"><i class="fa fa-download"></i> PDF</a>
+                                            <a href="{{asset('storage/'.$item->pdf)}}" target="_blank" class="download-pdf"><i class="fa fa-download"></i> PDF</a>
                                             <a data-pdf="{{asset('storage/'.$item->pdf)}}" class="view-pdf"><i class="fa fa-eye"></i> PDF</a>
                                         </div>
                                     </div>

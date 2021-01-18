@@ -21,6 +21,14 @@
     @include('web.components.pressrelease')
     @include('web.components.stockprice')
     @include('web.components.footer')
+
+    <div class="popup-pdf">
+        <div class="bg-layer"></div>
+        <a href="#" class="close-pdf"><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
+        <div class="main-pdf">
+            <object type="application/pdf" class="test-pdf" data="" width="100%" height="500" style="height: 100vh">No Support</object>
+        </div>
+    </div>
 @endsection
 
 @push('script')
@@ -174,163 +182,163 @@
     });
 
 
-    var stockInfoDataRaw = [
-        @foreach($stock_prices as $item)
-        { "value":{{$item->value}},"y":{{$item->year}},"m":{{$item->month}},"d":{{$item->day}} },
-        @endforeach
-    ];
+    // var stockInfoDataRaw = [
+    //     //
+    //     // { "value":,"y":,"m":,"d": },
+    //     //
+    // ];
 
-    var stockInfoData = [];
+    // var stockInfoData = [];
 
-    for (var i = 0; i < stockInfoDataRaw.length; i++) {
-        stockInfoData.push([Date.UTC(stockInfoDataRaw[i].y,stockInfoDataRaw[i].m,stockInfoDataRaw[i].d),stockInfoDataRaw[i].value]);
-    }
+    // for (var i = 0; i < stockInfoDataRaw.length; i++) {
+    //     stockInfoData.push([Date.UTC(stockInfoDataRaw[i].y,stockInfoDataRaw[i].m,stockInfoDataRaw[i].d),stockInfoDataRaw[i].value]);
+    // }
 
-    Highcharts.setOptions({
-        lang:{
-            rangeSelectorZoom: ''
-        }
-    });
+    // Highcharts.setOptions({
+    //     lang:{
+    //         rangeSelectorZoom: ''
+    //     }
+    // });
 
-    Highcharts.stockChart('chart-relation', {
-        chart: {
-            backgroundColor: null
-        },
-        rangeSelector: {
-            buttonTheme: {
-                fill: 'none',
-                stroke: 'none',
-                states: {
-                    style: {
-                            color: '#78b833'
-                        },
-                    hover: {
-                        fill: 'none',
-                        stroke: 'none',
-                        style: {
-                            color: '#fff'
-                        }
-                    },
-                    select: {
-                        fill: 'none',
-                        stroke: '#78b833',
-                        style: {
-                            color: '#fff'
-                        }
-                    }
-                }
-            },
-            buttons: [{
-                type: 'day',
-                count: 5,
-                text: '5D',
-            }, {
-                type: 'month',
-                count: 1,
-                text: '1M',
-            }, {
-                type: 'month',
-                count: 3,
-                text: '3M',
-            }, {
-                type: 'ytd',
-                text: 'YTD',
-            }, {
-                type: 'month',
-                count: 6,
-                text: '6M',
-            }, {
-                type: 'day',
-                count: stockInfoData.length,
-                text: '1Y',
-            }],
-            buttonPosition: {
-                y: 0
-            },
-            inputEnabled: false, // it supports only days
-            selected: 0 // all
-        },
-        plotOptions: {
-            line: {
-                dataLabels: {
-                    enabled: false,
-                    color: 'white',
-                    style: {
-                        textOutline: false,
-                        fontSize: 14,
-                        fontFamily: 'robotoblack,sans-serif'
+    // Highcharts.stockChart('chart-relation', {
+    //     chart: {
+    //         backgroundColor: null
+    //     },
+    //     rangeSelector: {
+    //         buttonTheme: {
+    //             fill: 'none',
+    //             stroke: 'none',
+    //             states: {
+    //                 style: {
+    //                         color: '#78b833'
+    //                     },
+    //                 hover: {
+    //                     fill: 'none',
+    //                     stroke: 'none',
+    //                     style: {
+    //                         color: '#fff'
+    //                     }
+    //                 },
+    //                 select: {
+    //                     fill: 'none',
+    //                     stroke: '#78b833',
+    //                     style: {
+    //                         color: '#fff'
+    //                     }
+    //                 }
+    //             }
+    //         },
+    //         buttons: [{
+    //             type: 'day',
+    //             count: 5,
+    //             text: '5D',
+    //         }, {
+    //             type: 'month',
+    //             count: 1,
+    //             text: '1M',
+    //         }, {
+    //             type: 'month',
+    //             count: 3,
+    //             text: '3M',
+    //         }, {
+    //             type: 'ytd',
+    //             text: 'YTD',
+    //         }, {
+    //             type: 'month',
+    //             count: 6,
+    //             text: '6M',
+    //         }, {
+    //             type: 'day',
+    //             count: stockInfoData.length,
+    //             text: '1Y',
+    //         }],
+    //         buttonPosition: {
+    //             y: 0
+    //         },
+    //         inputEnabled: false, // it supports only days
+    //         selected: 0 // all
+    //     },
+    //     plotOptions: {
+    //         line: {
+    //             dataLabels: {
+    //                 enabled: false,
+    //                 color: 'white',
+    //                 style: {
+    //                     textOutline: false,
+    //                     fontSize: 14,
+    //                     fontFamily: 'robotoblack,sans-serif'
 
-                    },
-                    y: -10,
-                    shape: 'callout'
-                }
-            },
-            series: {
+    //                 },
+    //                 y: -10,
+    //                 shape: 'callout'
+    //             }
+    //         },
+    //         series: {
 
-                lineWidth: 3,
-                lineColor: '#78b833',
-                marker: {
-                    fillColor: 'transparent',
-                    lineWidth: 0,
-                    lineColor: 'transparent' // inherit from series
-                }
-            }
-        },
-        navigator: {
-            enabled: false,
-            margin: 70
-        },
-        xAxis: {
-            className: 'datacharts-color',
-            type: 'datetime',
-            ordinal: false,
-            labels: {
-                y: 35,
-                formatter: function () {
-                    return Highcharts.dateFormat('%e %b', this.value);
-                },
-                dateTimeLabelFormats: {
-                    minute: '%H:%M',
-                    hour: '%H:%M',
-                    day: '%e. %b',
-                    week: '%e. %b',
-                    month: '%b \'%y',
-                    year: '%Y'
-                }
-            },
-            tickWidth: 0,
-            offset: -4
-        },
-        yAxis: {
-            className: 'rangecharts-color',
-            labels: {
-                align: 'left',
-                x: 10,
-                y: 0
-            },
-            offset: 0
-        },
-        tooltip: {
-            formatter: function () {
-                return Highcharts.dateFormat('%e %B, %Y', this.x) + '<br/>' +
-                    Highcharts.numberFormat(this.y, 2);
-            }
-        },
-        navigation: {
-            buttonOptions: {
-                enabled: false
-            }
-        },
-        series: [{
-            name: 'STOCK INFORMATION',
-            data: (stockInfoData),
-            marker: {
-                enabled: true,
-                radius: 3
-            },
-            shadow: false,
-        }]
-    });
+    //             lineWidth: 3,
+    //             lineColor: '#78b833',
+    //             marker: {
+    //                 fillColor: 'transparent',
+    //                 lineWidth: 0,
+    //                 lineColor: 'transparent' // inherit from series
+    //             }
+    //         }
+    //     },
+    //     navigator: {
+    //         enabled: false,
+    //         margin: 70
+    //     },
+    //     xAxis: {
+    //         className: 'datacharts-color',
+    //         type: 'datetime',
+    //         ordinal: false,
+    //         labels: {
+    //             y: 35,
+    //             formatter: function () {
+    //                 return Highcharts.dateFormat('%e %b', this.value);
+    //             },
+    //             dateTimeLabelFormats: {
+    //                 minute: '%H:%M',
+    //                 hour: '%H:%M',
+    //                 day: '%e. %b',
+    //                 week: '%e. %b',
+    //                 month: '%b \'%y',
+    //                 year: '%Y'
+    //             }
+    //         },
+    //         tickWidth: 0,
+    //         offset: -4
+    //     },
+    //     yAxis: {
+    //         className: 'rangecharts-color',
+    //         labels: {
+    //             align: 'left',
+    //             x: 10,
+    //             y: 0
+    //         },
+    //         offset: 0
+    //     },
+    //     tooltip: {
+    //         formatter: function () {
+    //             return Highcharts.dateFormat('%e %B, %Y', this.x) + '<br/>' +
+    //                 Highcharts.numberFormat(this.y, 2);
+    //         }
+    //     },
+    //     navigation: {
+    //         buttonOptions: {
+    //             enabled: false
+    //         }
+    //     },
+    //     series: [{
+    //         name: 'STOCK INFORMATION',
+    //         data: (stockInfoData),
+    //         marker: {
+    //             enabled: true,
+    //             radius: 3
+    //         },
+    //         shadow: false,
+    //     }]
+    // });
 
 
 </script>

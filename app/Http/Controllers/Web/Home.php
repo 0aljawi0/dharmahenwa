@@ -14,6 +14,7 @@ use App\Models\Sustainability;
 use App\Models\FinancialReport;
 use App\Models\Blog;
 use App\Models\StockPrice;
+use Illuminate\Support\Facades\Http;
 
 
 class Home extends Controller
@@ -38,8 +39,13 @@ class Home extends Controller
         $data['annual_reports'] = AnnualReport::latest()->limit(6)->get();
         $data['sustainabilities'] = Sustainability::latest()->limit(3)->get();
         $data['blogs'] = Blog::latest()->limit(3)->get();
-        $data['stock_prices'] = StockPrice::all();
+        // $data['stock_prices'] = StockPrice::all();
 
+        // Stock Price
+        $response = Http::get('http://investor.rti.co.id/dewa/last.jsp', );
+        $xml = simplexml_load_string($response->body());
+        $json = json_encode($xml);
+        $data['sp'] = json_decode($json);
 
         return view('web.home')->with($data);
     }

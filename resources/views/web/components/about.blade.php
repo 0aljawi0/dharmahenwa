@@ -58,7 +58,8 @@
                                                 @endphp
                                                 <div class="service-desc">
                                                     <h4 class="titlePain">{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</h4>
-                                                    <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
+                                                    <a href="#" data-pdf="{{asset('storage/'.$item->pdf)}}" class="open view-pdf">Open</a>
+                                                    {{-- <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a> --}}
                                                 </div>
                                             @endforeach
 										</div>
@@ -86,7 +87,8 @@
                                                 @endphp
                                                 <div class="service-desc">
                                                     <h4 class="titlePain">{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</h4>
-                                                    <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
+                                                    <a href="#" data-pdf="{{asset('storage/'.$item->pdf)}}" class="open view-pdf">Open</a>
+                                                    {{-- <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a> --}}
                                                 </div>
                                             @endforeach
 										</div>
@@ -121,7 +123,7 @@
                                                 @endphp
                                                 <div class="service-desc">
                                                     <h4 class="titlePain">{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</h4>
-                                                    <a href="{{asset('storage/'.$item->pdf)}}" class="open">Open</a>
+                                                    <a href="{{asset('storage/'.$item->pdf)}}" target="_blank" class="open">Open</a>
                                                 </div>
                                             @endforeach
 										</div>

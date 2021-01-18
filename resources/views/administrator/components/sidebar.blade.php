@@ -165,12 +165,12 @@
         </a>
     </li>
 
-    <li class="nav-item {{Route::is('stock-prices.index') ? 'active' : ''}}">
+    {{-- <li class="nav-item {{Route::is('stock-prices.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('stock-prices.index')}}">
             <i class="fas fa-box fa-sm fa-fw"></i>
             <span>Stock Price</span>
         </a>
-    </li>
+    </li> --}}
 
     <li class="nav-item {{Route::is('files.index') ? 'active' : ''}}">
         <a class="nav-link" href="{{route('files.index')}}">

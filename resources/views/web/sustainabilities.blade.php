@@ -44,7 +44,7 @@
                                     <div class="col-xs-12 col-sm-6 col-md-4 space-report hv-ar-green">
                                         <div class="img-full">
                                             <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->title}}">
-                                            <a href="{{asset('storage/'.$item->pdf)}}" class="downlad-ar">Download</a>
+                                            <a href="{{asset('storage/'.$item->pdf)}}" target="_blank" class="downlad-ar">Download</a>
                                         </div>
                                         <div class="d-flex mt-xs mb-xs">
                                             <div class="text-left flex-1">

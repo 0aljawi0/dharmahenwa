@@ -52,6 +52,12 @@
         <script src="{{asset('web/js/html5shiv.js')}}"></script>
         <script src="{{asset('web/js/respond.min.js')}}"></script>
     <![endif]-->
+
+    <style>
+        .show-action > a {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 

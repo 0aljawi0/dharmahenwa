@@ -55,7 +55,7 @@
                                                         <p><strong>{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</strong></p>
                                                     </div>
                                                     <div class="link-list flex-1 mt-sm btn-kecil">
-                                                        <a href="#" data-pdf="{{asset('storage/'.$item->pdf)}}" class="open view-pdf">Open</a>
+                                                        <a href="{{asset('storage/'.$item->pdf)}}" target="_blank" class="open">Open</a>
                                                     </div>
                                                 </div>
                                             </div>

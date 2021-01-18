@@ -137,7 +137,7 @@
 									<a href="{{route('profile')}}">{{Session::get('locale') == 'id' ? 'Sekretaris Perusahaan' : 'Corporate Secretary'}}</a>
 								</li>
 								<li>
-									<a href="{{route('sustainability_report')}}">{{Session::get('locale') == 'id' ? 'Keberlanjutan' : 'Sustainability'}}</a>
+									<a href="{{route('hse')}}">{{Session::get('locale') == 'id' ? 'Keberlanjutan' : 'Sustainability'}}</a>
 								</li>
 								<li>
 									<a href="{{route('contact')}}">{{Session::get('locale') == 'id' ? 'Kontak Kami' : 'Contact Us'}}</a>

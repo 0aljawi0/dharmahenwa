@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="d-flex mt-xs mb-xs">
                                                 <div class="show-action show-color flex-1">
-                                                    <a href="{{asset('storage/'.$item->pdf)}}" class="download-pdf"><i class="fa fa-download"></i> PDF</a>
+                                                    <a href="{{asset('storage/'.$item->pdf)}}" target="_blank" class="download-pdf"><i class="fa fa-download"></i> PDF</a>
                                                     <a data-pdf="{{asset('storage/'.$item->pdf)}}" class="view-pdf"><i class="fa fa-eye"></i> PDF</a>
                                                 </div>
                                             </div>
