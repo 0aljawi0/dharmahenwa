@@ -33,7 +33,23 @@ class About extends Controller
     {
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
-        $data['milestones'] = Milestone::orderBy('year', 'asc')->get();
+        // $data['milestones'] = Milestone::orderBy('year', 'asc')->get();
+        $milestones = Milestone::orderBy('year', 'asc')->get();
+
+        $year_temp = 0;
+        $newMS = [];
+
+        foreach ($milestones as $key => $value) {
+            if ($value->year == $year_temp) {
+                $newMS[$year_temp][] = $milestones[$key];
+            } else {
+                $newMS[$value->year][] = $milestones[$key];
+            }
+
+            $year_temp = $value->year;
+        }
+
+        $data['milestones'] = $newMS;
 
         return view('web.milestone')->with($data);
     }

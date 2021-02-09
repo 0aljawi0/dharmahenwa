@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-4 widgets-contact mb-60-xs">
                             <div class="widget">
-                                <div class="widget-contact-icon pull-left">
+                                <div class="widget-contact-icon pull-left" style="height: 100px">
                                     <i class="lnr lnr-map"></i>
                                 </div>
                                 <div class="widget-contact-info">

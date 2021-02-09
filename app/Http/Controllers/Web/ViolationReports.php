@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Pelaporan;
 use Illuminate\Http\Request;
 use App\Models\ViolationReport;
+use Illuminate\Support\Facades\Mail;
 
 class ViolationReports extends Controller
 {
@@ -14,18 +16,16 @@ class ViolationReports extends Controller
         $evidence[] = $this->upload_evidence($request->evidence_1, 'evicence_1');
         $evidence[] = $this->upload_evidence($request->evidence_2, 'evidence_2');
 
-        $violation = new ViolationReport;
-        $violation->name = $request->name;
-        $violation->email = $request->email;
-        $violation->phone = $request->phone;
-        $violation->category_violation = $request->category_violation;
-        $violation->party_reported = $request->party_reported;
-        $violation->violation_detail = $request->violation_detail;
-        $violation->evidence = json_encode($evidence);
-        $violation->is_read = 'No';
-        $saved = $violation->save();
+        $request->merge([
+            'evidence' => json_encode($evidence),
+            'is_read' => 'No'
+        ]);
 
-        if($saved) return redirect()->back()->with(['message' => 'Berhasil mengirim laporan', 'type' => 'success']);
+        $violation = ViolationReport::create($request->all())->id;
+
+        Mail::to(env('MAIL_FOR_WHISTLEBLOWING'))->send(new Pelaporan($violation));
+
+        if($violation) return redirect()->back()->with(['message' => 'Berhasil mengirim laporan', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Gagal mengirim laporan, Coba lagi nanti!', 'type' => 'danger']);
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Pesan;
 use Illuminate\Http\Request;
 use App\Models\Option;
 use App\Models\Slider;
@@ -15,7 +16,7 @@ use App\Models\FinancialReport;
 use App\Models\Blog;
 use App\Models\StockPrice;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Mail;
 
 class Home extends Controller
 {
@@ -39,13 +40,13 @@ class Home extends Controller
         $data['annual_reports'] = AnnualReport::latest()->limit(6)->get();
         $data['sustainabilities'] = Sustainability::latest()->limit(3)->get();
         $data['blogs'] = Blog::latest()->limit(3)->get();
-        // $data['stock_prices'] = StockPrice::all();
+        $data['stock_prices'] = StockPrice::all();
 
         // Stock Price
-        $response = Http::get('http://investor.rti.co.id/dewa/last.jsp', );
-        $xml = simplexml_load_string($response->body());
-        $json = json_encode($xml);
-        $data['sp'] = json_decode($json);
+        // $response = Http::get('http://investor.rti.co.id/dewa/last.jsp', );
+        // $xml = simplexml_load_string($response->body());
+        // $json = json_encode($xml);
+        // $data['sp'] = json_decode($json);
 
         return view('web.home')->with($data);
     }
@@ -78,15 +79,11 @@ class Home extends Controller
 
     public function message_store(Request $request)
     {
-        $message = new Message;
-        $message->name = $request->name;
-        $message->email = $request->email;
-        $message->phone = $request->phone;
-        $message->subject = $request->subject;
-        $message->message = $request->message;
-        $saved = $message->save();
+        $message = Message::create($request->all())->id;
 
-        if($saved) return redirect()->back()->with(['message' => 'Berhasil mengirim pesan!', 'type' => 'success']);
+        Mail::to(env('MAIL_FOR_CONTACT'))->send(new Pesan($message));
+
+        if($message) return redirect()->back()->with(['message' => 'Berhasil mengirim pesan!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Gagal mengirim pesan, Coba lagi nanti!', 'type' => 'danger']);
     }
 

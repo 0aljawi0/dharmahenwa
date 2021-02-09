@@ -45,34 +45,31 @@
                        <div class="col-xs-12 col-sm-12 col-md-12 milestone-company p-0">
                              <ul class="list-history medium-block-grid-2">
 
-                                @php
-                                    $year_temp = 0;
-                                @endphp
-
-                                @foreach ($milestones as $item)
-
-                                    @php
-                                        $title = json_decode($item->title);
-                                        $description = json_decode($item->description);
-                                    @endphp
+                                @foreach ($milestones as $key => $values)
 
                                     <li>
-
-                                        <span class="range-year">{{$item->year == $year_temp ? '' : $item->year}}</span>
+                                        <span class="range-year">{{$key}}</span>
                                         <div class="small-12 detail-history">
-                                            <p><strong>{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</strong></p>
-                                            <p>{{Session::get('locale') == 'id' ? $description->id ?? '' : $description->en ?? ''}}</p>
 
-                                            @if ($item->image)
-                                                <img src="{{asset('storage/'.$item->image)}}" alt="{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}"/>
-                                            @endif
+                                            @foreach ($values as $item)
+
+                                                @php
+                                                    $title = json_decode($item->title);
+                                                    $description = json_decode($item->description);
+                                                @endphp
+
+                                                    <p><strong>{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}</strong></p>
+                                                    <p>{{Session::get('locale') == 'id' ? $description->id ?? '' : $description->en ?? ''}}</p>
+
+                                                    @if ($item->image)
+                                                        <img src="{{asset('storage/'.$item->image)}}" alt="{{Session::get('locale') == 'id' ? $title->id ?? '' : $title->en ?? ''}}"/>
+                                                    @endif
+
+                                            @endforeach
 
                                         </div>
                                     </li>
 
-                                    @php
-                                        $year_temp = $item->year;
-                                    @endphp
                                 @endforeach
                              </ul>
                        </div>
