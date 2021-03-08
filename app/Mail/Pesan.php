@@ -23,7 +23,7 @@ class Pesan extends Mailable
     {
         $message = Message::find($this->message_id);
 
-        return $this->subject('Message Darmahenwa : '.$message->subject)
+        return $this->subject('Message Whistleblowing PT Darma Henwa Tbk : '.$message->subject)
             ->from(['address' => $message->email, 'name' => $message->name])
             ->view('mail.pesan', ['data' => $message]);
     }

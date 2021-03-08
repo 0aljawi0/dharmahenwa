@@ -26,7 +26,7 @@ class Pelaporan extends Mailable
         $vr = ViolationReport::find($this->violation_id);
         $evidence = json_decode($vr->evidence);
 
-        return $this->subject('Whistleblowing Darmahenwa')
+        return $this->subject('Whistleblowing PT Darma Henwa Tbk')
                 ->from(['address' => $vr->email, 'name' => $vr->name])
                 ->attach(asset('storage/'.$evidence[0]))
                 ->attach(asset('storage/'.$evidence[1]))
