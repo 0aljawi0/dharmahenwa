@@ -109,7 +109,7 @@
 								<div class="flex-6 performance-hlg text-white col-img">
 
 									<div class="col-bg">
-										<img src="{{ asset('storage/'.$home_section->image_background_financial_statement)}}" alt="Coal Barging"/>
+										{{-- <img src="{{ asset('storage/'.$home_section->image_background_financial_statement)}}" alt="Coal Barging"/> --}}
 									</div>
 									<div class="title-headline">
 										Financial Statement

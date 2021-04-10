@@ -86,7 +86,7 @@ class About extends Controller
         $data['website'] = Option::firstWhere('key', 'website-profile');
         $data['address'] = Option::firstWhere('key', 'address');
 
-        $data['awards'] = Award::where('type', 'Awards')->latest()->get();
+        $data['awards'] = Award::where('type', 'Awards')->latest('year')->get();
 
         $year = Award::where('type', 'Awards')->pluck('year')->toArray();
         rsort($year);

@@ -15,7 +15,7 @@
 			</div>
 			<!-- .col-md-4 end -->
 			<div class="col-xs-12 col-sm-12 col-md-5 col-StockPrice col-img">
-                <iframe src="https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?chart_hgt=500&prd=YTD" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+                <iframe src="https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?chart_hgt=500&prd=YTD" frameborder="0" width="100%" height="100%" scrolling="yes"></iframe>
 				{{-- <div class="grid-relation relation"> --}}
                     {{-- <h3 class="s-24 mb-0">PT. DARMA HENWA TBK</h3> --}}
                     {{-- <span class="s-19 t-white font-semibold">IDX: {{$sp->stock->stock_code}} - {{$sp->stock->time}}</span> --}}
