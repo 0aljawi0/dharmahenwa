@@ -12,9 +12,7 @@
 							<div class="contact-box">
 							    <div class="contact-details">
 							        <h4 class="pre-footer-title"><i class="fa fa-map-marker" aria-hidden="true"></i>HEAD OFFICE</h4>
-							        <p>
-							        	{{$address->head_office}}
-							        </p>
+							        <p style="white-space: pre-wrap">{{$address->head_office}}</p>
 							        <p></p>
 							    </div>
 							</div>

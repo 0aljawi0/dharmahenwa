@@ -14,8 +14,8 @@
 				</div>
 			</div>
 			<!-- .col-md-4 end -->
-			<div class="col-xs-12 col-sm-12 col-md-5 col-StockPrice col-img" style="padding: 0 !important">
-                <iframe src='https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?prd=YTD&width=100%&height=310' width='100%' height='100%' style='background: URL("{{asset('web/background/home-as.jpg')}}") no-repeat; background-size: 100% 100%'></iframe>
+			<div class="stockprice-wrapper col-xs-12 col-sm-12 col-md-5 col-StockPrice col-img" style="padding: 0 !important">
+                <iframe src='https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?prd=YTD&width=100%&height=310' width='100%' height='100%' style='background: URL("{{asset('web/background/home-as.jpg')}}") no-repeat; background-size: 100% 100%' scrolling="no"></iframe>
                 {{-- <iframe src="https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?chart_hgt=500&prd=YTD" frameborder="0" width="100%" height="100%" scrolling="yes"></iframe> --}}
 				{{-- <div class="grid-relation relation"> --}}
                     {{-- <h3 class="s-24 mb-0">PT. DARMA HENWA TBK</h3> --}}
@@ -111,7 +111,7 @@
 			                </ul> --}}
 		                {{-- </div> --}}
 		        	{{-- </div> --}}
-		        </div>
+		        {{-- </div> --}}
 		        {{-- <div class="col-bg">
 					<img src="{{asset('web/background/home-as.jpg')}}" alt="Background"/>
 				</div> --}}
