@@ -37,18 +37,18 @@ class CSRGalleries extends Controller
         else return redirect()->back()->with(['message' => 'Menambah csr gallery gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(CSRGallery $csr_gallery)
     {}
 
-    public function edit($id)
+    public function edit(CSRGallery $csr_gallery)
     {
-        $csr_gallery = CSRGallery::firstWhere('id', $id);
+        // $csr_gallery = CSRGallery::firstWhere('id', $id);
         return view('administrator.csr_galleries.edit')->with('csr_gallery', $csr_gallery);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, CSRGallery $csr_gallery)
     {
-        $csr_gallery = CSRGallery::find($id);
+        // $csr_gallery = CSRGallery::find($id);
         $saved = $csr_gallery->fill($request->all())->save();
 
         // Make log
@@ -58,9 +58,9 @@ class CSRGalleries extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah csr gallery gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(CSRGallery $csr_gallery)
     {
-        $csr_gallery = CSRGallery::firstWhere('id', $id);
+        // $csr_gallery = CSRGallery::firstWhere('id', $id);
         $delete = $csr_gallery->delete();
 
         // Make log

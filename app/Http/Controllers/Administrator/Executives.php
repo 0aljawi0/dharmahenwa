@@ -52,13 +52,13 @@ class Executives extends Controller
     public function show($id)
     {}
 
-    public function edit($id)
+    public function edit(Executive $executive)
     {
-        $executive = Executive::firstWhere('id', $id);
+        // $executive = Executive::firstWhere('id', $executive->id);
         return view('administrator.executives.edit')->with('executive', $executive);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Executive $executive)
     {
         $position['id'] = $request->position_id;
         $position['en'] = $request->position_en;
@@ -66,7 +66,7 @@ class Executives extends Controller
         $bio['id'] = $request->bio_id;
         $bio['en'] = $request->bio_en;
 
-        $executive = Executive::firstWhere('id', $id);
+        // $executive = Executive::firstWhere('id', $id);
         $executive->name = $request->name;
         $executive->position = json_encode($position);
         $executive->bio = json_encode($bio);
@@ -81,9 +81,9 @@ class Executives extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah executive gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Executive $executive)
     {
-        $executive = Executive::firstWhere('id', $id);
+        // $executive = Executive::firstWhere('id', $id);
         $delete = $executive->delete();
 
         // Make log

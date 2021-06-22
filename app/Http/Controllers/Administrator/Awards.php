@@ -42,18 +42,18 @@ class Awards extends Controller
         else return redirect()->back()->with(['message' => 'Menambah award gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Award $award)
     {}
 
-    public function edit($id)
+    public function edit(Award $award)
     {
-        $award = Award::firstWhere('id', $id);
+        // $award = Award::firstWhere('id', $id);
         return view('administrator.awards.edit')->with('award', $award);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Award $award)
     {
-        $award = Award::firstWhere('id', $id);
+        // $award = Award::firstWhere('id', $id);
         $award->image = $request->image;
         $award->description = $request->description;
         $award->type = $request->type;
@@ -67,9 +67,9 @@ class Awards extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah award gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Award $award)
     {
-        $award = Award::firstWhere('id', $id);
+        // $award = Award::firstWhere('id', $id);
         $delete = $award->delete();
 
         // Make log

@@ -108,7 +108,7 @@
         <div id="sustainability" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Page:</h6>
-                <a class="collapse-item {{Route::is('sustainablities.index') ? 'active' : ''}}" href="{{route('sustainablities.index')}}">Sustainability Reports</a>
+                <a class="collapse-item {{Route::is('sustainabilities.index') ? 'active' : ''}}" href="{{route('sustainabilities.index')}}">Sustainability Reports</a>
                 <a class="collapse-item {{Route::is('hse.index') ? 'active' : ''}}" href="{{route('hse.index')}}">Health, Safety, Environment</a>
                 <a class="collapse-item {{Route::is('csr.index') ? 'active' : ''}}" href="{{route('csr.index')}}">Corporate Social Responsibility</a>
                 <a class="collapse-item {{Route::is('csr-page.index') ? 'active' : ''}}" href="{{route('csr-page.index')}}">CSR Page</a>

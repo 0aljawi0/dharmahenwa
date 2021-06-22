@@ -47,13 +47,13 @@
                     <div class="col-md-6">
                         @component('administrator.components.input_text')
                             @slot('name') position_en @endslot
-                            @slot('value') {{$position->id ?? ''}} @endslot
+                            @slot('value') {{$position->en ?? ''}} @endslot
                             @slot('required') required @endslot
                         @endcomponent
 
                         @component('administrator.components.input_textarea')
                             @slot('name') bio_en @endslot
-                            @slot('value') {{$bio->id ?? ''}} @endslot
+                            @slot('value') {{$bio->en ?? ''}} @endslot
                             @slot('required') required @endslot
                         @endcomponent
                     </div>
@@ -61,13 +61,13 @@
                     <div class="col-md-6">
                         @component('administrator.components.input_text')
                             @slot('name') position_id @endslot
-                            @slot('value') {{$position->en ?? ''}} @endslot
+                            @slot('value') {{$position->id ?? ''}} @endslot
                             @slot('required') required @endslot
                         @endcomponent
 
                         @component('administrator.components.input_textarea')
                             @slot('name') bio_id @endslot
-                            @slot('value') {{$position->en ?? ''}} @endslot
+                            @slot('value') {{$bio->id ?? ''}} @endslot
                             @slot('required') required @endslot
                         @endcomponent
                     </div>

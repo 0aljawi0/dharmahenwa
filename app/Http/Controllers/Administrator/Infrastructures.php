@@ -43,21 +43,21 @@ class Infrastructures extends Controller
         else return redirect()->back()->with(['message' => 'Menambah infrastructure gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Infrastructure $infrastructure)
     {}
 
-    public function edit($id)
+    public function edit(Infrastructure $infrastructure)
     {
-        $infrastructure = Infrastructure::firstWhere('id', $id);
+        // $infrastructure = Infrastructure::firstWhere('id', $id);
         return view('administrator.infrastructures.edit')->with('infrastructure', $infrastructure);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Infrastructure $infrastructure)
     {
         $title['en'] = $request->title_en;
         $title['id'] = $request->title_id;
 
-        $infrastructure = Infrastructure::firstWhere('id', $id);
+        // $infrastructure = Infrastructure::firstWhere('id', $id);
         $infrastructure->title = json_encode($title);
         $infrastructure->image = $request->image;
         $saved = $infrastructure->save();
@@ -69,9 +69,9 @@ class Infrastructures extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah infrastructure gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Infrastructure $infrastructure)
     {
-        $infrastructure = Infrastructure::firstWhere('id', $id);
+        // $infrastructure = Infrastructure::firstWhere('id', $id);
         $delete = $infrastructure->delete();
 
         // Make log

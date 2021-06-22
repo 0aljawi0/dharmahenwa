@@ -1,7 +1,7 @@
 <section id="shortcode-7" class="shortcode-7 section-img">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-7 col-img">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-img">
 				<div class="col-captionVideo">
 					<div class="linkToPlay text-center">
 						<a href="#" class="untukMemulai">
@@ -14,8 +14,8 @@
 				</div>
 			</div>
 			<!-- .col-md-4 end -->
-			<div class="col-xs-12 col-sm-12 col-md-5 col-StockPrice col-img" style="padding: 0 !important">
-                <iframe id="rti" src='https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?prd=YTD&width=100%&height=310' width='100%' height='100%' style='background: URL("{{asset('web/background/home-as.jpg')}}") no-repeat; background-size: 100% 100%' seemless></iframe>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-StockPrice col-img" style="padding: 0 !important">
+                <iframe id="rti" src='https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?prd=YTD&width=600&height=320' width='100%' height='100%' style='background: URL("{{asset('web/background/home-as.jpg')}}") no-repeat; background-size: 100% 100%'></iframe>
                 {{-- <iframe src="https://investor3.rti.co.id/rtirelation/dewa/stkDetail_dewa.jsp?chart_hgt=500&prd=YTD" frameborder="0" width="100%" height="100%" scrolling="yes"></iframe> --}}
 				{{-- <div class="grid-relation relation"> --}}
                     {{-- <h3 class="s-24 mb-0">PT. DARMA HENWA TBK</h3> --}}

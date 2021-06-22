@@ -9,7 +9,7 @@
 
         <div class="btn-group" role="group">
             <a href="{{route('dashboard')}}" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Go To Dashboard</a>
-            <a href="{{route('sustainablities.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Sustainability Report</a>
+            <a href="{{route('sustainabilities.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-user fa-sm text-white-50"></i> Create New Sustainability Report</a>
         </div>
     </div>
 
@@ -45,11 +45,11 @@
                             <td>{{ date('d F Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="{{route('sustainablities.edit', ['sustainablity' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
+                                    <a href="{{route('sustainabilities.edit', ['sustainability' => $item->id])}}" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt fa-sm fa-fw"></i> <span>Edit</span></a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="destroy({{$item->id}}, '{{$item->title}}')"> <i class="fas fa-trash fa-sm fa-fw"></i> <span>Delete</span></button>
                                 </div>
 
-                                <form id="destroy_{{$item->id}}" action="{{route('sustainablities.destroy', ['sustainablity' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
+                                <form id="destroy_{{$item->id}}" action="{{route('sustainabilities.destroy', ['sustainability' => $item->id])}}" method="POST"> @csrf @method('DELETE') </form>
                             </td>
                         </tr>
                     @endforeach

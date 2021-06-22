@@ -43,21 +43,21 @@ class MonthlyReports extends Controller
         else return redirect()->back()->with(['message' => 'Menambah monthly report gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(MonthlyReport $monthly_report)
     {}
 
-    public function edit($id)
+    public function edit(MonthlyReport $monthly_report)
     {
-        $monthly_report = MonthlyReport::firstWhere('id', $id);
+        // $monthly_report = MonthlyReport::firstWhere('id', $id);
         return view('administrator.monthly_reports.edit')->with('monthly_report', $monthly_report);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, MonthlyReport $monthly_report)
     {
         $title['id'] = $request->title_id;
         $title['en'] = $request->title_en;
 
-        $monthly_report = MonthlyReport::firstWhere('id', $id);
+        // $monthly_report = MonthlyReport::firstWhere('id', $id);
         $monthly_report->title = json_encode($title);
         $monthly_report->pdf = $request->pdf;
         $saved = $monthly_report->save();
@@ -69,9 +69,9 @@ class MonthlyReports extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah monthly report gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(MonthlyReport $monthly_report)
     {
-        $monthly_report = MonthlyReport::firstWhere('id', $id);
+        // $monthly_report = MonthlyReport::firstWhere('id', $id);
         $delete = $monthly_report->delete();
 
         // Make log

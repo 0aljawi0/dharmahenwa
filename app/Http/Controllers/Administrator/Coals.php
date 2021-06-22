@@ -47,16 +47,16 @@ class Coals extends Controller
         else return redirect()->back()->with(['message' => 'Menambah coal gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Coal $coal)
     {}
 
-    public function edit($id)
+    public function edit(Coal $coal)
     {
-        $coal = Coal::firstWhere('id', $id);
+        // $coal = Coal::firstWhere('id', $id);
         return view('administrator.coals.edit')->with('coal', $coal);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Coal $coal)
     {
         $title['en'] = $request->title_en;
         $title['id'] = $request->title_id;
@@ -64,7 +64,7 @@ class Coals extends Controller
         $description['en'] = $request->description_en;
         $description['id'] = $request->description_id;
 
-        $coal = Coal::firstWhere('id', $id);
+        // $coal = Coal::firstWhere('id', $id);
         $coal->title = json_encode($title);
         $coal->description = json_encode($description);
         $coal->image = $request->image;
@@ -77,9 +77,9 @@ class Coals extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah coal gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Coal $coal)
     {
-        $coal = Coal::firstWhere('id', $id);
+        // $coal = Coal::firstWhere('id', $id);
         $delete = $coal->delete();
 
         // Make log

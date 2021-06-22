@@ -41,18 +41,18 @@ class AnalystCoverages extends Controller
         else return redirect()->back()->with(['message' => 'Menambah analyst coverage gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(AnalystCoverage $analyst_coverage)
     {}
 
-    public function edit($id)
+    public function edit(AnalystCoverage $analyst_coverage)
     {
-        $analyst_coverage = AnalystCoverage::firstWhere('id', $id);
+        // $analyst_coverage = AnalystCoverage::firstWhere('id', $id);
         return view('administrator.analyst_coverages.edit')->with('analyst_coverage', $analyst_coverage);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, AnalystCoverage $analyst_coverage)
     {
-        $analyst_coverage = AnalystCoverage::firstWhere('id', $id);
+        // $analyst_coverage = AnalystCoverage::firstWhere('id', $id);
         $analyst_coverage->firm = $request->firm;
         $analyst_coverage->analyst = $request->analyst;
         $analyst_coverage->pdf = $request->pdf;
@@ -65,9 +65,9 @@ class AnalystCoverages extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah annual report gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(AnalystCoverage $analyst_coverage)
     {
-        $analyst_coverage = AnalystCoverage::firstWhere('id', $id);
+        // $analyst_coverage = AnalystCoverage::firstWhere('id', $id);
         $delete = $analyst_coverage->delete();
 
         // Make log

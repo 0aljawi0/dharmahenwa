@@ -44,21 +44,21 @@ class Meetings extends Controller
         else return redirect()->back()->with(['message' => 'Menambah meeting gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Meeting $meeting)
     {}
 
-    public function edit($id)
+    public function edit(Meeting $meeting)
     {
-        $meeting = Meeting::firstWhere('id', $id);
+        // $meeting = Meeting::firstWhere('id', $id);
         return view('administrator.meetings.edit')->with('meeting', $meeting);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Meeting $meeting)
     {
         $title['id'] = $request->title_id;
         $title['en'] = $request->title_en;
 
-        $meeting = Meeting::firstWhere('id', $id);
+        // $meeting = Meeting::firstWhere('id', $id);
         $meeting->title = json_encode($title);
         $meeting->year = $request->year;
         $meeting->pdf = $request->pdf;
@@ -71,9 +71,9 @@ class Meetings extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah meeting gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Meeting $meeting)
     {
-        $meeting = Meeting::firstWhere('id', $id);
+        // $meeting = Meeting::firstWhere('id', $id);
         $delete = $meeting->delete();
 
         // Make log

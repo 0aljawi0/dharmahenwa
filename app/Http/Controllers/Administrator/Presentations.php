@@ -44,21 +44,21 @@ class Presentations extends Controller
         else return redirect()->back()->with(['message' => 'Menambah presentation gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Presentation $presentation)
     {}
 
-    public function edit($id)
+    public function edit(Presentation $presentation)
     {
-        $presentation = Presentation::firstWhere('id', $id);
+        // $presentation = Presentation::firstWhere('id', $id);
         return view('administrator.presentations.edit')->with('presentation', $presentation);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Presentation $presentation)
     {
         $title['id'] = $request->title_id;
         $title['en'] = $request->title_en;
 
-        $presentation = Presentation::firstWhere('id', $id);
+        // $presentation = Presentation::firstWhere('id', $id);
         $presentation->title = json_encode($title);
         $presentation->image = $request->image;
         $presentation->pdf = $request->pdf;
@@ -71,9 +71,9 @@ class Presentations extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah presentation gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Presentation $presentation)
     {
-        $presentation = Presentation::firstWhere('id', $id);
+        // $presentation = Presentation::firstWhere('id', $id);
         $delete = $presentation->delete();
 
         // Make log

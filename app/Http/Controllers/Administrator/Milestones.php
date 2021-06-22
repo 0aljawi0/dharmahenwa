@@ -48,16 +48,16 @@ class Milestones extends Controller
         else return redirect()->back()->with(['message' => 'Menambah milestone gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Milestone $milestone)
     {}
 
-    public function edit($id)
+    public function edit(Milestone $milestone)
     {
-        $milestone = milestone::firstWhere('id', $id);
+        // $milestone = milestone::firstWhere('id', $milestone->id);
         return view('administrator.milestones.edit')->with('milestone', $milestone);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Milestone $milestone)
     {
         $title['en'] = $request->title_en;
         $title['id'] = $request->title_id;
@@ -65,7 +65,7 @@ class Milestones extends Controller
         $description['en'] = $request->description_en;
         $description['id'] = $request->description_id;
 
-        $milestone = Milestone::firstWhere('id', $id);
+        // $milestone = Milestone::firstWhere('id', $id);
         $milestone->title = json_encode($title);
         $milestone->description = json_encode($description);
         $milestone->image = $request->image;
@@ -79,9 +79,9 @@ class Milestones extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah milestone gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Milestone $milestone)
     {
-        $milestone = Milestone::firstWhere('id', $id);
+        // $milestone = Milestone::firstWhere('id', $id);
         $delete = $milestone->delete();
 
         // Make log

@@ -49,16 +49,16 @@ class Committees extends Controller
         else return redirect()->back()->with(['message' => 'Menambah committee gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Committee $committee)
     {}
 
-    public function edit($id)
+    public function edit(Committee $committee)
     {
-        $committee = Committee::firstWhere('id', $id);
+        // $committee = Committee::firstWhere('id', $id);
         return view('administrator.committees.edit')->with('committee', $committee);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Committee $committee)
     {
         $position['id'] = $request->position_id;
         $position['en'] = $request->position_en;
@@ -66,7 +66,7 @@ class Committees extends Controller
         $bio['id'] = $request->bio_id;
         $bio['en'] = $request->bio_en;
 
-        $committee = Committee::firstWhere('id', $id);
+        // $committee = Committee::firstWhere('id', $id);
         $committee->photo = $request->photo;
         $committee->name = $request->name;
         $committee->position = json_encode($position);
@@ -81,9 +81,9 @@ class Committees extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah committee gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Committee $committee)
     {
-        $committee = Committee::firstWhere('id', $id);
+        // $committee = Committee::firstWhere('id', $id);
         $delete = $committee->delete();
 
         // Make log

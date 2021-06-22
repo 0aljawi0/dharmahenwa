@@ -48,16 +48,16 @@ class Blogs extends Controller
         else return redirect()->back()->with(['message' => 'Menambah blog gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Blog $blog)
     {}
 
-    public function edit($id)
+    public function edit(Blog $blog)
     {
-        $blog = Blog::firstWhere('id', $id);
+        // $blog = Blog::firstWhere('id', $id);
         return view('administrator.blogs.edit')->with('blog', $blog);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Blog $blog)
     {
         $title['en'] = $request->title_english;
         $title['id'] = $request->title_indonesia;
@@ -65,7 +65,7 @@ class Blogs extends Controller
         $description['en'] = $request->description_english;
         $description['id'] = $request->description_indonesia;
 
-        $blog = Blog::firstWhere('id', $id);
+        // $blog = Blog::firstWhere('id', $id);
         $blog->title = json_encode($title);
         $blog->description = json_encode($description);
         $blog->image = $request->image;
@@ -79,9 +79,9 @@ class Blogs extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah blog gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Blog $blog)
     {
-        $blog = Blog::firstWhere('id', $id);
+        // $blog = Blog::firstWhere('id', $id);
         $delete = $blog->delete();
 
         // Make log

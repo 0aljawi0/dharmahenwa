@@ -43,21 +43,21 @@ class Newsletters extends Controller
         else return redirect()->back()->with(['message' => 'Menambah newsletter gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Newsletter $newsletter)
     {}
 
-    public function edit($id)
+    public function edit(Newsletter $newsletter)
     {
-        $newsletter = Newsletter::firstWhere('id', $id);
+        // $newsletter = Newsletter::firstWhere('id', $id);
         return view('administrator.newsletters.edit')->with('newsletter', $newsletter);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Newsletter $newsletter)
     {
         $title['id'] = $request->title_id;
         $title['en'] = $request->title_en;
 
-        $newsletter = Newsletter::firstWhere('id', $id);
+        // $newsletter = Newsletter::firstWhere('id', $id);
         $newsletter->title = json_encode($title);
         $newsletter->pdf = $request->pdf;
         $saved = $newsletter->save();
@@ -69,9 +69,9 @@ class Newsletters extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah newsletter gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Newsletter $newsletter)
     {
-        $newsletter = Newsletter::firstWhere('id', $id);
+        // $newsletter = Newsletter::firstWhere('id', $id);
         $delete = $newsletter->delete();
 
         // Make log

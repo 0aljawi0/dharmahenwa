@@ -43,21 +43,21 @@ class FinancialReports extends Controller
         else return redirect()->back()->with(['message' => 'Menambah financial report gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(FinancialReport $financial_report)
     {}
 
-    public function edit($id)
+    public function edit(FinancialReport $financial_report)
     {
-        $financial_report = FinancialReport::firstWhere('id', $id);
+        // $financial_report = FinancialReport::firstWhere('id', $id);
         return view('administrator.financial_reports.edit')->with('financial_report', $financial_report);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, FinancialReport $financial_report)
     {
         $title['id'] = $request->title_id;
         $title['en'] = $request->title_en;
 
-        $financial_report = FinancialReport::firstWhere('id', $id);
+        // $financial_report = FinancialReport::firstWhere('id', $id);
         $financial_report->title = json_encode($title);
         $financial_report->pdf = $request->pdf;
         $saved = $financial_report->save();
@@ -69,9 +69,9 @@ class FinancialReports extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah financial report gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(FinancialReport $financial_report)
     {
-        $financial_report = FinancialReport::firstWhere('id', $id);
+        // $financial_report = FinancialReport::firstWhere('id', $id);
         $delete = $financial_report->delete();
 
         // Make log

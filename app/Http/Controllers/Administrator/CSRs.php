@@ -47,16 +47,16 @@ class CSRs extends Controller
         else return redirect()->back()->with(['message' => 'Menambah csr gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(CSR $csr)
     {}
 
-    public function edit($id)
+    public function edit(CSR $csr)
     {
-        $csr = CSR::firstWhere('id', $id);
+        // $csr = CSR::firstWhere('id', $id);
         return view('administrator.csr.edit')->with('csr', $csr);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, CSR $csr)
     {
         $title['en'] = $request->title_english;
         $title['id'] = $request->title_indonesia;
@@ -64,7 +64,7 @@ class CSRs extends Controller
         $description['en'] = $request->description_english;
         $description['id'] = $request->description_indonesia;
 
-        $csr = CSR::firstWhere('id', $id);
+        // $csr = CSR::firstWhere('id', $id);
         $csr->title = json_encode($title);
         $csr->description = json_encode($description);
         $csr->image = $request->image;
@@ -77,9 +77,9 @@ class CSRs extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah csr gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(CSR $csr)
     {
-        $csr = CSR::firstWhere('id', $id);
+        // $csr = CSR::firstWhere('id', $id);
         $delete = $csr->delete();
 
         // Make log

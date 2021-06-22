@@ -229,7 +229,7 @@ Route::resource('analyst-coverages', App\Http\Controllers\Administrator\AnalystC
 Route::resource('blogs', App\Http\Controllers\Administrator\Blogs::class);
 
 // Sustainabilities
-Route::resource('sustainablities', App\Http\Controllers\Administrator\Sustainabilities::class);
+Route::resource('sustainabilities', App\Http\Controllers\Administrator\Sustainabilities::class);
 
 // Health Safety Environment
 Route::get('hse', [App\Http\Controllers\Administrator\HSE::class, 'index'])->name('hse.index');

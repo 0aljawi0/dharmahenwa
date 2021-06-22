@@ -49,20 +49,20 @@ class Users extends Controller
         else return redirect()->back()->with(['message' => 'Menambah user gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(User $user)
     {
         //
     }
 
-    public function edit($id)
+    public function edit(User $user)
     {
-        $user = User::firstWhere('id', $id);
+        // $user = User::firstWhere('id', $id);
         return view('administrator.users.edit')->with('user', $user);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        $user = User::firstWhere('id', $id);
+        // $user = User::firstWhere('id', $id);
         $user->name = $request->name;
         $user->email = $request->email;
 
@@ -83,9 +83,9 @@ class Users extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah user gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::firstWhere('id', $id);
+        // $user = User::firstWhere('id', $id);
 
         // Make log
         Logs::add(Auth::user()->name.' Menghapus user '.$user->email);

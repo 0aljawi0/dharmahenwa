@@ -47,16 +47,16 @@ class Policies extends Controller
         else return redirect()->back()->with(['message' => 'Menambah policy gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Policy $policy)
     {}
 
-    public function edit($id)
+    public function edit(Policy $policy)
     {
-        $policy = Policy::firstWhere('id', $id);
+        // $policy = Policy::firstWhere('id', $id);
         return view('administrator.policies.edit')->with('policy', $policy);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Policy $policy)
     {
         $title['en'] = $request->title_en;
         $title['id'] = $request->title_id;
@@ -64,7 +64,7 @@ class Policies extends Controller
         $description['en'] = $request->description_en;
         $description['id'] = $request->description_id;
 
-        $policy = Policy::firstWhere('id', $id);
+        // $policy = Policy::firstWhere('id', $id);
         $policy->title = json_encode($title);
         $policy->description = json_encode($description);
         $policy->pdf = $request->pdf;
@@ -77,9 +77,9 @@ class Policies extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah policy gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Policy $policy)
     {
-        $policy = Policy::firstWhere('id', $id);
+        // $policy = Policy::firstWhere('id', $id);
         $delete = $policy->delete();
 
         // Make log

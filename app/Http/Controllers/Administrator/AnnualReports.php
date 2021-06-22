@@ -41,18 +41,18 @@ class AnnualReports extends Controller
         else return redirect()->back()->with(['message' => 'Menambah annual report gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(AnnualReport $annual_report)
     {}
 
-    public function edit($id)
+    public function edit(AnnualReport $annual_report)
     {
-        $annual_report = AnnualReport::firstWhere('id', $id);
+        // $annual_report = AnnualReport::firstWhere('id', $id);
         return view('administrator.annual_reports.edit')->with('annual_report', $annual_report);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, AnnualReport $annual_report)
     {
-        $annual_report = AnnualReport::firstWhere('id', $id);
+        // $annual_report = AnnualReport::firstWhere('id', $id);
         $annual_report->title = $request->title;
         $annual_report->image = $request->image;
         $annual_report->pdf = $request->pdf;
@@ -65,9 +65,9 @@ class AnnualReports extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah annual report gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(AnnualReport $annual_report)
     {
-        $annual_report = AnnualReport::firstWhere('id', $id);
+        // $annual_report = AnnualReport::firstWhere('id', $id);
         $delete = $annual_report->delete();
 
         // Make log

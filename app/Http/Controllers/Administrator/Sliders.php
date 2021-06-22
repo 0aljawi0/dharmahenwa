@@ -49,16 +49,16 @@ class Sliders extends Controller
         else return redirect()->back()->with(['message' => 'Menambah slider gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Slider $slider)
     {}
 
-    public function edit($id)
+    public function edit(Slider $slider)
     {
-        $slider = Slider::firstWhere('id', $id);
+        // $slider = Slider::firstWhere('id', $id);
         return view('administrator.sliders.edit')->with('slider', $slider);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Slider $slider)
     {
         $title['en'] = $request->title_english;
         $title['id'] = $request->title_indonesia;
@@ -66,7 +66,7 @@ class Sliders extends Controller
         $subtitle['en'] = $request->subtitle_english;
         $subtitle['id'] = $request->subtitle_indonesia;
 
-        $slider = Slider::firstWhere('id', $id);
+        // $slider = Slider::firstWhere('id', $id);
         $slider->image = $request->image;
         $slider->title = json_encode($title);
         $slider->subtitle = json_encode($subtitle);
@@ -80,9 +80,9 @@ class Sliders extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah slider gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Slider $slider)
     {
-        $slider = Slider::firstWhere('id', $id);
+        // $slider = Slider::firstWhere('id', $id);
         $delete = $slider->delete();
 
         // Make log

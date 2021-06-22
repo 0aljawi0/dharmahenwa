@@ -41,18 +41,18 @@ class Shareholders extends Controller
         else return redirect()->back()->with(['message' => 'Menambah shareholder gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Shareholder $shareholder)
     {}
 
-    public function edit($id)
+    public function edit(Shareholder $shareholder)
     {
-        $shareholder = Shareholder::firstWhere('id', $id);
+        // $shareholder = Shareholder::firstWhere('id', $id);
         return view('administrator.shareholders.edit')->with('shareholder', $shareholder);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Shareholder $shareholder)
     {
-        $shareholder = Shareholder::firstWhere('id', $id);
+        // $shareholder = Shareholder::firstWhere('id', $id);
         $shareholder->name = $request->name;
         $shareholder->share = $request->share;
         $shareholder->percent = $request->percent;
@@ -65,9 +65,9 @@ class Shareholders extends Controller
         else return redirect()->back()->with(['message' => 'Mengubah shareholder gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Shareholder $shareholder)
     {
-        $shareholder = Shareholder::firstWhere('id', $id);
+        // $shareholder = Shareholder::firstWhere('id', $id);
         $delete = $shareholder->delete();
 
         // Make log

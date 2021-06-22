@@ -37,22 +37,22 @@ class Sustainabilities extends Controller
         // Make log
         Logs::add(Auth::user()->name.' Menambahkan sustainability baru');
 
-        if($saved) return redirect()->route('sustainablities.index')->with(['message' => 'Menambah sustainability berhasil!', 'type' => 'success']);
+        if($saved) return redirect()->route('sustainabilities.index')->with(['message' => 'Menambah sustainability berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Menambah sustainability gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function show($id)
+    public function show(Sustainability $sustainability)
     {}
 
-    public function edit($id)
+    public function edit(Sustainability $sustainability)
     {
-        $sustainability = Sustainability::firstWhere('id', $id);
+        // $sustainability = Sustainability::firstWhere('id', $id);
         return view('administrator.sustainabilities.edit')->with('sustainability', $sustainability);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Sustainability $sustainability)
     {
-        $sustainability = Sustainability::firstWhere('id', $id);
+        // $sustainability = Sustainability::firstWhere('id', $id);
         $sustainability->title = $request->title;
         $sustainability->image = $request->image;
         $sustainability->pdf = $request->pdf;
@@ -61,13 +61,13 @@ class Sustainabilities extends Controller
         // Make log
         Logs::add(Auth::user()->name.' Mengubah sustainability');
 
-        if($saved) return redirect()->route('sustainablities.index')->with(['message' => 'Mengubah sustainability berhasil!', 'type' => 'success']);
+        if($saved) return redirect()->route('sustainabilities.index')->with(['message' => 'Mengubah sustainability berhasil!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Mengubah sustainability gagal, Coba lagi nanti!', 'type' => 'danger']);
     }
 
-    public function destroy($id)
+    public function destroy(Sustainability $sustainability)
     {
-        $sustainability = Sustainability::firstWhere('id', $id);
+        // $sustainability = Sustainability::firstWhere('id', $id);
         $delete = $sustainability->delete();
 
         // Make log
