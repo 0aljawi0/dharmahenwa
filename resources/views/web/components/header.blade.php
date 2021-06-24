@@ -109,10 +109,10 @@
 						</ul>
 					</li>
 					<li class="has-dropdown">
-						<a href="{{route('profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Sekretaris Perusahaan' : 'Corporate Secretary'}}</a>
+						<a href="{{route('profile')}}" data-toggle="dropdown" class="dropdown-toggle">{{Session::get('locale') == 'id' ? 'Investor' : 'Investor'}}</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="{{route('profile')}}">{{Session::get('locale') == 'id' ? 'Profil' : 'Profile'}}</a>
+								<a href="{{route('profile')}}">{{Session::get('locale') == 'id' ? 'Profil Sekretaris Perusahaan & Hubungan Investor' : 'Profil Corporate Secretary & Invesstor Relations'}}</a>
 							</li>
 							<li>
 								<a href="{{route('shareholder')}}">{{Session::get('locale') == 'id' ? 'Informasi Pemegang Saham' : 'Shareholders Information'}}</a>

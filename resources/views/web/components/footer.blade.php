@@ -12,7 +12,7 @@
 							<div class="contact-box">
 							    <div class="contact-details">
 							        <h4 class="pre-footer-title"><i class="fa fa-map-marker" aria-hidden="true"></i>HEAD OFFICE</h4>
-							        <p style="white-space: pre-wrap">{{$address->head_office}}</p>
+							        <p style="white-space: pre-line">{{$address->head_office}}</p>
 							        <p></p>
 							    </div>
 							</div>
@@ -29,7 +29,7 @@
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
 									        	{{$address->operational_title_1}}
 									        </h4>
-									        <p style="white-space: pre-wrap">{{$address->operational_address_1}}</p>
+									        <p style="white-space: pre-line">{{$address->operational_address_1}}</p>
 									    </div>
 									</div>
 								</div>
@@ -40,7 +40,7 @@
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
 									        	{{$address->operational_title_2}}
 									        </h4>
-									        <p style="white-space: pre-wrap">{{$address->operational_address_2}}</p>
+									        <p style="white-space: pre-line">{{$address->operational_address_2}}</p>
 									    </div>
 									</div>
 								</div>
@@ -51,7 +51,7 @@
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
 									        	{{$address->operational_title_3}}
 									        </h4>
-									        <p style="white-space: pre-wrap">{{$address->operational_address_3}}</p>
+									        <p style="white-space: pre-line">{{$address->operational_address_3}}</p>
 									    </div>
 									</div>
 								</div>
@@ -62,7 +62,7 @@
 									        	<i class="fa fa-map-marker" aria-hidden="true"></i>
 									        	{{$address->operational_title_4}}
 									        </h4>
-									        <p style="white-space: pre-wrap">{{$address->operational_address_4}}</p>
+									        <p style="white-space: pre-line">{{$address->operational_address_4}}</p>
 									    </div>
 									</div>
 								</div>

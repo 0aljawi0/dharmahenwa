@@ -74,19 +74,50 @@
                                     @csrf
 
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Your Name" required/>
+                                        @error('name')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                        <input type="text" class="form-control mb-1" name="name" id="name" placeholder="Your Name" value="{{old('name')}}"/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control mb-30" name="email" id="email" placeholder="Your Email" required/>
+                                        @error('email')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                        <input type="email" class="form-control mb-1" name="email" id="email" placeholder="Your Email" value="{{old('email')}}"/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="phone" id="telephone" placeholder="Telephone" required/>
+                                        @error('phone')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                        <input type="text" class="form-control mb-1" name="phone" id="telephone" placeholder="Telephone" value="{{old('phone')}}"/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Subject" required/>
+                                        @error('subject')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                        <input type="text" class="form-control mb-1" name="subject" id="subject" placeholder="Subject" value="{{old('subject')}}"/>
                                     </div>
                                     <div class="col-md-12">
-                                        <textarea class="form-control mb-30" name="message" id="message" rows="2" placeholder="Message Details" required></textarea>
+                                        @error('message')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                        <textarea class="form-control mb-1" name="message" id="message" rows="2" placeholder="Message Details">{{old('message')}}</textarea>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="" id="captcha" alt="captcha" height="50">
+                                                <button type="button" id="refresh-captcha" class="btn btn-primary ml-2">Refresh Captcha</button>
+                                            </div>
+
+                                            <div class="col-12 mt-2">
+                                                @error('captcha')
+                                                    <small class="text-danger">{{$message}}</small>
+                                                @enderror
+                                                <input type="hidden" id="captcha-key" name="key">
+                                                <input type="text" class="form-control" name="captcha">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" id="submit-message" class="btn btn-primary btn-black btn-block">Send Message</button>
@@ -131,3 +162,30 @@
 
     @include('web.components.footer')
 @endsection
+
+@push('script')
+<script type="text/javascript">
+    const refreshBtn = document.querySelector('#refresh-captcha');
+    refreshBtn.addEventListener('click', refreshCaptcha);
+
+    refreshCaptcha();
+
+    function refreshCaptcha() {
+        var captcha = document.getElementById('captcha');
+        var key = document.getElementById('captcha-key');
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var res = JSON.parse(xhr.responseText);
+                // console.log(res.img);
+                captcha.src = res.img;
+                key.value = res.key;
+            }
+        };
+        xhr.open("GET", host + "/captcha/api/mini", true);
+        xhr.send();
+    }
+</script>
+@endpush

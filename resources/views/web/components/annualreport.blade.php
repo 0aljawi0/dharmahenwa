@@ -49,7 +49,7 @@
                                 <div class="list-ar">
                                     <div class="area-ar">
                                         <div class="caption-ar">
-                                            <span class="name-ar">{{$item->title}}</span>
+                                            <span class="name-ar" style="padding: 0 15%;">{{$item->title}}</span>
                                         </div>
                                         <div class="fram-img-ar">
                                             <img src="{{asset('storage/'.$item->image)}}" alt="" width="200">

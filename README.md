@@ -1,19 +1,12 @@
 ## DharmaHenwa
 
-### PHP Requirement :
+### New Update June 24 2021 :
 
-- PHP >= 7.3
-- BCMath PHP Extension
-- Ctype PHP Extension
-- Fileinfo PHP extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
+- Change menu name
+- Fix white space on footer
+- Add captcha in contact message
 
-### New Update June 22 2021 :
+### Update June 22 2021 :
 
 - Fix RTI Layout
 - Fix issue in php 8

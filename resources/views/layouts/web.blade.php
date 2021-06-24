@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="site" content="{{url('/')}}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="@yield('favicon')">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('web/images/favicon/favicon-32x32.png')}}">
@@ -78,6 +79,22 @@
     <script src="{{asset('web/js/jquery-2.1.1.min.js')}}"></script>
     <script src="{{asset('web/js/plugins.js?v=1.0.0')}}"></script>
     <script src="{{asset('web/js/functions.js?v=1.2.0')}}"></script>
+
+    <script type="text/javascript">
+        var host = getMeta('site');
+
+        function getMeta(metaName) {
+            const metas = document.getElementsByTagName('meta');
+
+            for (let i = 0; i < metas.length; i++) {
+                if (metas[i].getAttribute('name') === metaName) {
+                    return metas[i].getAttribute('content');
+                }
+            }
+
+            return '';
+        }
+    </script>
 
     @stack('script')
 </body>

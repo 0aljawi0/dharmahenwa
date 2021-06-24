@@ -79,11 +79,22 @@ class Home extends Controller
 
     public function message_store(Request $request)
     {
-        $message = Message::create($request->all())->id;
+        $validated = $request->validate([
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|max:100',
+            'phone' => 'required|max:20',
+            'subject' => 'required|string|max:200',
+            'message' => 'required|string',
+            'captcha' => 'required|captcha_api:' . $request->key . ',mini'
+        ]);
 
-        Mail::to(env('MAIL_FOR_CONTACT'))->send(new Pesan($message));
+        $saved = Message::create($validated)->id;
 
-        if($message) return redirect()->back()->with(['message' => 'Berhasil mengirim pesan!', 'type' => 'success']);
+        // $message = Message::create($request->all())->id;
+
+        Mail::to(env('MAIL_FOR_CONTACT'))->send(new Pesan($saved));
+
+        if($saved) return redirect()->back()->with(['message' => 'Berhasil mengirim pesan!', 'type' => 'success']);
         else return redirect()->back()->with(['message' => 'Gagal mengirim pesan, Coba lagi nanti!', 'type' => 'danger']);
     }
 
